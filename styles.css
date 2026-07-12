@@ -64,10 +64,19 @@ nav.main a[aria-current="page"]{color:var(--plum);box-shadow:inset 0 -2px 0 var(
 .hero .eyebrow{color:var(--brass)}
 .hero h1{font-size:clamp(30px,5vw,52px);max-width:16ch;margin-bottom:.35em}
 .hero h1 .accent{font-style:italic;color:var(--brass);font-weight:600}
+.hero-sub{font-family:'Source Serif 4',serif;font-weight:500;font-size:clamp(17px,2.2vw,21px);line-height:1.42;color:var(--sage);max-width:46ch;margin:0 0 18px}
 .hero .lede{font-size:clamp(16px,2vw,20px);max-width:60ch;color:var(--ink)}
 .tagband{display:flex;align-items:center;gap:12px;margin:22px 0 6px}
 .tagband .rl{height:2px;width:46px;background:var(--brass);flex:0 0 auto}
 .tagband .tx{font-family:'Source Serif 4',serif;font-style:italic;font-size:16px;color:var(--sage)}
+.hero-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:44px;align-items:center}
+.hero-photo{display:flex;justify-content:center}
+.hero-photo img{width:100%;max-width:330px;aspect-ratio:4/5;object-fit:cover;border-radius:16px;box-shadow:0 14px 34px rgba(38,34,42,.16);border:1px solid var(--line)}
+@media(max-width:820px){
+  .hero-grid{grid-template-columns:1fr;gap:20px}
+  .hero-photo{order:-1;justify-content:flex-start}
+  .hero-photo img{max-width:148px;border-radius:12px}
+}
 .accolade{font-family:'Source Serif 4',serif;font-style:italic;color:var(--plum);font-size:15px;margin-top:14px}
 .affil{font-size:13px;color:var(--muted);margin-top:2px}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
@@ -193,7 +202,7 @@ nav.main a[aria-current="page"]{color:var(--plum);box-shadow:inset 0 -2px 0 var(
 .authority-strip span{position:relative;font-size:12.5px;font-weight:600;color:var(--plum);padding:2px 15px;line-height:1.35}
 .authority-strip span:first-child{padding-left:0}
 .authority-strip span:not(:last-child)::after{content:"";position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:13px;background:var(--brass)}
-@media(max-width:640px){.authority-strip span{padding:2px 0;flex:1 0 100%}.authority-strip span::after{display:none!important}}
+@media(max-width:640px){.authority-strip span{padding:3px 0;flex:1 0 100%;font-size:11px;line-height:1.3}.authority-strip span::after{display:none!important}}
 /* ---- referral forms buttons ---- */
 .refforms{margin-top:16px}
 .refforms-h{font-weight:700;color:var(--ink);font-size:15px;margin:0}
