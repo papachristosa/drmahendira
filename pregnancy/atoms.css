@@ -69,6 +69,9 @@ ul.ticks li:before{content:"\2713";position:absolute;left:0;color:var(--teal);fo
 .cards{display:grid;gap:12px;margin:12px 0}
 .card{border:1px solid var(--line);border-radius:10px;padding:12px 14px}
 .card h3{margin:.1em 0 .3em}
+.card .doorbtns{display:flex;gap:8px;margin-top:11px;flex-wrap:wrap}
+.card .doorbtn{display:inline-block;padding:7px 15px;border:1px solid var(--line,#e3dccb);border-radius:8px;font-size:14px;font-weight:600;color:var(--plum,#432a49);background:var(--white,#fff);text-decoration:none;line-height:1.25}
+.card .doorbtn:hover{background:var(--plum,#432a49);color:#fff;border-color:var(--plum,#432a49);text-decoration:none}
 .pos{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.01em;border-radius:999px;padding:3px 11px;margin-bottom:6px;border:1px solid transparent}
 .pos.continue{background:var(--pc-cont-bg);color:var(--pc-cont-fg);border-color:var(--pc-cont-bd)}
 .pos.use_if_needed{background:var(--pc-cau-bg);color:var(--pc-cau-fg);border-color:var(--pc-cau-bd)}
