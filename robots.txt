@@ -1,0 +1,5 @@
+# Production. All reviewed content is crawlable.
+User-agent: *
+Allow: /
+
+Sitemap: https://example-practice.ca/sitemap.xml
