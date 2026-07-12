@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 140" role="img" aria-label="Dr. Dharini Mahendira Rheumatology">
+  <defs><style>
+    .serif{font-family:'Source Serif 4',Georgia,'Times New Roman',serif}
+    .sans{font-family:Inter,'Helvetica Neue',Arial,sans-serif}
+  </style></defs>
+  <!-- seal mark: matches the site seal and the referral letterhead -->
+  <circle cx="56" cy="70" r="40" fill="#432a49"/>
+  <text x="56" y="82" text-anchor="middle" class="serif" font-weight="700" font-size="38" fill="#f7f3ec" letter-spacing="-1.5">DM</text>
+  <line x1="14" y1="77" x2="98" y2="77" stroke="#a9781f" stroke-width="3.4"/>
+  <!-- wordmark -->
+  <text x="120" y="67" class="serif" font-weight="700" font-size="27.5" fill="#432a49">Dr. Dharini Mahendira</text>
+  <line x1="121" y1="83" x2="447" y2="83" stroke="#a9781f" stroke-width="1.1"/>
+  <text x="122" y="105" class="sans" font-weight="600" font-size="12.5" fill="#a9781f" letter-spacing="6.5">RHEUMATOLOGY</text>
+</svg>

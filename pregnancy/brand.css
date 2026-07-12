@@ -1,0 +1,33 @@
+/* brand.css - single source of brand tokens. PLACEHOLDER palette (Direction A).
+   Swap the hex values here on brand sign-off; the whole site re-themes. */
+:root{
+  /* --- practice brand (placeholder: deep plum / brass / sage) --- */
+  --plum:#432a49;        /* primary: headings, dark bands, seal disc */
+  --plum-2:#5c3a63;      /* lighter plum for hovers/accents */
+  --brass:#a9781f;       /* accent: eyebrows, the line motif, primary CTA */
+  --brass-2:#c08f36;
+  --sage:#54715f;        /* secondary accent */
+  --ivory:#f7f3ec;       /* soft background */
+  --ivory-2:#efe8db;     /* alt soft background */
+  --ink:#26222a;         /* body text */
+  --muted:#6a6270;       /* secondary text */
+  --line:#e4ddd0;        /* hairlines */
+  --white:#ffffff;
+
+  /* aliases so shared/atom components that reference the myositis names still work */
+  --navy:var(--plum);
+  --maple:var(--brass);
+  --teal:var(--sage);
+  --cream:var(--ivory);
+
+  /* --- clinical position + evidence colours (shared with atom pages) --- */
+  --pc-cont-bg:#cfead9; --pc-cont-fg:#0f6b3f; --pc-cont-bd:#a3d6b9;
+  --pc-cau-bg:#fbf3bd;  --pc-cau-fg:#6a5d00;  --pc-cau-bd:#e8da62;
+  --pc-neu-bg:#e8ecf1;  --pc-neu-fg:#3d4a5e;  --pc-neu-bd:#ccd4df;
+  --pc-stop-bg:#fbe3ba; --pc-stop-fg:#8a5600; --pc-stop-bd:#edc57e;
+  --pc-avoid-bg:#f9d2ce; --pc-avoid-fg:#a01e1d; --pc-avoid-bd:#efaaa4;
+  --ev-green:#157347; --ev-slate:#475569; --ev-purple:#6d3f9c;
+
+  --amber-bg:#fdf6e3; --amber-br:#e0b64b;
+  --red-bg:#fbecea; --red-br:#c0392b;
+}
