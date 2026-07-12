@@ -51,6 +51,7 @@ nav.main a[aria-current="page"]{color:var(--plum);box-shadow:inset 0 -2px 0 var(
 .pub-all{display:inline-block;margin-top:8px;font-weight:600;color:var(--ivory);background:var(--brass);padding:9px 16px;border-radius:8px}
 .pub-all:hover{background:var(--brass-2);color:var(--white);text-decoration:none}
 .pub-src{font-size:12px;color:var(--muted);margin-top:12px}
+.pub-sub{margin:28px 0 2px;color:var(--plum);font-size:18px}
 /* CSS-only hamburger */
 #nav-toggle{display:none}
 .nav-burger{display:none;margin-left:auto;width:42px;height:38px;border:1px solid var(--line);
@@ -69,6 +70,7 @@ nav.main a[aria-current="page"]{color:var(--plum);box-shadow:inset 0 -2px 0 var(
 .tagband{display:flex;align-items:center;gap:12px;margin:22px 0 6px}
 .tagband .rl{height:2px;width:46px;background:var(--brass);flex:0 0 auto}
 .tagband .tx{font-family:'Source Serif 4',serif;font-style:italic;font-size:16px;color:var(--sage)}
+.prose-sig{font-family:'Source Serif 4',serif;font-style:italic;font-size:21px;color:var(--brass);margin-top:24px}
 .hero-photo{display:flex;justify-content:center;margin:4px 0 20px}
 .hero-photo img{width:100%;max-width:230px;aspect-ratio:4/5;object-fit:cover;border-radius:14px;box-shadow:0 12px 30px rgba(38,34,42,.16);border:1px solid var(--line)}
 @media(min-width:821px){
@@ -199,11 +201,9 @@ nav.main a[aria-current="page"]{color:var(--plum);box-shadow:inset 0 -2px 0 var(
   color:var(--plum);background:var(--ivory-2);border:1px solid var(--line);border-radius:6px;padding:3px 9px;margin-top:12px}
 
 /* ---- authority strip (hero credentials) ---- */
-.authority-strip{display:flex;flex-wrap:wrap;margin:20px 0 0;padding:14px 0 0;border-top:1px solid var(--line)}
-.authority-strip span{position:relative;font-size:12.5px;font-weight:600;color:var(--plum);padding:2px 15px;line-height:1.35}
-.authority-strip span:first-child{padding-left:0}
-.authority-strip span:not(:last-child)::after{content:"";position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:13px;background:var(--brass)}
-@media(max-width:640px){.authority-strip span{padding:3px 0;flex:1 0 100%;font-size:11px;line-height:1.3}.authority-strip span::after{display:none!important}}
+.authority-strip{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0;padding:16px 0 0;border-top:1px solid var(--line)}
+.authority-strip span{font-size:12px;font-weight:600;color:var(--plum);background:rgba(67,42,73,.06);border:1px solid var(--line);border-radius:20px;padding:6px 14px;line-height:1.3}
+@media(max-width:640px){.authority-strip span{font-size:11px;padding:6px 12px}}
 /* ---- referral forms buttons ---- */
 .refforms{margin-top:16px}
 .refforms-h{font-weight:700;color:var(--ink);font-size:15px;margin:0}
