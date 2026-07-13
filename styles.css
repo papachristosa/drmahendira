@@ -107,18 +107,20 @@ nav.main a[aria-current="page"]{color:var(--plum);box-shadow:inset 0 -2px 0 var(
 .grid.cols-3{grid-template-columns:repeat(3,1fr)}
 .grid.cols-2{grid-template-columns:repeat(2,1fr)}
 .featcard{display:block;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:22px;
-  transition:.18s;position:relative;overflow:hidden}
-.featcard:hover{text-decoration:none;border-color:var(--brass);transform:translateY(-2px);
-  box-shadow:0 10px 28px -18px rgba(67,42,73,.5)}
-.featcard .tag{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brass)}
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;position:relative;overflow:hidden}
+.featcard:hover{text-decoration:none;border-color:var(--accent,var(--brass));transform:translateY(-4px);
+  box-shadow:0 16px 34px -16px rgba(67,42,73,.45)}
+.featcard .tag{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent,var(--brass))}
 .featcard h3{font-size:21px;margin:8px 0 6px}
 .featcard p{margin:0;color:var(--muted);font-size:14.5px}
-.featcard .go{display:inline-block;margin-top:14px;font-weight:600;font-size:13.5px;color:var(--plum)}
+.featcard .go{display:inline-block;margin-top:14px;font-weight:600;font-size:13.5px;color:var(--accent,var(--plum))}
 .featcard .go::after{content:" \2192"}
-.featcard .bartop{position:absolute;top:0;left:0;right:0;height:4px;background:var(--brass)}
-.featcard.c-rheum .bartop{background:var(--sage)}
-.featcard.c-oa .bartop{background:var(--brass)}
-.featcard.c-preg .bartop{background:var(--plum-2)}
+.featcard .bartop{position:absolute;top:0;left:0;right:0;height:5px;background:var(--accent,var(--brass))}
+.featcard .cico{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:13px;background:var(--accent-soft,var(--ivory-2));color:var(--accent,var(--brass));margin-bottom:12px}
+.featcard .cico svg{width:26px;height:26px;display:block}
+.featcard.c-rheum{--accent:var(--sage);--accent-soft:#e9efeb}
+.featcard.c-oa{--accent:var(--brass);--accent-soft:#f7f0df}
+.featcard.c-preg{--accent:var(--plum-2);--accent-soft:#efe9f1}
 
 /* ---- one promise, two readers ---- */
 .promise{display:grid;grid-template-columns:1fr 1fr;gap:20px}
