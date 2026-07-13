@@ -9,6 +9,12 @@ body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--ink);background
 h1,h2,h3,h4{font-family:'Source Serif 4',Georgia,serif;line-height:1.16;color:var(--plum);margin:0 0 .4em}
 a{color:var(--plum);text-decoration:none}
 a:hover{text-decoration:underline}
+/* inline links in body content: clearly visible (contrast colour + brass underline) */
+.prose a:not(.btn),.lede a:not(.btn),.alert a,.info-block a:not(.btn),.disclaimer a,.rtable a,.ticks a,.sec p a:not(.btn),.sec li a:not(.btn){
+  color:var(--plum);font-weight:600;text-decoration:underline;text-decoration-color:var(--brass);
+  text-decoration-thickness:2px;text-underline-offset:2px}
+.prose a:not(.btn):hover,.lede a:not(.btn):hover,.alert a:hover,.info-block a:not(.btn):hover,.disclaimer a:hover,.rtable a:hover,.ticks a:hover,.sec p a:not(.btn):hover,.sec li a:not(.btn):hover{
+  color:#8a6212;text-decoration-color:var(--plum)}
 .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
 :focus-visible{outline:3px solid var(--brass);outline-offset:2px;border-radius:3px}
 img,svg{max-width:100%}
