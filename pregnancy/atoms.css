@@ -150,3 +150,7 @@ tr.flagrow td:first-child{box-shadow:inset 4px 0 0 var(--flag-bd)}
 .partial .badge{background:#46617f}
 .verified{background:#e8f3ec;border-left:5px solid #157347}
 .verified .badge{background:#157347}
+
+.card-guide{margin:10px 0 0}
+.card-guide a{font-weight:600;color:var(--plum,#432a49);text-decoration:underline;text-decoration-color:var(--brass,#a9781f);text-decoration-thickness:2px;text-underline-offset:2px}
+.card-guide a::after{content:" \2192"}
