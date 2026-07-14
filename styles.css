@@ -235,10 +235,18 @@ nav.main a[aria-current="page"]{color:var(--plum);box-shadow:inset 0 -2px 0 var(
 .refbox dt{font-weight:600;color:var(--plum)}
 .refbox dd{margin:0;color:var(--ink)}
 .group-label{font-family:'Source Serif 4',serif;font-size:19px;color:var(--plum);margin:26px 0 12px}
+.exg-section{margin-top:32px}
+.exg-why{color:var(--muted);margin-top:-6px}
+.exg-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:14px 0 6px}
+.exg-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.exg-num{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:var(--sage);color:#fff;font-weight:700;font-size:13px;margin-bottom:8px}
+.exg-card h4{margin:0 0 6px;font-size:16px;color:var(--plum)}
+.exg-card p{margin:0;font-size:14.5px}
+.exg-dose{font-size:12.5px !important;color:var(--muted) !important;margin-top:8px !important;font-weight:600;text-transform:uppercase;letter-spacing:.02em}
 
 /* ---- responsive ---- */
 @media(max-width:900px){
-  .grid.cols-3,.grid.cols-2,.tiers,.team-grid{grid-template-columns:1fr}
+  .grid.cols-3,.grid.cols-2,.tiers,.team-grid,.exg-grid{grid-template-columns:1fr}
   .promise{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr 1fr}
   .nav-burger{display:flex}
