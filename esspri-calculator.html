@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ESSPRI calculator | Dr. Mahendira Rheumatology</title>
+<meta name="description" content="An interactive ESSPRI (EULAR Sjogren's Syndrome Patient Reported Index) calculator, with tracking and printing.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://example-practice.ca/rheumatology/sjogrens.patients.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dr. Dharini Mahendira Rheumatology">
+<meta property="og:title" content="ESSPRI calculator">
+<meta property="og:description" content="An interactive ESSPRI (EULAR Sjogren's Syndrome Patient Reported Index) calculator, with tracking and printing.">
+<meta property="og:url" content="https://example-practice.ca/rheumatology/sjogrens.patients.html">
+<meta property="og:image" content="https://example-practice.ca/assets/social-1280x640.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ESSPRI calculator">
+<meta name="twitter:description" content="An interactive ESSPRI (EULAR Sjogren's Syndrome Patient Reported Index) calculator, with tracking and printing.">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://example-practice.ca/index.html"}, {"@type": "ListItem", "position": 2, "name": "General Rheumatology", "item": "https://example-practice.ca/general-rheumatology.html"}, {"@type": "ListItem", "position": 3, "name": "Sjogren's disease", "item": "https://example-practice.ca/rheumatology/sjogrens.patients.html"}, {"@type": "ListItem", "position": 4, "name": "ESSPRI calculator", "item": "https://example-practice.ca/esspri-calculator.html"}]}</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-in">
+    <a class="brandmark" href="index.html">
+      <img class="brand-logo" src="assets/logo-mahendira-light.png" alt="Dr. Dharini Mahendira, Rheumatology" width="150" height="42">
+    </a>
+    <input type="checkbox" id="nav-toggle">
+    <label class="nav-burger" for="nav-toggle" aria-label="Menu"><span></span></label>
+    <nav class="main" aria-label="Primary">
+      <a href="index.html">Home</a><a href="general-rheumatology.html">General Rheumatology</a><a href="osteoarthritis.html">Osteoarthritis Clinic</a><a href="pregnancy.html">RheumPreg Clinic</a><a href="patient-guides.html">Patient Guides</a><a href="teaching.html">Teaching</a><a href="research.html">Research</a><a href="team.html">Team</a><a href="contact.html">Contact</a>
+      <span class="aud" role="group" aria-label="Choose audience">
+        <a href="#" class="on">For patients</a>
+        <a href="#">For clinicians</a>
+      </span>
+      <a class="refer" href="contact.html">Refer a patient</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero"><div class="wrap">
+  <p class="eyebrow"><a href="rheumatology/sjogrens.patients.html">Sjogren's disease</a> &middot; Self-tracking tool</p>
+  <h1>ESSPRI: track your symptoms</h1>
+  <p class="lede">The EULAR Sjogren's Syndrome Patient Reported Index (ESSPRI) is a short, three-question tool that captures how dryness, fatigue, and pain have affected you over the last two weeks. Complete it, save your result to track it over time, and print it to bring to your rheumatology appointment.</p>
+  <div class="cta-row"><a class="btn btn-ghost" href="rheumatology/sjogrens.patients.html">Back to the Sjogren's guide</a><a class="btn btn-ghost" href="patient-guides.html">All patient guides</a></div>
+</div></section>
+<section class="sec"><div class="wrap">
+
+<div class="alert noprint"><span class="b">i</span><span>Answer each question based on how you have felt over the <strong>last 2 weeks</strong>, not just today. There are no right or wrong answers. This tool runs entirely in your browser: nothing you enter is saved to a server or sent anywhere. Saving a result stores it only in this browser, on this device.</span></div>
+
+<div class="prose noprint">
+<div class="bq">
+  <h3>Q1. Dryness</h3>
+  <p class="q-help">How would you rate your overall level of dryness (eyes, mouth, skin, or elsewhere)?</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q1" min="0" max="10" step="1" value="0" oninput="esspriUpdate()">
+    <span class="bq-val" id="q1v">0</span>
+  </div>
+  <div class="bq-ends"><span>No symptom</span><span>Maximal imaginable</span></div>
+</div><div class="bq">
+  <h3>Q2. Fatigue</h3>
+  <p class="q-help">How would you rate your overall level of fatigue?</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q2" min="0" max="10" step="1" value="0" oninput="esspriUpdate()">
+    <span class="bq-val" id="q2v">0</span>
+  </div>
+  <div class="bq-ends"><span>No symptom</span><span>Maximal imaginable</span></div>
+</div><div class="bq">
+  <h3>Q3. Pain</h3>
+  <p class="q-help">How would you rate your overall level of pain (joint and/or muscle pain)?</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q3" min="0" max="10" step="1" value="0" oninput="esspriUpdate()">
+    <span class="bq-val" id="q3v">0</span>
+  </div>
+  <div class="bq-ends"><span>No symptom</span><span>Maximal imaginable</span></div>
+</div>
+</div>
+
+<div class="basdai-result">
+  <div class="basdai-score-label">Your ESSPRI score</div>
+  <div class="basdai-score" id="bScore">0.0</div>
+  <div class="basdai-score-label">out of 10</div>
+  <div class="basdai-gauge"><span class="basdai-marker" id="bMarker" style="left:0%"></span></div>
+  <div class="basdai-endlabels"><span>0 &middot; no symptoms</span><span>&nbsp;</span><span>10 &middot; maximal symptoms</span></div>
+  <div class="basdai-interp" id="bInterp">Move the sliders above to see your score.</div>
+</div>
+
+<div class="disclaimer noprint" style="margin-top:16px"><strong>About the scale.</strong> ESSPRI does not have a single target or "normal" score. It is designed to be tracked over time: what matters most is the change in your own score from one reading to the next.</div>
+
+<div class="cta-row noprint" style="margin-top:18px">
+  <button type="button" class="btn btn-primary" onclick="esspriSave()">Save this result</button>
+  <button type="button" class="btn btn-ghost" onclick="esspriPrintSummary()">Print this result</button>
+</div>
+
+<div class="basdai-hist noprint">
+  <p class="group-label" style="margin-top:26px">Your saved results</p>
+  <div id="bHistWrap"></div>
+  <p style="margin-top:10px"><button type="button" class="btn btn-ghost" onclick="esspriClearHistory()" style="font-size:13px">Clear saved history</button></p>
+</div>
+
+<div class="printonly" style="margin-top:18px">
+  <p><strong>Dr. Dharini Mahendira Rheumatology</strong> &middot; ESSPRI result &middot; <span id="bPrintDate"></span></p>
+  <table class="bans"><thead><tr><th>Question</th><th>Response</th></tr></thead><tbody id="bAnswerRows"></tbody></table>
+</div>
+
+<div class="info-block" style="margin-top:24px"><h3>How the score is calculated</h3>
+<p style="font-size:14.5px;margin:0 0 8px">ESSPRI = the mean (average) of the 3 item scores: dryness, fatigue, and pain, each rated 0 (no symptom) to 10 (maximal imaginable symptom).</p>
+<p style="font-size:12.5px;color:var(--muted);margin-top:6px">Seror R, Ravaud P, Mariette X, et al, for the EULAR Sjogren's Task Force. EULAR Sjogren's Syndrome Patient Reported Index (ESSPRI): development of a consensus patient index for primary Sjogren's syndrome. <em>Ann Rheum Dis.</em> 2011;70(6):968 to 972.</p>
+</div>
+
+<div class="cta-row" style="margin-top:20px"><a class="btn btn-ghost" href="rheumatology/sjogrens.patients.html">Back to the Sjogren's guide</a><a class="btn btn-ghost" href="patient-guides.html">All patient guides</a></div>
+</div></section>
+
+<script>
+function esspriUpdate(){
+  var ids=['q1','q2','q3'];
+  var v={}; var sum=0;
+  ids.forEach(function(id){
+    var el=document.getElementById(id);
+    var out=document.getElementById(id+'v');
+    v[id]=parseFloat(el.value);
+    out.textContent=el.value;
+    sum+=v[id];
+  });
+  var score=sum/3;
+  score=Math.round(score*10)/10;
+  document.getElementById('bScore').textContent=score.toFixed(1);
+  var pct=(score/10)*100;
+  document.getElementById('bMarker').style.left=pct+'%';
+  var interp=document.getElementById('bInterp');
+  interp.innerHTML='<strong>Your ESSPRI score.</strong> There is no single target score. A drop of about 1 point, or about 15%, from a previous reading is generally considered a meaningful improvement; a similar rise is generally considered a meaningful worsening.';
+  window._esspriCurrent={date:new Date().toISOString().slice(0,10),score:score,q1:v.q1,q2:v.q2,q3:v.q3};
+}
+function esspriSave(){
+  if(!window._esspriCurrent){ esspriUpdate(); }
+  var hist=[];
+  try{ hist=JSON.parse(localStorage.getItem('sjogrens_esspri_history')||'[]'); }catch(e){ hist=[]; }
+  hist.push(window._esspriCurrent);
+  if(hist.length>20){ hist=hist.slice(hist.length-20); }
+  localStorage.setItem('sjogrens_esspri_history', JSON.stringify(hist));
+  esspriRenderHistory();
+}
+function esspriClearHistory(){
+  if(!confirm('Clear all saved ESSPRI results from this browser? This cannot be undone.')) return;
+  localStorage.removeItem('sjogrens_esspri_history');
+  esspriRenderHistory();
+}
+function esspriRenderHistory(){
+  var hist=[];
+  try{ hist=JSON.parse(localStorage.getItem('sjogrens_esspri_history')||'[]'); }catch(e){ hist=[]; }
+  var wrap=document.getElementById('bHistWrap');
+  if(!hist.length){ wrap.innerHTML='<p style="font-size:13.5px;color:var(--muted)">No saved results yet in this browser. Complete the three questions above and select \'Save this result\' to start tracking.</p>'; return; }
+  var rows=hist.slice().reverse().map(function(h){
+    return '<tr><td>'+h.date+'</td><td>'+h.score.toFixed(1)+'</td></tr>';
+  }).join('');
+  wrap.innerHTML='<table class="bhist"><thead><tr><th>Date</th><th>ESSPRI</th></tr></thead><tbody>'+rows+'</tbody></table>';
+}
+function esspriPrintSummary(){
+  var ids=['q1','q2','q3'];
+  var labels={q1:'Dryness',q2:'Fatigue',q3:'Pain'};
+  var rows=ids.map(function(id){
+    return '<tr><td>'+labels[id]+'</td><td>'+document.getElementById(id).value+' / 10</td></tr>';
+  }).join('');
+  document.getElementById('bAnswerRows').innerHTML=rows;
+  document.getElementById('bPrintDate').textContent=new Date().toLocaleDateString();
+  window.print();
+}
+document.addEventListener('DOMContentLoaded', function(){ esspriUpdate(); esspriRenderHistory(); });
+</script>
+<footer class="site-footer">
+  <div class="foot-in foot-grid">
+    <div class="foot-brand">
+      <img class="brand-logo-dark" src="assets/logo-mahendira-dark.png" alt="Dr. Dharini Mahendira, Rheumatology" width="150" height="42">
+      <p>Reproductive rheumatology, complex osteoarthritis, and general rheumatology. Careful, sourced answers for patients and clinicians.</p>
+    </div>
+    <div><h5>Clinics</h5>
+      <a href="general-rheumatology.html">General Rheumatology</a>
+      <a href="osteoarthritis.html">Osteoarthritis Clinic</a>
+      <a href="pregnancy.html">RheumPreg Clinic</a>
+    </div>
+    <div><h5>Patients</h5>
+      <a href="patient-guides.html">Patient Guides</a><a href="pregnancy/index.html">Medication guides</a><a href="https://www.arthros.ca/flareforward" target="_blank" rel="noopener">FlareForward (exercise)</a>
+    </div>
+    <div><h5>Clinicians</h5>
+      <a href="pregnancy/guideline-comparison.clinicians.html">Guideline matrix</a><a href="methodology.html">How we make this</a><a href="https://rheumacademy.com/" target="_blank" rel="noopener">Rheum Academy (CPD)</a>
+    </div>
+    <div><h5>Practice</h5>
+      <a href="team.html">Team</a><a href="research.html">Research</a><a href="teaching.html">Teaching</a><a href="contact.html">Contact</a><a href="medico-legal.html">Medico-legal</a><a href="https://www.torontomyositis.ca" target="_blank" rel="noopener">Toronto Myositis Centre</a>
+    </div>
+  </div>
+  <div class="foot-in foot-base">
+    <span>&copy; 2026 Dr. Dharini Mahendira.</span>
+    <span>For clinical reference &middot; generated from reviewed records</span>
+  </div>
+</footer>
+</body></html>

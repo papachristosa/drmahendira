@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PsAID calculator | Dr. Mahendira Rheumatology</title>
+<meta name="description" content="An interactive PsAID-12 (Psoriatic Arthritis Impact of Disease) calculator, with tracking and printing.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://example-practice.ca/rheumatology/psoriatic-arthritis.patients.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dr. Dharini Mahendira Rheumatology">
+<meta property="og:title" content="PsAID calculator">
+<meta property="og:description" content="An interactive PsAID-12 (Psoriatic Arthritis Impact of Disease) calculator, with tracking and printing.">
+<meta property="og:url" content="https://example-practice.ca/rheumatology/psoriatic-arthritis.patients.html">
+<meta property="og:image" content="https://example-practice.ca/assets/social-1280x640.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PsAID calculator">
+<meta name="twitter:description" content="An interactive PsAID-12 (Psoriatic Arthritis Impact of Disease) calculator, with tracking and printing.">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://example-practice.ca/index.html"}, {"@type": "ListItem", "position": 2, "name": "General Rheumatology", "item": "https://example-practice.ca/general-rheumatology.html"}, {"@type": "ListItem", "position": 3, "name": "Psoriatic arthritis", "item": "https://example-practice.ca/rheumatology/psoriatic-arthritis.patients.html"}, {"@type": "ListItem", "position": 4, "name": "PsAID calculator", "item": "https://example-practice.ca/psaid-calculator.html"}]}</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-in">
+    <a class="brandmark" href="index.html">
+      <img class="brand-logo" src="assets/logo-mahendira-light.png" alt="Dr. Dharini Mahendira, Rheumatology" width="150" height="42">
+    </a>
+    <input type="checkbox" id="nav-toggle">
+    <label class="nav-burger" for="nav-toggle" aria-label="Menu"><span></span></label>
+    <nav class="main" aria-label="Primary">
+      <a href="index.html">Home</a><a href="general-rheumatology.html">General Rheumatology</a><a href="osteoarthritis.html">Osteoarthritis Clinic</a><a href="pregnancy.html">RheumPreg Clinic</a><a href="patient-guides.html">Patient Guides</a><a href="teaching.html">Teaching</a><a href="research.html">Research</a><a href="team.html">Team</a><a href="contact.html">Contact</a>
+      <span class="aud" role="group" aria-label="Choose audience">
+        <a href="#" class="on">For patients</a>
+        <a href="#">For clinicians</a>
+      </span>
+      <a class="refer" href="contact.html">Refer a patient</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero"><div class="wrap">
+  <p class="eyebrow"><a href="rheumatology/psoriatic-arthritis.patients.html">Psoriatic arthritis</a> &middot; Self-tracking tool</p>
+  <h1>PsAID: track the impact of your disease</h1>
+  <p class="lede">The Psoriatic Arthritis Impact of Disease (PsAID-12) is a twelve-question tool that captures how psoriatic arthritis has affected you physically and emotionally over the last week, pain, fatigue, skin, function, sleep, mood, and more. Complete it, save your result to track it over time, and print it to bring to your rheumatology appointment.</p>
+  <div class="cta-row"><a class="btn btn-ghost" href="rheumatology/psoriatic-arthritis.patients.html">Back to the PsA guide</a><a class="btn btn-ghost" href="patient-guides.html">All patient guides</a></div>
+</div></section>
+<section class="sec"><div class="wrap">
+
+<div class="alert noprint"><span class="b">i</span><span>Answer each question based on how you have felt over the <strong>last 7 days</strong>, not just today. There are no right or wrong answers. This tool runs entirely in your browser: nothing you enter is saved to a server or sent anywhere. Saving a result stores it only in this browser, on this device.</span></div>
+
+<div class="prose noprint">
+<div class="bq">
+  <h3>Q1. Pain</h3>
+  <p class="q-help">How would you rate the pain you felt due to your psoriatic arthritis during the last week?</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q1" min="0" max="10" step="1" value="0" oninput="psaidUpdate()">
+    <span class="bq-val" id="q1v">0</span>
+  </div>
+  <div class="bq-ends"><span>None</span><span>Extreme</span></div>
+</div><div class="bq">
+  <h3>Q2. Fatigue</h3>
+  <p class="q-help">How would you rate the overall level of fatigue you have experienced due to your psoriatic arthritis during the last week?</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q2" min="0" max="10" step="1" value="0" oninput="psaidUpdate()">
+    <span class="bq-val" id="q2v">0</span>
+  </div>
+  <div class="bq-ends"><span>None</span><span>Extreme</span></div>
+</div><div class="bq">
+  <h3>Q3. Skin problems</h3>
+  <p class="q-help">How would you rate the skin problems (such as psoriasis) you have experienced during the last week?</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q3" min="0" max="10" step="1" value="0" oninput="psaidUpdate()">
+    <span class="bq-val" id="q3v">0</span>
+  </div>
+  <div class="bq-ends"><span>None</span><span>Extreme</span></div>
+</div><div class="bq">
+  <h3>Q4. Work and/or leisure activities</h3>
+  <p class="q-help">How much has your psoriatic arthritis affected your ability to take part in work and/or leisure activities during the last week?</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q4" min="0" max="10" step="1" value="0" oninput="psaidUpdate()">
+    <span class="bq-val" id="q4v">0</span>
+  </div>
+  <div class="bq-ends"><span>None</span><span>Extreme</span></div>
+</div><div class="bq">
+  <h3>Q5. Functional capacity</h3>
+  <p class="q-help">How much has your psoriatic arthritis limited your everyday physical activities (such as dressing, walking, or household tasks) during the last week?</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q5" min="0" max="10" step="1" value="0" oninput="psaidUpdate()">
+    <span class="bq-val" id="q5v">0</span>
+  </div>
+  <div class="bq-ends"><span>None</span><span>Extreme</span></div>
+</div><div class="bq">
+  <h3>Q6. Discomfort</h3>
+  <p class="q-help">How would you rate the overall physical discomfort you have felt due to your psoriatic arthritis during the last week?</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q6" min="0" max="10" step="1" value="0" oninput="psaidUpdate()">
+    <span class="bq-val" id="q6v">0</span>
+  </div>
+  <div class="bq-ends"><span>None</span><span>Extreme</span></div>
+</div><div class="bq">
+  <h3>Q7. Sleep disturbance</h3>
+  <p class="q-help">How much has your psoriatic arthritis disturbed your sleep during the last week?</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q7" min="0" max="10" step="1" value="0" oninput="psaidUpdate()">
+    <span class="bq-val" id="q7v">0</span>
+  </div>
+  <div class="bq-ends"><span>None</span><span>Extreme</span></div>
+</div><div class="bq">
+  <h3>Q8. Coping</h3>
+  <p class="q-help">How much have you struggled to cope with your psoriatic arthritis during the last week?</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q8" min="0" max="10" step="1" value="0" oninput="psaidUpdate()">
+    <span class="bq-val" id="q8v">0</span>
+  </div>
+  <div class="bq-ends"><span>None</span><span>Extreme</span></div>
+</div><div class="bq">
+  <h3>Q9. Anxiety, fear, or uncertainty</h3>
+  <p class="q-help">How much anxiety, fear, or uncertainty about the future has your psoriatic arthritis caused you during the last week?</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q9" min="0" max="10" step="1" value="0" oninput="psaidUpdate()">
+    <span class="bq-val" id="q9v">0</span>
+  </div>
+  <div class="bq-ends"><span>None</span><span>Extreme</span></div>
+</div><div class="bq">
+  <h3>Q10. Embarrassment or shame</h3>
+  <p class="q-help">How much embarrassment or shame has your psoriatic arthritis caused you during the last week?</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q10" min="0" max="10" step="1" value="0" oninput="psaidUpdate()">
+    <span class="bq-val" id="q10v">0</span>
+  </div>
+  <div class="bq-ends"><span>None</span><span>Extreme</span></div>
+</div><div class="bq">
+  <h3>Q11. Social participation</h3>
+  <p class="q-help">How much has your psoriatic arthritis limited your social life and relationships during the last week?</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q11" min="0" max="10" step="1" value="0" oninput="psaidUpdate()">
+    <span class="bq-val" id="q11v">0</span>
+  </div>
+  <div class="bq-ends"><span>None</span><span>Extreme</span></div>
+</div><div class="bq">
+  <h3>Q12. Feeling low or depressed</h3>
+  <p class="q-help">How much has your psoriatic arthritis made you feel low or depressed during the last week?</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q12" min="0" max="10" step="1" value="0" oninput="psaidUpdate()">
+    <span class="bq-val" id="q12v">0</span>
+  </div>
+  <div class="bq-ends"><span>None</span><span>Extreme</span></div>
+</div>
+</div>
+
+<div class="basdai-result">
+  <div class="basdai-score-label">Your PsAID score</div>
+  <div class="basdai-score" id="bScore">0.0</div>
+  <div class="basdai-score-label">out of 10</div>
+  <div class="basdai-gauge"><span class="basdai-marker" id="bMarker" style="left:0%"></span></div>
+  <div class="basdai-endlabels"><span>0 &middot; no impact</span><span>4.0 &middot; patient-acceptable symptom state</span><span>10 &middot; worst imaginable</span></div>
+  <div class="basdai-interp" id="bInterp">Move the sliders above to see your score.</div>
+</div>
+
+<div class="disclaimer noprint" style="margin-top:16px"><strong>About the scale.</strong> A PsAID score under 4.0 is generally considered a patient-acceptable symptom state (Gossec et al, 2014). The 12 domains carry different weights in the formula, pain and fatigue-related domains count for more, reflecting how much patients said each mattered to them when the tool was developed. Treat any single score as one data point for a conversation with your team, not a diagnosis or a treatment decision on its own.</div>
+
+<div class="cta-row noprint" style="margin-top:18px">
+  <button type="button" class="btn btn-primary" onclick="psaidSave()">Save this result</button>
+  <button type="button" class="btn btn-ghost" onclick="psaidPrintSummary()">Print this result</button>
+</div>
+
+<div class="basdai-hist noprint">
+  <p class="group-label" style="margin-top:26px">Your saved results</p>
+  <div id="bHistWrap"></div>
+  <p style="margin-top:10px"><button type="button" class="btn btn-ghost" onclick="psaidClearHistory()" style="font-size:13px">Clear saved history</button></p>
+</div>
+
+<div class="printonly" style="margin-top:18px">
+  <p><strong>Dr. Dharini Mahendira Rheumatology</strong> &middot; PsAID result &middot; <span id="bPrintDate"></span></p>
+  <table class="bans"><thead><tr><th>Question</th><th>Response</th></tr></thead><tbody id="bAnswerRows"></tbody></table>
+</div>
+
+<div class="info-block" style="margin-top:24px"><h3>How the score is calculated</h3>
+<p style="font-size:14.5px;margin:0 0 8px">PsAID-12 = (3&times;Pain + 2&times;Fatigue + 2&times;Skin + 2&times;Work/leisure + 2&times;Function + 2&times;Discomfort + 2&times;Sleep + Coping + Anxiety + Embarrassment + Social participation + Feeling low) &divide; 20. Higher-weighted domains (pain, fatigue, skin, function, discomfort, sleep) count for more than the psychosocial domains, reflecting their relative importance to patients.</p>
+<p style="font-size:12.5px;color:var(--muted);margin-top:6px">Gossec L, de Wit M, Kiltz U, et al, on behalf of the EULAR PsAID Taskforce. A patient-derived and patient-reported outcome measure for assessing psoriatic arthritis: elaboration and preliminary validation of the Psoriatic Arthritis Impact of Disease (PsAID) questionnaire, a 13-country EULAR initiative. <em>Ann Rheum Dis.</em> 2014;73(6):1012 to 1019.</p>
+</div>
+
+<div class="cta-row" style="margin-top:20px"><a class="btn btn-ghost" href="rheumatology/psoriatic-arthritis.patients.html">Back to the PsA guide</a><a class="btn btn-ghost" href="patient-guides.html">All patient guides</a></div>
+</div></section>
+
+<script>
+function psaidUpdate(){
+  var ids=['q1','q2','q3','q4','q5','q6','q7','q8','q9','q10','q11','q12'];
+  var weights={q1:3,q2:2,q3:2,q4:2,q5:2,q6:2,q7:2,q8:1,q9:1,q10:1,q11:1,q12:1};
+  var v={}; var weighted=0;
+  ids.forEach(function(id){
+    var el=document.getElementById(id);
+    var out=document.getElementById(id+'v');
+    v[id]=parseFloat(el.value);
+    out.textContent=el.value;
+    weighted+=v[id]*weights[id];
+  });
+  var score=weighted/20;
+  score=Math.round(score*10)/10;
+  document.getElementById('bScore').textContent=score.toFixed(1);
+  var pct=(score/10)*100;
+  document.getElementById('bMarker').style.left=pct+'%';
+  var interp=document.getElementById('bInterp');
+  if(score<4){
+    interp.innerHTML='<strong>Below 4.0.</strong> A PsAID score under 4 is generally taken as a patient-acceptable symptom state. Keep tracking, and mention any change to your rheumatology team.';
+  } else {
+    interp.innerHTML='<strong>4.0 or higher.</strong> A PsAID score of 4 or more is above the patient-acceptable symptom state and may be worth discussing with your rheumatology team, especially if it has stayed this way over more than one reading. A change of about 3 points from a previous reading is generally considered a meaningful change.';
+  }
+  window._psaidCurrent={date:new Date().toISOString().slice(0,10),score:score,q1:v.q1,q2:v.q2,q3:v.q3,q4:v.q4,q5:v.q5,q6:v.q6,q7:v.q7,q8:v.q8,q9:v.q9,q10:v.q10,q11:v.q11,q12:v.q12};
+}
+function psaidSave(){
+  if(!window._psaidCurrent){ psaidUpdate(); }
+  var hist=[];
+  try{ hist=JSON.parse(localStorage.getItem('psa_psaid_history')||'[]'); }catch(e){ hist=[]; }
+  hist.push(window._psaidCurrent);
+  if(hist.length>20){ hist=hist.slice(hist.length-20); }
+  localStorage.setItem('psa_psaid_history', JSON.stringify(hist));
+  psaidRenderHistory();
+}
+function psaidClearHistory(){
+  if(!confirm('Clear all saved PsAID results from this browser? This cannot be undone.')) return;
+  localStorage.removeItem('psa_psaid_history');
+  psaidRenderHistory();
+}
+function psaidRenderHistory(){
+  var hist=[];
+  try{ hist=JSON.parse(localStorage.getItem('psa_psaid_history')||'[]'); }catch(e){ hist=[]; }
+  var wrap=document.getElementById('bHistWrap');
+  if(!hist.length){ wrap.innerHTML='<p style="font-size:13.5px;color:var(--muted)">No saved results yet in this browser. Complete the twelve questions above and select \'Save this result\' to start tracking.</p>'; return; }
+  var rows=hist.slice().reverse().map(function(h){
+    return '<tr><td>'+h.date+'</td><td>'+h.score.toFixed(1)+'</td><td>'+(h.score>=4?'At or above 4.0':'Below 4.0')+'</td></tr>';
+  }).join('');
+  wrap.innerHTML='<table class="bhist"><thead><tr><th>Date</th><th>PsAID</th><th>Level</th></tr></thead><tbody>'+rows+'</tbody></table>';
+}
+function psaidPrintSummary(){
+  var ids=['q1','q2','q3','q4','q5','q6','q7','q8','q9','q10','q11','q12'];
+  var labels={q1:'Pain',q2:'Fatigue',q3:'Skin problems',q4:'Work/leisure activities',q5:'Functional capacity',q6:'Discomfort',q7:'Sleep disturbance',q8:'Coping',q9:'Anxiety/fear/uncertainty',q10:'Embarrassment/shame',q11:'Social participation',q12:'Feeling low or depressed'};
+  var rows=ids.map(function(id){
+    return '<tr><td>'+labels[id]+'</td><td>'+document.getElementById(id).value+' / 10</td></tr>';
+  }).join('');
+  document.getElementById('bAnswerRows').innerHTML=rows;
+  document.getElementById('bPrintDate').textContent=new Date().toLocaleDateString();
+  window.print();
+}
+document.addEventListener('DOMContentLoaded', function(){ psaidUpdate(); psaidRenderHistory(); });
+</script>
+<footer class="site-footer">
+  <div class="foot-in foot-grid">
+    <div class="foot-brand">
+      <img class="brand-logo-dark" src="assets/logo-mahendira-dark.png" alt="Dr. Dharini Mahendira, Rheumatology" width="150" height="42">
+      <p>Reproductive rheumatology, complex osteoarthritis, and general rheumatology. Careful, sourced answers for patients and clinicians.</p>
+    </div>
+    <div><h5>Clinics</h5>
+      <a href="general-rheumatology.html">General Rheumatology</a>
+      <a href="osteoarthritis.html">Osteoarthritis Clinic</a>
+      <a href="pregnancy.html">RheumPreg Clinic</a>
+    </div>
+    <div><h5>Patients</h5>
+      <a href="patient-guides.html">Patient Guides</a><a href="pregnancy/index.html">Medication guides</a><a href="https://www.arthros.ca/flareforward" target="_blank" rel="noopener">FlareForward (exercise)</a>
+    </div>
+    <div><h5>Clinicians</h5>
+      <a href="pregnancy/guideline-comparison.clinicians.html">Guideline matrix</a><a href="methodology.html">How we make this</a><a href="https://rheumacademy.com/" target="_blank" rel="noopener">Rheum Academy (CPD)</a>
+    </div>
+    <div><h5>Practice</h5>
+      <a href="team.html">Team</a><a href="research.html">Research</a><a href="teaching.html">Teaching</a><a href="contact.html">Contact</a><a href="medico-legal.html">Medico-legal</a><a href="https://www.torontomyositis.ca" target="_blank" rel="noopener">Toronto Myositis Centre</a>
+    </div>
+  </div>
+  <div class="foot-in foot-base">
+    <span>&copy; 2026 Dr. Dharini Mahendira.</span>
+    <span>For clinical reference &middot; generated from reviewed records</span>
+  </div>
+</footer>
+</body></html>

@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Knee & Hip Function Tracker (PROMIS) | Dr. Mahendira Rheumatology</title>
+<meta name="description" content="Interactive PROMIS Physical Function and Pain Interference short forms for knee and hip osteoarthritis, with tracking and printing.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://example-practice.ca/osteoarthritis.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dr. Dharini Mahendira Rheumatology">
+<meta property="og:title" content="Knee & Hip Function Tracker (PROMIS)">
+<meta property="og:description" content="Interactive PROMIS Physical Function and Pain Interference short forms for knee and hip osteoarthritis, with tracking and printing.">
+<meta property="og:url" content="https://example-practice.ca/osteoarthritis.html">
+<meta property="og:image" content="https://example-practice.ca/assets/social-1280x640.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Knee & Hip Function Tracker (PROMIS)">
+<meta name="twitter:description" content="Interactive PROMIS Physical Function and Pain Interference short forms for knee and hip osteoarthritis, with tracking and printing.">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://example-practice.ca/index.html"}, {"@type": "ListItem", "position": 2, "name": "Osteoarthritis Clinic", "item": "https://example-practice.ca/osteoarthritis.html"}, {"@type": "ListItem", "position": 3, "name": "Function tracker", "item": "https://example-practice.ca/oa-function-tracker.html"}]}</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-in">
+    <a class="brandmark" href="index.html">
+      <img class="brand-logo" src="assets/logo-mahendira-light.png" alt="Dr. Dharini Mahendira, Rheumatology" width="150" height="42">
+    </a>
+    <input type="checkbox" id="nav-toggle">
+    <label class="nav-burger" for="nav-toggle" aria-label="Menu"><span></span></label>
+    <nav class="main" aria-label="Primary">
+      <a href="index.html">Home</a><a href="general-rheumatology.html">General Rheumatology</a><a href="osteoarthritis.html" aria-current="page">Osteoarthritis Clinic</a><a href="pregnancy.html">RheumPreg Clinic</a><a href="patient-guides.html">Patient Guides</a><a href="teaching.html">Teaching</a><a href="research.html">Research</a><a href="team.html">Team</a><a href="contact.html">Contact</a>
+      <span class="aud" role="group" aria-label="Choose audience">
+        <a href="#" class="on">For patients</a>
+        <a href="#">For clinicians</a>
+      </span>
+      <a class="refer" href="contact.html">Refer a patient</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero"><div class="wrap">
+  <p class="eyebrow"><a href="osteoarthritis.html">Osteoarthritis Clinic</a> &middot; Self-tracking tool</p>
+  <h1>Knee &amp; hip function tracker</h1>
+  <p class="lede">Two short PROMIS&reg; (Patient-Reported Outcomes Measurement Information System) questionnaires: Physical Function and Pain Interference, four questions each, validated in people with knee and hip osteoarthritis. Track your own trend over time, for example before and after a joint injection, and print your results to bring to your appointment.</p>
+  <div class="cta-row"><a class="btn btn-ghost" href="osteoarthritis.html">Back to the Osteoarthritis Clinic</a><a class="btn btn-ghost" href="patient-guides.html">All patient guides</a></div>
+</div></section>
+<section class="sec"><div class="wrap">
+
+<div class="alert noprint"><span class="b">i</span><span>For Physical Function, answer based on your abilities right now. For Pain Interference, answer based on the <strong>last 7 days</strong>. There are no right or wrong answers. This tool runs entirely in your browser: nothing you enter is saved to a server or sent anywhere. Saving a result stores it only in this browser, on this device.</span></div>
+
+<div class="prose noprint">
+<h2>Physical function</h2>
+<div class="bq">
+  <h3>Q1. Are you able to do chores such as vacuuming or yard work?</h3>
+  <div class="promis-opts" id="pf1-opts"><button type="button" class="popt" data-val="5" onclick="promisSelect('pf1',5,this)">Without any difficulty</button><button type="button" class="popt" data-val="4" onclick="promisSelect('pf1',4,this)">With a little difficulty</button><button type="button" class="popt" data-val="3" onclick="promisSelect('pf1',3,this)">With some difficulty</button><button type="button" class="popt" data-val="2" onclick="promisSelect('pf1',2,this)">With much difficulty</button><button type="button" class="popt" data-val="1" onclick="promisSelect('pf1',1,this)">Unable to do</button></div>
+</div><div class="bq">
+  <h3>Q2. Are you able to go up and down stairs at a normal pace?</h3>
+  <div class="promis-opts" id="pf2-opts"><button type="button" class="popt" data-val="5" onclick="promisSelect('pf2',5,this)">Without any difficulty</button><button type="button" class="popt" data-val="4" onclick="promisSelect('pf2',4,this)">With a little difficulty</button><button type="button" class="popt" data-val="3" onclick="promisSelect('pf2',3,this)">With some difficulty</button><button type="button" class="popt" data-val="2" onclick="promisSelect('pf2',2,this)">With much difficulty</button><button type="button" class="popt" data-val="1" onclick="promisSelect('pf2',1,this)">Unable to do</button></div>
+</div><div class="bq">
+  <h3>Q3. Are you able to go for a walk of at least 15 minutes?</h3>
+  <div class="promis-opts" id="pf3-opts"><button type="button" class="popt" data-val="5" onclick="promisSelect('pf3',5,this)">Without any difficulty</button><button type="button" class="popt" data-val="4" onclick="promisSelect('pf3',4,this)">With a little difficulty</button><button type="button" class="popt" data-val="3" onclick="promisSelect('pf3',3,this)">With some difficulty</button><button type="button" class="popt" data-val="2" onclick="promisSelect('pf3',2,this)">With much difficulty</button><button type="button" class="popt" data-val="1" onclick="promisSelect('pf3',1,this)">Unable to do</button></div>
+</div><div class="bq">
+  <h3>Q4. Are you able to run errands and shop?</h3>
+  <div class="promis-opts" id="pf4-opts"><button type="button" class="popt" data-val="5" onclick="promisSelect('pf4',5,this)">Without any difficulty</button><button type="button" class="popt" data-val="4" onclick="promisSelect('pf4',4,this)">With a little difficulty</button><button type="button" class="popt" data-val="3" onclick="promisSelect('pf4',3,this)">With some difficulty</button><button type="button" class="popt" data-val="2" onclick="promisSelect('pf4',2,this)">With much difficulty</button><button type="button" class="popt" data-val="1" onclick="promisSelect('pf4',1,this)">Unable to do</button></div>
+</div>
+<h2 style="margin-top:32px">Pain interference</h2>
+<div class="bq">
+  <h3>Q1. How much did pain interfere with your day to day activities?</h3>
+  <div class="promis-opts" id="pi1-opts"><button type="button" class="popt" data-val="1" onclick="promisSelect('pi1',1,this)">Not at all</button><button type="button" class="popt" data-val="2" onclick="promisSelect('pi1',2,this)">A little bit</button><button type="button" class="popt" data-val="3" onclick="promisSelect('pi1',3,this)">Somewhat</button><button type="button" class="popt" data-val="4" onclick="promisSelect('pi1',4,this)">Quite a bit</button><button type="button" class="popt" data-val="5" onclick="promisSelect('pi1',5,this)">Very much</button></div>
+</div><div class="bq">
+  <h3>Q2. How much did pain interfere with work around the home?</h3>
+  <div class="promis-opts" id="pi2-opts"><button type="button" class="popt" data-val="1" onclick="promisSelect('pi2',1,this)">Not at all</button><button type="button" class="popt" data-val="2" onclick="promisSelect('pi2',2,this)">A little bit</button><button type="button" class="popt" data-val="3" onclick="promisSelect('pi2',3,this)">Somewhat</button><button type="button" class="popt" data-val="4" onclick="promisSelect('pi2',4,this)">Quite a bit</button><button type="button" class="popt" data-val="5" onclick="promisSelect('pi2',5,this)">Very much</button></div>
+</div><div class="bq">
+  <h3>Q3. How much did pain interfere with your ability to participate in social activities?</h3>
+  <div class="promis-opts" id="pi3-opts"><button type="button" class="popt" data-val="1" onclick="promisSelect('pi3',1,this)">Not at all</button><button type="button" class="popt" data-val="2" onclick="promisSelect('pi3',2,this)">A little bit</button><button type="button" class="popt" data-val="3" onclick="promisSelect('pi3',3,this)">Somewhat</button><button type="button" class="popt" data-val="4" onclick="promisSelect('pi3',4,this)">Quite a bit</button><button type="button" class="popt" data-val="5" onclick="promisSelect('pi3',5,this)">Very much</button></div>
+</div><div class="bq">
+  <h3>Q4. How much did pain interfere with your household chores?</h3>
+  <div class="promis-opts" id="pi4-opts"><button type="button" class="popt" data-val="1" onclick="promisSelect('pi4',1,this)">Not at all</button><button type="button" class="popt" data-val="2" onclick="promisSelect('pi4',2,this)">A little bit</button><button type="button" class="popt" data-val="3" onclick="promisSelect('pi4',3,this)">Somewhat</button><button type="button" class="popt" data-val="4" onclick="promisSelect('pi4',4,this)">Quite a bit</button><button type="button" class="popt" data-val="5" onclick="promisSelect('pi4',5,this)">Very much</button></div>
+</div>
+</div>
+
+<div class="basdai-result">
+  <div class="basdai-score-label">Your raw scores</div>
+  <div class="promis-domain-score"><span class="pdlab">Physical Function<br><span class="pdsub">higher = better function</span></span><span class="pdval" id="pfScore">--</span></div>
+  <div class="promis-domain-score"><span class="pdlab">Pain Interference<br><span class="pdsub">higher = more interference</span></span><span class="pdval" id="piScore">--</span></div>
+</div>
+
+<div class="disclaimer noprint" style="margin-top:16px"><strong>About these scores.</strong> These are <em>raw</em> scores (each domain: sum of 4 items, range 4 to 20), not the official standardized PROMIS T-score. Raw scores are useful for seeing your own trend over time. For the precise, population-standardized T-score (the number your care team would use to compare against published benchmarks), use HealthMeasures' own free scoring tool below.</div>
+
+<div class="info-block noprint" style="margin-top:14px"><h3>Get your standardized T-score</h3>
+<p style="font-size:14.5px;margin:0">HealthMeasures, the official steward of PROMIS, provides a free scoring service that converts your answers into the standardized T-score (population mean 50, SD 10).</p>
+<p style="margin-top:10px"><a class="btn btn-ghost" href="https://www.healthmeasures.net/score-and-interpret/calculate-scores" target="_blank" rel="noopener">Open the HealthMeasures scoring service</a></p>
+</div>
+
+<div class="cta-row noprint" style="margin-top:18px">
+  <button type="button" class="btn btn-primary" onclick="promisSave()">Save this result</button>
+  <button type="button" class="btn btn-ghost" onclick="promisPrintSummary()">Print this result</button>
+</div>
+
+<div class="basdai-hist noprint">
+  <p class="group-label" style="margin-top:26px">Your saved results</p>
+  <div id="bHistWrap"></div>
+  <p style="margin-top:10px"><button type="button" class="btn btn-ghost" onclick="promisClearHistory()" style="font-size:13px">Clear saved history</button></p>
+</div>
+
+<div class="printonly" style="margin-top:18px">
+  <p><strong>Dr. Dharini Mahendira Rheumatology</strong> &middot; PROMIS Physical Function &amp; Pain Interference &middot; <span id="bPrintDate"></span></p>
+  <table class="bans"><thead><tr><th>Question</th><th>Response</th></tr></thead><tbody id="bAnswerRows"></tbody></table>
+</div>
+
+<div class="info-block" style="margin-top:24px"><h3>About these questionnaires</h3>
+<p style="font-size:14.5px;margin:0 0 8px">PROMIS Physical Function Short Form 4a and PROMIS Pain Interference Short Form 4a, developed by the PROMIS Health Organization with National Institutes of Health funding. Both have been validated in people with knee osteoarthritis, correlating well with longer legacy measures. Each domain score is the sum of its 4 items (range 4 to 20); Physical Function is scored so that a higher number means better function, Pain Interference so that a higher number means more interference from pain.</p>
+<p style="font-size:12.5px;color:var(--muted);margin-top:6px">PROMIS&reg; is a registered trademark of the U.S. Department of Health and Human Services. Items reproduced from PROMIS Item Bank v2.0, &copy; 2008 to 2017 PROMIS Health Organization and PROMIS Cooperative Group, used under the HealthMeasures Terms of Use for individual clinical and research use. Full information at <a href="https://www.healthmeasures.net" target="_blank" rel="noopener">healthmeasures.net</a>.</p>
+</div>
+
+<div class="cta-row" style="margin-top:20px"><a class="btn btn-ghost" href="osteoarthritis.html">Back to the Osteoarthritis Clinic</a><a class="btn btn-ghost" href="injection-aftercare.html">Injection aftercare</a></div>
+</div></section>
+
+<script>
+var PROMIS_VALS = {};
+function promisSelect(qid, val, btn){
+  PROMIS_VALS[qid]=val;
+  var group=document.getElementById(qid+'-opts');
+  group.querySelectorAll('.popt').forEach(function(b){ b.classList.remove('selected'); });
+  btn.classList.add('selected');
+  promisUpdate();
+}
+function promisUpdate(){
+  var pfIds=['pf1','pf2','pf3','pf4'];
+  var piIds=['pi1','pi2','pi3','pi4'];
+  var pfComplete = pfIds.every(function(id){ return PROMIS_VALS[id]!==undefined; });
+  var piComplete = piIds.every(function(id){ return PROMIS_VALS[id]!==undefined; });
+  if(pfComplete){
+    var pfSum=pfIds.reduce(function(s,id){ return s+PROMIS_VALS[id]; },0);
+    document.getElementById('pfScore').textContent=pfSum;
+  } else {
+    document.getElementById('pfScore').textContent='--';
+  }
+  if(piComplete){
+    var piSum=piIds.reduce(function(s,id){ return s+PROMIS_VALS[id]; },0);
+    document.getElementById('piScore').textContent=piSum;
+  } else {
+    document.getElementById('piScore').textContent='--';
+  }
+  window._promisCurrent={date:new Date().toISOString().slice(0,10),
+    pfRaw: pfComplete ? pfIds.reduce(function(s,id){return s+PROMIS_VALS[id];},0) : null,
+    piRaw: piComplete ? piIds.reduce(function(s,id){return s+PROMIS_VALS[id];},0) : null};
+}
+function promisSave(){
+  if(!window._promisCurrent || (window._promisCurrent.pfRaw===null && window._promisCurrent.piRaw===null)){
+    alert('Please answer at least one full set of questions (Physical Function or Pain Interference) before saving.'); return;
+  }
+  var hist=[];
+  try{ hist=JSON.parse(localStorage.getItem('oa_promis_history')||'[]'); }catch(e){ hist=[]; }
+  hist.push(window._promisCurrent);
+  if(hist.length>20){ hist=hist.slice(hist.length-20); }
+  localStorage.setItem('oa_promis_history', JSON.stringify(hist));
+  promisRenderHistory();
+}
+function promisClearHistory(){
+  if(!confirm('Clear all saved results from this browser? This cannot be undone.')) return;
+  localStorage.removeItem('oa_promis_history');
+  promisRenderHistory();
+}
+function promisRenderHistory(){
+  var hist=[];
+  try{ hist=JSON.parse(localStorage.getItem('oa_promis_history')||'[]'); }catch(e){ hist=[]; }
+  var wrap=document.getElementById('bHistWrap');
+  if(!hist.length){ wrap.innerHTML='<p style="font-size:13.5px;color:var(--muted)">No saved results yet in this browser. Answer the questions above and select \'Save this result\' to start tracking.</p>'; return; }
+  var rows=hist.slice().reverse().map(function(h){
+    return '<tr><td>'+h.date+'</td><td>'+(h.pfRaw===null?'--':h.pfRaw+' / 20')+'</td><td>'+(h.piRaw===null?'--':h.piRaw+' / 20')+'</td></tr>';
+  }).join('');
+  wrap.innerHTML='<table class="bhist"><thead><tr><th>Date</th><th>Physical Function (raw)</th><th>Pain Interference (raw)</th></tr></thead><tbody>'+rows+'</tbody></table>';
+}
+function promisPrintSummary(){
+  var pfLabels={pf1:'Chores (vacuuming/yard work)',pf2:'Stairs at a normal pace',pf3:'A 15-minute walk',pf4:'Errands and shopping'};
+  var piLabels={pi1:'Day to day activities',pi2:'Work around the home',pi3:'Social activities',pi4:'Household chores'};
+  var pfOptLabels={5:'Without any difficulty',4:'With a little difficulty',3:'With some difficulty',2:'With much difficulty',1:'Unable to do'};
+  var piOptLabels={1:'Not at all',2:'A little bit',3:'Somewhat',4:'Quite a bit',5:'Very much'};
+  var rows='';
+  Object.keys(pfLabels).forEach(function(id){
+    var v=PROMIS_VALS[id];
+    rows+='<tr><td>Physical function: '+pfLabels[id]+'</td><td>'+(v?pfOptLabels[v]+' ('+v+')':'not answered')+'</td></tr>';
+  });
+  Object.keys(piLabels).forEach(function(id){
+    var v=PROMIS_VALS[id];
+    rows+='<tr><td>Pain interference: '+piLabels[id]+'</td><td>'+(v?piOptLabels[v]+' ('+v+')':'not answered')+'</td></tr>';
+  });
+  document.getElementById('bAnswerRows').innerHTML=rows;
+  document.getElementById('bPrintDate').textContent=new Date().toLocaleDateString();
+  window.print();
+}
+document.addEventListener('DOMContentLoaded', function(){ promisUpdate(); promisRenderHistory(); });
+</script>
+<footer class="site-footer">
+  <div class="foot-in foot-grid">
+    <div class="foot-brand">
+      <img class="brand-logo-dark" src="assets/logo-mahendira-dark.png" alt="Dr. Dharini Mahendira, Rheumatology" width="150" height="42">
+      <p>Reproductive rheumatology, complex osteoarthritis, and general rheumatology. Careful, sourced answers for patients and clinicians.</p>
+    </div>
+    <div><h5>Clinics</h5>
+      <a href="general-rheumatology.html">General Rheumatology</a>
+      <a href="osteoarthritis.html">Osteoarthritis Clinic</a>
+      <a href="pregnancy.html">RheumPreg Clinic</a>
+    </div>
+    <div><h5>Patients</h5>
+      <a href="patient-guides.html">Patient Guides</a><a href="pregnancy/index.html">Medication guides</a><a href="https://www.arthros.ca/flareforward" target="_blank" rel="noopener">FlareForward (exercise)</a>
+    </div>
+    <div><h5>Clinicians</h5>
+      <a href="pregnancy/guideline-comparison.clinicians.html">Guideline matrix</a><a href="methodology.html">How we make this</a><a href="https://rheumacademy.com/" target="_blank" rel="noopener">Rheum Academy (CPD)</a>
+    </div>
+    <div><h5>Practice</h5>
+      <a href="team.html">Team</a><a href="research.html">Research</a><a href="teaching.html">Teaching</a><a href="contact.html">Contact</a><a href="medico-legal.html">Medico-legal</a><a href="https://www.torontomyositis.ca" target="_blank" rel="noopener">Toronto Myositis Centre</a>
+    </div>
+  </div>
+  <div class="foot-in foot-base">
+    <span>&copy; 2026 Dr. Dharini Mahendira.</span>
+    <span>For clinical reference &middot; generated from reviewed records</span>
+  </div>
+</footer>
+</body></html>

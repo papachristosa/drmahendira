@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BASFI calculator | Dr. Mahendira Rheumatology</title>
+<meta name="description" content="An interactive BASFI (Bath Ankylosing Spondylitis Functional Index) calculator for axial spondyloarthritis, with tracking and printing.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://example-practice.ca/rheumatology/axial-spondyloarthritis.patients.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dr. Dharini Mahendira Rheumatology">
+<meta property="og:title" content="BASFI calculator">
+<meta property="og:description" content="An interactive BASFI (Bath Ankylosing Spondylitis Functional Index) calculator for axial spondyloarthritis, with tracking and printing.">
+<meta property="og:url" content="https://example-practice.ca/rheumatology/axial-spondyloarthritis.patients.html">
+<meta property="og:image" content="https://example-practice.ca/assets/social-1280x640.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="BASFI calculator">
+<meta name="twitter:description" content="An interactive BASFI (Bath Ankylosing Spondylitis Functional Index) calculator for axial spondyloarthritis, with tracking and printing.">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://example-practice.ca/index.html"}, {"@type": "ListItem", "position": 2, "name": "General Rheumatology", "item": "https://example-practice.ca/general-rheumatology.html"}, {"@type": "ListItem", "position": 3, "name": "Axial spondyloarthritis", "item": "https://example-practice.ca/rheumatology/axial-spondyloarthritis.patients.html"}, {"@type": "ListItem", "position": 4, "name": "BASFI calculator", "item": "https://example-practice.ca/basfi-calculator.html"}]}</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-in">
+    <a class="brandmark" href="index.html">
+      <img class="brand-logo" src="assets/logo-mahendira-light.png" alt="Dr. Dharini Mahendira, Rheumatology" width="150" height="42">
+    </a>
+    <input type="checkbox" id="nav-toggle">
+    <label class="nav-burger" for="nav-toggle" aria-label="Menu"><span></span></label>
+    <nav class="main" aria-label="Primary">
+      <a href="index.html">Home</a><a href="general-rheumatology.html">General Rheumatology</a><a href="osteoarthritis.html">Osteoarthritis Clinic</a><a href="pregnancy.html">RheumPreg Clinic</a><a href="patient-guides.html">Patient Guides</a><a href="teaching.html">Teaching</a><a href="research.html">Research</a><a href="team.html">Team</a><a href="contact.html">Contact</a>
+      <span class="aud" role="group" aria-label="Choose audience">
+        <a href="#" class="on">For patients</a>
+        <a href="#">For clinicians</a>
+      </span>
+      <a class="refer" href="contact.html">Refer a patient</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero"><div class="wrap">
+  <p class="eyebrow"><a href="rheumatology/axial-spondyloarthritis.patients.html">Axial spondyloarthritis</a> &middot; Self-tracking tool</p>
+  <h1>BASFI: track your physical function</h1>
+  <p class="lede">The Bath Ankylosing Spondylitis Functional Index (BASFI) is a ten-question tool that captures how much axial spondyloarthritis limits your everyday activities. It is often used alongside BASDAI, disease activity and function together. Complete it, save your result to track it over time, and print it to bring to your rheumatology appointment.</p>
+  <div class="cta-row"><a class="btn btn-ghost" href="rheumatology/axial-spondyloarthritis.patients.html">Back to the axSpA guide</a><a class="btn btn-ghost" href="basdai-calculator.html">BASDAI calculator</a></div>
+</div></section>
+<section class="sec"><div class="wrap">
+
+<div class="alert noprint"><span class="b">i</span><span>Answer each question based on how easy or hard each activity has been for you, over the last week. There are no right or wrong answers. This tool runs entirely in your browser: nothing you enter is saved to a server or sent anywhere. Saving a result stores it only in this browser, on this device.</span></div>
+
+<div class="prose noprint">
+<div class="bq">
+  <h3>Q1. Putting on socks or tights</h3>
+  <p class="q-help">Putting on your socks or tights without help or aids (such as a sock aid).</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q1" min="0" max="10" step="1" value="0" oninput="basfiUpdate()">
+    <span class="bq-val" id="q1v">0</span>
+  </div>
+  <div class="bq-ends"><span>Easy</span><span>Impossible</span></div>
+</div><div class="bq">
+  <h3>Q2. Bending to the floor</h3>
+  <p class="q-help">Bending forward from the waist to pick up a pen from the floor without an aid.</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q2" min="0" max="10" step="1" value="0" oninput="basfiUpdate()">
+    <span class="bq-val" id="q2v">0</span>
+  </div>
+  <div class="bq-ends"><span>Easy</span><span>Impossible</span></div>
+</div><div class="bq">
+  <h3>Q3. Reaching up high</h3>
+  <p class="q-help">Reaching up to a high shelf without help or aids (such as a helping hand).</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q3" min="0" max="10" step="1" value="0" oninput="basfiUpdate()">
+    <span class="bq-val" id="q3v">0</span>
+  </div>
+  <div class="bq-ends"><span>Easy</span><span>Impossible</span></div>
+</div><div class="bq">
+  <h3>Q4. Getting up from a chair</h3>
+  <p class="q-help">Getting up out of an armless dining room chair without using your hands or any other help.</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q4" min="0" max="10" step="1" value="0" oninput="basfiUpdate()">
+    <span class="bq-val" id="q4v">0</span>
+  </div>
+  <div class="bq-ends"><span>Easy</span><span>Impossible</span></div>
+</div><div class="bq">
+  <h3>Q5. Getting up from the floor</h3>
+  <p class="q-help">Getting up off the floor without help, from lying on your back.</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q5" min="0" max="10" step="1" value="0" oninput="basfiUpdate()">
+    <span class="bq-val" id="q5v">0</span>
+  </div>
+  <div class="bq-ends"><span>Easy</span><span>Impossible</span></div>
+</div><div class="bq">
+  <h3>Q6. Standing unsupported</h3>
+  <p class="q-help">Standing unsupported for 10 minutes without discomfort.</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q6" min="0" max="10" step="1" value="0" oninput="basfiUpdate()">
+    <span class="bq-val" id="q6v">0</span>
+  </div>
+  <div class="bq-ends"><span>Easy</span><span>Impossible</span></div>
+</div><div class="bq">
+  <h3>Q7. Climbing steps</h3>
+  <p class="q-help">Climbing 12 to 15 steps without using a handrail or a walking aid, one foot to each step.</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q7" min="0" max="10" step="1" value="0" oninput="basfiUpdate()">
+    <span class="bq-val" id="q7v">0</span>
+  </div>
+  <div class="bq-ends"><span>Easy</span><span>Impossible</span></div>
+</div><div class="bq">
+  <h3>Q8. Looking over your shoulder</h3>
+  <p class="q-help">Looking over your shoulder without turning your body.</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q8" min="0" max="10" step="1" value="0" oninput="basfiUpdate()">
+    <span class="bq-val" id="q8v">0</span>
+  </div>
+  <div class="bq-ends"><span>Easy</span><span>Impossible</span></div>
+</div><div class="bq">
+  <h3>Q9. Physically demanding activities</h3>
+  <p class="q-help">Doing physically demanding activities, such as physiotherapy exercises, gardening, or sports.</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q9" min="0" max="10" step="1" value="0" oninput="basfiUpdate()">
+    <span class="bq-val" id="q9v">0</span>
+  </div>
+  <div class="bq-ends"><span>Easy</span><span>Impossible</span></div>
+</div><div class="bq">
+  <h3>Q10. A full day's activities</h3>
+  <p class="q-help">Doing a full day's activities, whether at home or at work.</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q10" min="0" max="10" step="1" value="0" oninput="basfiUpdate()">
+    <span class="bq-val" id="q10v">0</span>
+  </div>
+  <div class="bq-ends"><span>Easy</span><span>Impossible</span></div>
+</div>
+</div>
+
+<div class="basdai-result">
+  <div class="basdai-score-label">Your BASFI score</div>
+  <div class="basdai-score" id="bScore">0.0</div>
+  <div class="basdai-score-label">out of 10</div>
+  <div class="basdai-gauge"><span class="basdai-marker" id="bMarker" style="left:0%"></span></div>
+  <div class="basdai-endlabels"><span>0 &middot; no limitation</span><span>&nbsp;</span><span>10 &middot; maximal limitation</span></div>
+  <div class="basdai-interp" id="bInterp">Move the sliders above to see your score.</div>
+</div>
+
+<div class="disclaimer noprint" style="margin-top:16px"><strong>About the scale.</strong> Unlike BASDAI, there is no single widely agreed cutoff score for BASFI. It is most useful tracked over time, alongside your BASDAI score and your rheumatology team's assessment, rather than read as a one-off number.</div>
+
+<div class="cta-row noprint" style="margin-top:18px">
+  <button type="button" class="btn btn-primary" onclick="basfiSave()">Save this result</button>
+  <button type="button" class="btn btn-ghost" onclick="basfiPrintSummary()">Print this result</button>
+</div>
+
+<div class="basdai-hist noprint">
+  <p class="group-label" style="margin-top:26px">Your saved results</p>
+  <div id="bHistWrap"></div>
+  <p style="margin-top:10px"><button type="button" class="btn btn-ghost" onclick="basfiClearHistory()" style="font-size:13px">Clear saved history</button></p>
+</div>
+
+<div class="printonly" style="margin-top:18px">
+  <p><strong>Dr. Dharini Mahendira Rheumatology</strong> &middot; BASFI result &middot; <span id="bPrintDate"></span></p>
+  <table class="bans"><thead><tr><th>Question</th><th>Response</th></tr></thead><tbody id="bAnswerRows"></tbody></table>
+</div>
+
+<div class="info-block" style="margin-top:24px"><h3>How the score is calculated</h3>
+<p style="font-size:14.5px;margin:0 0 8px">BASFI = the mean (average) of all 10 item scores, each rated 0 (easy) to 10 (impossible).</p>
+<p style="font-size:12.5px;color:var(--muted);margin-top:6px">Calin A, Garrett S, Whitelock H, Kennedy LG, O'Hea J, Mallorie P, Jenkinson T. A new approach to defining functional ability in ankylosing spondylitis: the development of the Bath Ankylosing Spondylitis Functional Index. <em>J Rheumatol.</em> 1994;21(12):2281 to 2285.</p>
+</div>
+
+<div class="cta-row" style="margin-top:20px"><a class="btn btn-ghost" href="rheumatology/axial-spondyloarthritis.patients.html">Back to the axSpA guide</a><a class="btn btn-ghost" href="axspa-exercise-programme.html">Exercise programme</a></div>
+</div></section>
+
+<script>
+function basfiUpdate(){
+  var ids=['q1','q2','q3','q4','q5','q6','q7','q8','q9','q10'];
+  var v={}; var sum=0;
+  ids.forEach(function(id){
+    var el=document.getElementById(id);
+    var out=document.getElementById(id+'v');
+    v[id]=parseFloat(el.value);
+    out.textContent=el.value;
+    sum+=v[id];
+  });
+  var score=sum/10;
+  score=Math.round(score*10)/10;
+  document.getElementById('bScore').textContent=score.toFixed(1);
+  var pct=(score/10)*100;
+  document.getElementById('bMarker').style.left=pct+'%';
+  var interp=document.getElementById('bInterp');
+  interp.innerHTML='<strong>Your BASFI score.</strong> There is no single validated cutoff for BASFI: higher scores mean more functional limitation, and the score is most useful for tracking your own trend over time. A change of about 1 point (roughly 7mm, or about 17.5%) from a previous reading is generally considered a meaningful change.';
+  window._basfiCurrent={date:new Date().toISOString().slice(0,10),score:score,q1:v.q1,q2:v.q2,q3:v.q3,q4:v.q4,q5:v.q5,q6:v.q6,q7:v.q7,q8:v.q8,q9:v.q9,q10:v.q10};
+}
+function basfiSave(){
+  if(!window._basfiCurrent){ basfiUpdate(); }
+  var hist=[];
+  try{ hist=JSON.parse(localStorage.getItem('axspa_basfi_history')||'[]'); }catch(e){ hist=[]; }
+  hist.push(window._basfiCurrent);
+  if(hist.length>20){ hist=hist.slice(hist.length-20); }
+  localStorage.setItem('axspa_basfi_history', JSON.stringify(hist));
+  basfiRenderHistory();
+}
+function basfiClearHistory(){
+  if(!confirm('Clear all saved BASFI results from this browser? This cannot be undone.')) return;
+  localStorage.removeItem('axspa_basfi_history');
+  basfiRenderHistory();
+}
+function basfiRenderHistory(){
+  var hist=[];
+  try{ hist=JSON.parse(localStorage.getItem('axspa_basfi_history')||'[]'); }catch(e){ hist=[]; }
+  var wrap=document.getElementById('bHistWrap');
+  if(!hist.length){ wrap.innerHTML='<p style="font-size:13.5px;color:var(--muted)">No saved results yet in this browser. Complete the ten questions above and select \'Save this result\' to start tracking.</p>'; return; }
+  var rows=hist.slice().reverse().map(function(h){
+    return '<tr><td>'+h.date+'</td><td>'+h.score.toFixed(1)+'</td></tr>';
+  }).join('');
+  wrap.innerHTML='<table class="bhist"><thead><tr><th>Date</th><th>BASFI</th></tr></thead><tbody>'+rows+'</tbody></table>';
+}
+function basfiPrintSummary(){
+  var ids=['q1','q2','q3','q4','q5','q6','q7','q8','q9','q10'];
+  var labels={q1:'Socks or tights',q2:'Bending to the floor',q3:'Reaching up high',q4:'Getting up from a chair',q5:'Getting up from the floor',q6:'Standing unsupported',q7:'Climbing steps',q8:'Looking over shoulder',q9:'Physically demanding activities',q10:"A full day's activities"};
+  var rows=ids.map(function(id){
+    return '<tr><td>'+labels[id]+'</td><td>'+document.getElementById(id).value+' / 10</td></tr>';
+  }).join('');
+  document.getElementById('bAnswerRows').innerHTML=rows;
+  document.getElementById('bPrintDate').textContent=new Date().toLocaleDateString();
+  window.print();
+}
+document.addEventListener('DOMContentLoaded', function(){ basfiUpdate(); basfiRenderHistory(); });
+</script>
+<footer class="site-footer">
+  <div class="foot-in foot-grid">
+    <div class="foot-brand">
+      <img class="brand-logo-dark" src="assets/logo-mahendira-dark.png" alt="Dr. Dharini Mahendira, Rheumatology" width="150" height="42">
+      <p>Reproductive rheumatology, complex osteoarthritis, and general rheumatology. Careful, sourced answers for patients and clinicians.</p>
+    </div>
+    <div><h5>Clinics</h5>
+      <a href="general-rheumatology.html">General Rheumatology</a>
+      <a href="osteoarthritis.html">Osteoarthritis Clinic</a>
+      <a href="pregnancy.html">RheumPreg Clinic</a>
+    </div>
+    <div><h5>Patients</h5>
+      <a href="patient-guides.html">Patient Guides</a><a href="pregnancy/index.html">Medication guides</a><a href="https://www.arthros.ca/flareforward" target="_blank" rel="noopener">FlareForward (exercise)</a>
+    </div>
+    <div><h5>Clinicians</h5>
+      <a href="pregnancy/guideline-comparison.clinicians.html">Guideline matrix</a><a href="methodology.html">How we make this</a><a href="https://rheumacademy.com/" target="_blank" rel="noopener">Rheum Academy (CPD)</a>
+    </div>
+    <div><h5>Practice</h5>
+      <a href="team.html">Team</a><a href="research.html">Research</a><a href="teaching.html">Teaching</a><a href="contact.html">Contact</a><a href="medico-legal.html">Medico-legal</a><a href="https://www.torontomyositis.ca" target="_blank" rel="noopener">Toronto Myositis Centre</a>
+    </div>
+  </div>
+  <div class="foot-in foot-base">
+    <span>&copy; 2026 Dr. Dharini Mahendira.</span>
+    <span>For clinical reference &middot; generated from reviewed records</span>
+  </div>
+</footer>
+</body></html>
