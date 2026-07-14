@@ -4,6 +4,15 @@
 .targetbox p{margin:4px 0}
 .targetbox ul{margin:8px 0 0;padding-left:20px}
 .targetbox .tgt-note{font-size:13.5px;color:var(--muted,#6a6270);margin-top:8px}
+.basdai-cta{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:14px;
+  padding:14px 18px;background:#fff;border:1.5px solid var(--plum,#432a49);border-radius:12px;
+  text-decoration:none !important;transition:background .15s,color .15s}
+.basdai-cta:hover{background:var(--plum,#432a49)}
+.basdai-cta:hover .basdai-cta-title,.basdai-cta:hover .basdai-cta-sub{color:var(--ivory,#f7f3ec) !important}
+.basdai-cta-title{display:block;font-weight:700;font-size:15.5px;color:var(--plum,#432a49)}
+.basdai-cta-sub{display:block;font-size:13px;color:var(--muted,#6a6270);margin-top:2px;font-weight:400}
+.basdai-cta-arrow{flex:0 0 auto;font-size:20px;color:var(--brass,#a9781f);transition:color .15s}
+.basdai-cta:hover .basdai-cta-arrow{color:var(--ivory,#f7f3ec)}
 ol.ladder{list-style:none;margin:14px 0 0;padding:0}
 .lad-step{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--line,#e4ddd0)}
 .lad-step:first-child{border-top:0}
