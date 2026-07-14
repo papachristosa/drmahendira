@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BASDAI calculator | Dr. Mahendira Rheumatology</title>
+<meta name="description" content="An interactive BASDAI (Bath Ankylosing Spondylitis Disease Activity Index) calculator for axial spondyloarthritis, with tracking and printing.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://example-practice.ca/rheumatology/axial-spondyloarthritis.patients.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dr. Dharini Mahendira Rheumatology">
+<meta property="og:title" content="BASDAI calculator">
+<meta property="og:description" content="An interactive BASDAI (Bath Ankylosing Spondylitis Disease Activity Index) calculator for axial spondyloarthritis, with tracking and printing.">
+<meta property="og:url" content="https://example-practice.ca/rheumatology/axial-spondyloarthritis.patients.html">
+<meta property="og:image" content="https://example-practice.ca/assets/social-1280x640.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="BASDAI calculator">
+<meta name="twitter:description" content="An interactive BASDAI (Bath Ankylosing Spondylitis Disease Activity Index) calculator for axial spondyloarthritis, with tracking and printing.">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://example-practice.ca/index.html"}, {"@type": "ListItem", "position": 2, "name": "General Rheumatology", "item": "https://example-practice.ca/general-rheumatology.html"}, {"@type": "ListItem", "position": 3, "name": "Axial spondyloarthritis", "item": "https://example-practice.ca/rheumatology/axial-spondyloarthritis.patients.html"}, {"@type": "ListItem", "position": 4, "name": "BASDAI calculator", "item": "https://example-practice.ca/basdai-calculator.html"}]}</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-in">
+    <a class="brandmark" href="index.html">
+      <img class="brand-logo" src="assets/logo-mahendira-light.png" alt="Dr. Dharini Mahendira, Rheumatology" width="150" height="42">
+    </a>
+    <input type="checkbox" id="nav-toggle">
+    <label class="nav-burger" for="nav-toggle" aria-label="Menu"><span></span></label>
+    <nav class="main" aria-label="Primary">
+      <a href="index.html">Home</a><a href="general-rheumatology.html">General Rheumatology</a><a href="osteoarthritis.html">Osteoarthritis Clinic</a><a href="pregnancy.html">RheumPreg Clinic</a><a href="patient-guides.html">Patient Guides</a><a href="teaching.html">Teaching</a><a href="research.html">Research</a><a href="team.html">Team</a><a href="contact.html">Contact</a>
+      <span class="aud" role="group" aria-label="Choose audience">
+        <a href="#" class="on">For patients</a>
+        <a href="#">For clinicians</a>
+      </span>
+      <a class="refer" href="contact.html">Refer a patient</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero"><div class="wrap">
+  <p class="eyebrow"><a href="rheumatology/axial-spondyloarthritis.patients.html">Axial spondyloarthritis</a> &middot; Self-tracking tool</p>
+  <h1>BASDAI: track your disease activity</h1>
+  <p class="lede">The Bath Ankylosing Spondylitis Disease Activity Index (BASDAI) is a short, six-question tool that captures how active your axial spondyloarthritis has felt over the last week. Complete it, save your result to track it over time, and print it to bring to your rheumatology appointment.</p>
+  <div class="cta-row"><a class="btn btn-ghost" href="rheumatology/axial-spondyloarthritis.patients.html">Back to the axSpA guide</a><a class="btn btn-ghost" href="patient-guides.html">All patient guides</a></div>
+</div></section>
+<section class="sec"><div class="wrap">
+
+<div class="alert noprint"><span class="b">i</span><span>Answer each question based on how you have felt over the <strong>last 7 days</strong>, not just today. There are no right or wrong answers. This tool runs entirely in your browser: nothing you enter is saved to a server or sent anywhere. Saving a result stores it only in this browser, on this device.</span></div>
+
+<div class="prose noprint">
+<div class="bq">
+  <h3>Q1. Fatigue</h3>
+  <p class="q-help">How would you describe the overall level of fatigue or tiredness you have experienced?</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q1" min="0" max="10" step="1" value="0" oninput="basdaiUpdate()">
+    <span class="bq-val" id="q1v">0</span>
+  </div>
+  <div class="bq-ends"><span>None</span><span>Very severe</span></div>
+</div><div class="bq">
+  <h3>Q2. Spinal pain</h3>
+  <p class="q-help">How would you describe the overall level of AS neck, back, or hip pain you have had?</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q2" min="0" max="10" step="1" value="0" oninput="basdaiUpdate()">
+    <span class="bq-val" id="q2v">0</span>
+  </div>
+  <div class="bq-ends"><span>None</span><span>Very severe</span></div>
+</div><div class="bq">
+  <h3>Q3. Other joint pain or swelling</h3>
+  <p class="q-help">How would you describe the overall level of pain or swelling in joints other than your neck, back, or hips?</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q3" min="0" max="10" step="1" value="0" oninput="basdaiUpdate()">
+    <span class="bq-val" id="q3v">0</span>
+  </div>
+  <div class="bq-ends"><span>None</span><span>Very severe</span></div>
+</div><div class="bq">
+  <h3>Q4. Tenderness</h3>
+  <p class="q-help">How would you describe the overall level of discomfort you have had from any areas tender to touch or pressure (such as at the heel, chest wall, or spine)?</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q4" min="0" max="10" step="1" value="0" oninput="basdaiUpdate()">
+    <span class="bq-val" id="q4v">0</span>
+  </div>
+  <div class="bq-ends"><span>None</span><span>Very severe</span></div>
+</div><div class="bq">
+  <h3>Q5. Morning stiffness: severity</h3>
+  <p class="q-help">How would you describe the overall level of morning stiffness you have had, from the time you wake up?</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q5" min="0" max="10" step="1" value="0" oninput="basdaiUpdate()">
+    <span class="bq-val" id="q5v">0</span>
+  </div>
+  <div class="bq-ends"><span>None</span><span>Very severe</span></div>
+</div><div class="bq">
+  <h3>Q6. Morning stiffness: duration</h3>
+  <p class="q-help">How long does your morning stiffness last, from the time you wake up? (0 = no stiffness, 5 = about 1 hour, 10 = 2 hours or more)</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q6" min="0" max="10" step="1" value="0" oninput="basdaiUpdate()">
+    <span class="bq-val" id="q6v">0</span>
+  </div>
+  <div class="bq-ends"><span>None</span><span>Very severe</span></div>
+</div>
+</div>
+
+<div class="basdai-result">
+  <div class="basdai-score-label">Your BASDAI score</div>
+  <div class="basdai-score" id="bScore">0.0</div>
+  <div class="basdai-score-label">out of 10</div>
+  <div class="basdai-gauge"><span class="basdai-marker" id="bMarker" style="left:0%"></span></div>
+  <div class="basdai-endlabels"><span>0 &middot; inactive</span><span>4.0 &middot; common threshold for active disease</span><span>10 &middot; very active</span></div>
+  <div class="basdai-interp" id="bInterp">Move the sliders above to see your score.</div>
+</div>
+
+<div class="disclaimer noprint" style="margin-top:16px"><strong>About the scale.</strong> A BASDAI of 4.0 or higher is the most widely used and best-established cutoff, taken to suggest active disease that may need a treatment review (Garrett et al, 1994; used internationally, including in NICE criteria for biologic eligibility). Beyond this single cutoff there is no universally agreed, formally validated set of BASDAI severity bands, unlike the related ASDAS score, which does have ASAS-endorsed disease-activity categories. Treat any single score as one data point for a conversation with your team, not a diagnosis or a treatment decision on its own.</div>
+
+<div class="cta-row noprint" style="margin-top:18px">
+  <button type="button" class="btn btn-primary" onclick="basdaiSave()">Save this result</button>
+  <button type="button" class="btn btn-ghost" onclick="basdaiPrintSummary()">Print this result</button>
+</div>
+
+<div class="basdai-hist noprint">
+  <p class="group-label" style="margin-top:26px">Your saved results</p>
+  <div id="bHistWrap"></div>
+  <p style="margin-top:10px"><button type="button" class="btn btn-ghost" onclick="basdaiClearHistory()" style="font-size:13px">Clear saved history</button></p>
+</div>
+
+<div class="printonly" style="margin-top:18px">
+  <p><strong>Dr. Dharini Mahendira Rheumatology</strong> &middot; BASDAI result &middot; <span id="bPrintDate"></span></p>
+  <table class="bans"><thead><tr><th>Question</th><th>Response</th></tr></thead><tbody id="bAnswerRows"></tbody></table>
+</div>
+
+<div class="info-block" style="margin-top:24px"><h3>How the score is calculated</h3>
+<p style="font-size:14.5px;margin:0 0 8px">BASDAI = (Q1 + Q2 + Q3 + Q4 + the average of Q5 and Q6) &divide; 5. The two morning-stiffness questions are averaged together first because they measure the same symptom (severity and duration), then combined with the other four.</p>
+<p style="font-size:12.5px;color:var(--muted);margin-top:6px">Garrett S, Jenkinson T, Kennedy LG, Whitelock H, Gaisford P, Calin A. A new approach to defining disease status in ankylosing spondylitis: the Bath Ankylosing Spondylitis Disease Activity Index. <em>J Rheumatol.</em> 1994;21(12):2286 to 2291.</p>
+</div>
+
+<div class="cta-row" style="margin-top:20px"><a class="btn btn-ghost" href="rheumatology/axial-spondyloarthritis.patients.html">Back to the axSpA guide</a><a class="btn btn-ghost" href="axspa-exercise-programme.html">Exercise programme</a></div>
+</div></section>
+
+<script>
+function basdaiUpdate(){
+  var ids=['q1','q2','q3','q4','q5','q6'];
+  var v={};
+  ids.forEach(function(id){
+    var el=document.getElementById(id);
+    var out=document.getElementById(id+'v');
+    v[id]=parseFloat(el.value);
+    out.textContent=el.value;
+  });
+  var score=(v.q1+v.q2+v.q3+v.q4+((v.q5+v.q6)/2))/5;
+  score=Math.round(score*10)/10;
+  document.getElementById('bScore').textContent=score.toFixed(1);
+  var pct=(score/10)*100;
+  document.getElementById('bMarker').style.left=pct+'%';
+  var interp=document.getElementById('bInterp');
+  if(score<4){
+    interp.innerHTML='<strong>Below 4.0.</strong> A BASDAI under 4 is generally taken as a sign your disease is reasonably well controlled. Keep tracking, and mention any change to your rheumatology team.';
+  } else {
+    interp.innerHTML='<strong>4.0 or higher.</strong> A BASDAI of 4 or more is the widely used threshold for active disease that may be worth discussing with your rheumatology team, especially if it has stayed this way over more than one reading.';
+  }
+  window._basdaiCurrent={date:new Date().toISOString().slice(0,10),score:score,q1:v.q1,q2:v.q2,q3:v.q3,q4:v.q4,q5:v.q5,q6:v.q6};
+}
+function basdaiSave(){
+  if(!window._basdaiCurrent){ basdaiUpdate(); }
+  var hist=[];
+  try{ hist=JSON.parse(localStorage.getItem('axspa_basdai_history')||'[]'); }catch(e){ hist=[]; }
+  hist.push(window._basdaiCurrent);
+  if(hist.length>20){ hist=hist.slice(hist.length-20); }
+  localStorage.setItem('axspa_basdai_history', JSON.stringify(hist));
+  basdaiRenderHistory();
+}
+function basdaiClearHistory(){
+  if(!confirm('Clear all saved BASDAI results from this browser? This cannot be undone.')) return;
+  localStorage.removeItem('axspa_basdai_history');
+  basdaiRenderHistory();
+}
+function basdaiRenderHistory(){
+  var hist=[];
+  try{ hist=JSON.parse(localStorage.getItem('axspa_basdai_history')||'[]'); }catch(e){ hist=[]; }
+  var wrap=document.getElementById('bHistWrap');
+  if(!hist.length){ wrap.innerHTML='<p style="font-size:13.5px;color:var(--muted)">No saved results yet in this browser. Complete the six questions above and select \'Save this result\' to start tracking.</p>'; return; }
+  var rows=hist.slice().reverse().map(function(h){
+    return '<tr><td>'+h.date+'</td><td>'+h.score.toFixed(1)+'</td><td>'+(h.score>=4?'At or above 4.0':'Below 4.0')+'</td></tr>';
+  }).join('');
+  wrap.innerHTML='<table class="bhist"><thead><tr><th>Date</th><th>BASDAI</th><th>Level</th></tr></thead><tbody>'+rows+'</tbody></table>';
+}
+function basdaiPrintSummary(){
+  var ids=['q1','q2','q3','q4','q5','q6'];
+  var labels={q1:'Fatigue',q2:'Spinal pain',q3:'Other joint pain/swelling',q4:'Tenderness',q5:'Morning stiffness: severity',q6:'Morning stiffness: duration'};
+  var rows=ids.map(function(id){
+    return '<tr><td>'+labels[id]+'</td><td>'+document.getElementById(id).value+' / 10</td></tr>';
+  }).join('');
+  document.getElementById('bAnswerRows').innerHTML=rows;
+  document.getElementById('bPrintDate').textContent=new Date().toLocaleDateString();
+  window.print();
+}
+document.addEventListener('DOMContentLoaded', function(){ basdaiUpdate(); basdaiRenderHistory(); });
+</script>
+<footer class="site-footer">
+  <div class="foot-in foot-grid">
+    <div class="foot-brand">
+      <img class="brand-logo-dark" src="assets/logo-mahendira-dark.png" alt="Dr. Dharini Mahendira, Rheumatology" width="150" height="42">
+      <p>Reproductive rheumatology, complex osteoarthritis, and general rheumatology. Careful, sourced answers for patients and clinicians.</p>
+    </div>
+    <div><h5>Clinics</h5>
+      <a href="general-rheumatology.html">General Rheumatology</a>
+      <a href="osteoarthritis.html">Osteoarthritis Clinic</a>
+      <a href="pregnancy.html">RheumPreg Clinic</a>
+    </div>
+    <div><h5>Patients</h5>
+      <a href="patient-guides.html">Patient Guides</a><a href="pregnancy/index.html">Medication guides</a><a href="https://www.arthros.ca/flareforward" target="_blank" rel="noopener">FlareForward (exercise)</a>
+    </div>
+    <div><h5>Clinicians</h5>
+      <a href="pregnancy/guideline-comparison.clinicians.html">Guideline matrix</a><a href="methodology.html">How we make this</a><a href="https://rheumacademy.com/" target="_blank" rel="noopener">Rheum Academy (CPD)</a>
+    </div>
+    <div><h5>Practice</h5>
+      <a href="team.html">Team</a><a href="research.html">Research</a><a href="teaching.html">Teaching</a><a href="contact.html">Contact</a><a href="https://www.torontomyositis.ca" target="_blank" rel="noopener">Toronto Myositis Centre</a>
+    </div>
+  </div>
+  <div class="foot-in foot-base">
+    <span>&copy; 2026 Dr. Dharini Mahendira.</span>
+    <span>For clinical reference &middot; generated from reviewed records</span>
+  </div>
+</footer>
+</body></html>

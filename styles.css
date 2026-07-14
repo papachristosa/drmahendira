@@ -244,6 +244,50 @@ nav.main a[aria-current="page"]{color:var(--plum);box-shadow:inset 0 -2px 0 var(
 .exg-card p{margin:0;font-size:14.5px}
 .exg-dose{font-size:12.5px !important;color:var(--muted) !important;margin-top:8px !important;font-weight:600;text-transform:uppercase;letter-spacing:.02em}
 
+/* ---- BASDAI calculator ---- */
+.bq{margin:24px 0;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.bq:last-of-type{border-bottom:0}
+.bq h3{margin:0 0 4px;font-size:16px;color:var(--plum)}
+.bq .q-help{margin:0 0 12px;font-size:13.5px;color:var(--muted)}
+.bq-row{display:flex;align-items:center;gap:16px}
+input[type=range].bq-range{flex:1;height:8px;border-radius:5px;-webkit-appearance:none;appearance:none;outline:none;
+  background:linear-gradient(to right,#4f7a5c 0%,#4f7a5c 20%,#d8a53d 20%,#d8a53d 40%,#c85a3c 40%,#c85a3c 100%)}
+input[type=range].bq-range::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;
+  background:var(--plum);border:3px solid #fff;box-shadow:0 1px 5px rgba(30,27,32,.4);cursor:pointer}
+input[type=range].bq-range::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--plum);
+  border:3px solid #fff;box-shadow:0 1px 5px rgba(30,27,32,.4);cursor:pointer}
+.bq-val{min-width:42px;text-align:center;font-weight:800;font-size:19px;color:var(--plum);
+  background:var(--ivory);border:1px solid var(--line);border-radius:9px;padding:5px 0}
+.bq-ends{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:5px}
+.basdai-result{background:#fff;border:2px solid var(--plum);border-radius:16px;padding:26px;margin-top:10px;text-align:center}
+.basdai-score{font-size:54px;font-weight:800;color:var(--plum);line-height:1}
+.basdai-score-label{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-top:6px}
+.basdai-gauge{position:relative;height:24px;border-radius:12px;margin:22px 0 4px;
+  background:linear-gradient(to right,#4f7a5c 0%,#4f7a5c 40%,#d8a53d 40%,#d8a53d 55%,#c85a3c 55%,#c85a3c 100%)}
+.basdai-marker{position:absolute;top:-5px;width:5px;height:34px;background:#26222a;border-radius:2px;
+  transform:translateX(-2.5px);transition:left .15s ease}
+.basdai-endlabels{display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);margin-top:4px}
+.basdai-thresh{position:absolute;top:26px;font-size:11px;color:var(--muted);left:40%;transform:translateX(-50%)}
+.basdai-interp{font-size:15px;margin-top:24px;text-align:left;background:var(--ivory);border-radius:10px;padding:14px 16px}
+.basdai-hist{margin-top:26px;text-align:left}
+table.bhist{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}
+table.bhist th,table.bhist td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left}
+table.bhist th{color:var(--muted);font-weight:600;font-size:12.5px;text-transform:uppercase;letter-spacing:.02em}
+.printonly{display:none}
+@media print{
+  .draft-ribbon,.site-header,.site-footer,.noprint,.bq{display:none !important}
+  .printonly{display:block !important}
+  body{background:#fff !important;color:#000 !important}
+  .hero{padding:0 0 6px !important;background:none !important}
+  .hero h1{color:#000 !important;font-size:22px}
+  .basdai-result{border:1.5px solid #000}
+  .basdai-score,.basdai-score-label{color:#000 !important}
+  .basdai-interp{background:#fff !important;border:1px solid #999}
+  table.bhist th,table.bhist td,table.bans th,table.bans td{border-bottom:1px solid #999}
+}
+table.bans{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:10px}
+table.bans th,table.bans td{padding:6px 10px;border-bottom:1px solid var(--line);text-align:left}
+
 /* ---- responsive ---- */
 @media(max-width:900px){
   .grid.cols-3,.grid.cols-2,.tiers,.team-grid,.exg-grid{grid-template-columns:1fr}
