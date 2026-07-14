@@ -50,48 +50,53 @@
 <div class="alert noprint"><span class="b">i</span><span>For Physical Function, answer based on your abilities right now. For Pain Interference, answer based on the <strong>last 7 days</strong>. There are no right or wrong answers. This tool runs entirely in your browser: nothing you enter is saved to a server or sent anywhere. Saving a result stores it only in this browser, on this device.</span></div>
 
 <div class="prose noprint">
-<h2>Physical function</h2>
+<h2>Physical function <span class="promis-progress" id="pf-progress">0 of 4 answered</span></h2>
 <div class="bq">
   <h3>Q1. Are you able to do chores such as vacuuming or yard work?</h3>
   <div class="promis-opts" id="pf1-opts"><button type="button" class="popt" data-val="5" onclick="promisSelect('pf1',5,this)">Without any difficulty</button><button type="button" class="popt" data-val="4" onclick="promisSelect('pf1',4,this)">With a little difficulty</button><button type="button" class="popt" data-val="3" onclick="promisSelect('pf1',3,this)">With some difficulty</button><button type="button" class="popt" data-val="2" onclick="promisSelect('pf1',2,this)">With much difficulty</button><button type="button" class="popt" data-val="1" onclick="promisSelect('pf1',1,this)">Unable to do</button></div>
+  <p class="q-answered" id="pf1-ans"></p>
 </div><div class="bq">
   <h3>Q2. Are you able to go up and down stairs at a normal pace?</h3>
   <div class="promis-opts" id="pf2-opts"><button type="button" class="popt" data-val="5" onclick="promisSelect('pf2',5,this)">Without any difficulty</button><button type="button" class="popt" data-val="4" onclick="promisSelect('pf2',4,this)">With a little difficulty</button><button type="button" class="popt" data-val="3" onclick="promisSelect('pf2',3,this)">With some difficulty</button><button type="button" class="popt" data-val="2" onclick="promisSelect('pf2',2,this)">With much difficulty</button><button type="button" class="popt" data-val="1" onclick="promisSelect('pf2',1,this)">Unable to do</button></div>
+  <p class="q-answered" id="pf2-ans"></p>
 </div><div class="bq">
   <h3>Q3. Are you able to go for a walk of at least 15 minutes?</h3>
   <div class="promis-opts" id="pf3-opts"><button type="button" class="popt" data-val="5" onclick="promisSelect('pf3',5,this)">Without any difficulty</button><button type="button" class="popt" data-val="4" onclick="promisSelect('pf3',4,this)">With a little difficulty</button><button type="button" class="popt" data-val="3" onclick="promisSelect('pf3',3,this)">With some difficulty</button><button type="button" class="popt" data-val="2" onclick="promisSelect('pf3',2,this)">With much difficulty</button><button type="button" class="popt" data-val="1" onclick="promisSelect('pf3',1,this)">Unable to do</button></div>
+  <p class="q-answered" id="pf3-ans"></p>
 </div><div class="bq">
   <h3>Q4. Are you able to run errands and shop?</h3>
   <div class="promis-opts" id="pf4-opts"><button type="button" class="popt" data-val="5" onclick="promisSelect('pf4',5,this)">Without any difficulty</button><button type="button" class="popt" data-val="4" onclick="promisSelect('pf4',4,this)">With a little difficulty</button><button type="button" class="popt" data-val="3" onclick="promisSelect('pf4',3,this)">With some difficulty</button><button type="button" class="popt" data-val="2" onclick="promisSelect('pf4',2,this)">With much difficulty</button><button type="button" class="popt" data-val="1" onclick="promisSelect('pf4',1,this)">Unable to do</button></div>
+  <p class="q-answered" id="pf4-ans"></p>
 </div>
-<h2 style="margin-top:32px">Pain interference</h2>
+<h2 style="margin-top:32px">Pain interference <span class="promis-progress" id="pi-progress">0 of 4 answered</span></h2>
 <div class="bq">
   <h3>Q1. How much did pain interfere with your day to day activities?</h3>
   <div class="promis-opts" id="pi1-opts"><button type="button" class="popt" data-val="1" onclick="promisSelect('pi1',1,this)">Not at all</button><button type="button" class="popt" data-val="2" onclick="promisSelect('pi1',2,this)">A little bit</button><button type="button" class="popt" data-val="3" onclick="promisSelect('pi1',3,this)">Somewhat</button><button type="button" class="popt" data-val="4" onclick="promisSelect('pi1',4,this)">Quite a bit</button><button type="button" class="popt" data-val="5" onclick="promisSelect('pi1',5,this)">Very much</button></div>
+  <p class="q-answered" id="pi1-ans"></p>
 </div><div class="bq">
   <h3>Q2. How much did pain interfere with work around the home?</h3>
   <div class="promis-opts" id="pi2-opts"><button type="button" class="popt" data-val="1" onclick="promisSelect('pi2',1,this)">Not at all</button><button type="button" class="popt" data-val="2" onclick="promisSelect('pi2',2,this)">A little bit</button><button type="button" class="popt" data-val="3" onclick="promisSelect('pi2',3,this)">Somewhat</button><button type="button" class="popt" data-val="4" onclick="promisSelect('pi2',4,this)">Quite a bit</button><button type="button" class="popt" data-val="5" onclick="promisSelect('pi2',5,this)">Very much</button></div>
+  <p class="q-answered" id="pi2-ans"></p>
 </div><div class="bq">
   <h3>Q3. How much did pain interfere with your ability to participate in social activities?</h3>
   <div class="promis-opts" id="pi3-opts"><button type="button" class="popt" data-val="1" onclick="promisSelect('pi3',1,this)">Not at all</button><button type="button" class="popt" data-val="2" onclick="promisSelect('pi3',2,this)">A little bit</button><button type="button" class="popt" data-val="3" onclick="promisSelect('pi3',3,this)">Somewhat</button><button type="button" class="popt" data-val="4" onclick="promisSelect('pi3',4,this)">Quite a bit</button><button type="button" class="popt" data-val="5" onclick="promisSelect('pi3',5,this)">Very much</button></div>
+  <p class="q-answered" id="pi3-ans"></p>
 </div><div class="bq">
   <h3>Q4. How much did pain interfere with your household chores?</h3>
   <div class="promis-opts" id="pi4-opts"><button type="button" class="popt" data-val="1" onclick="promisSelect('pi4',1,this)">Not at all</button><button type="button" class="popt" data-val="2" onclick="promisSelect('pi4',2,this)">A little bit</button><button type="button" class="popt" data-val="3" onclick="promisSelect('pi4',3,this)">Somewhat</button><button type="button" class="popt" data-val="4" onclick="promisSelect('pi4',4,this)">Quite a bit</button><button type="button" class="popt" data-val="5" onclick="promisSelect('pi4',5,this)">Very much</button></div>
+  <p class="q-answered" id="pi4-ans"></p>
 </div>
 </div>
 
 <div class="basdai-result">
-  <div class="basdai-score-label">Your raw scores</div>
-  <div class="promis-domain-score"><span class="pdlab">Physical Function<br><span class="pdsub">higher = better function</span></span><span class="pdval" id="pfScore">--</span></div>
-  <div class="promis-domain-score"><span class="pdlab">Pain Interference<br><span class="pdsub">higher = more interference</span></span><span class="pdval" id="piScore">--</span></div>
+  <div class="basdai-score-label">Your scores</div>
+  <div class="promis-domain-score"><span class="pdlab">Physical Function<br><span class="pdsub">raw score, higher = better</span></span><span class="pdval" id="pfScore">--</span></div>
+  <div class="promis-domain-score"><span class="pdlab">&nbsp;<br><span class="pdsub">standardized T-score (population mean 50)</span></span><span class="pdval" id="pfTScore" style="font-size:16px">--</span></div>
+  <div class="promis-domain-score"><span class="pdlab">Pain Interference<br><span class="pdsub">raw score, higher = worse</span></span><span class="pdval" id="piScore">--</span></div>
+  <div class="promis-domain-score"><span class="pdlab">&nbsp;<br><span class="pdsub">standardized T-score (population mean 50)</span></span><span class="pdval" id="piTScore" style="font-size:16px">--</span></div>
 </div>
 
-<div class="disclaimer noprint" style="margin-top:16px"><strong>About these scores.</strong> These are <em>raw</em> scores (each domain: sum of 4 items, range 4 to 20), not the official standardized PROMIS T-score. Raw scores are useful for seeing your own trend over time. For the precise, population-standardized T-score (the number your care team would use to compare against published benchmarks), use HealthMeasures' own free scoring tool below.</div>
-
-<div class="info-block noprint" style="margin-top:14px"><h3>Get your standardized T-score</h3>
-<p style="font-size:14.5px;margin:0">HealthMeasures, the official steward of PROMIS, provides a free scoring service that converts your answers into the standardized T-score (population mean 50, SD 10).</p>
-<p style="margin-top:10px"><a class="btn btn-ghost" href="https://www.healthmeasures.net/score-and-interpret/calculate-scores" target="_blank" rel="noopener">Open the HealthMeasures scoring service</a></p>
-</div>
+<div class="disclaimer noprint" style="margin-top:16px"><strong>About these scores.</strong> The T-score is the standardized PROMIS score (population mean 50, standard deviation 10), calculated here using the published raw-score-to-T-score conversion tables, the same tables your care team would use. A T-score above 50 for Physical Function means better-than-average function; a T-score above 50 for Pain Interference means more pain interference than average.</div>
 
 <div class="cta-row noprint" style="margin-top:18px">
   <button type="button" class="btn btn-primary" onclick="promisSave()">Save this result</button>
@@ -110,8 +115,8 @@
 </div>
 
 <div class="info-block" style="margin-top:24px"><h3>About these questionnaires</h3>
-<p style="font-size:14.5px;margin:0 0 8px">PROMIS Physical Function Short Form 4a and PROMIS Pain Interference Short Form 4a, developed by the PROMIS Health Organization with National Institutes of Health funding. Both have been validated in people with knee osteoarthritis, correlating well with longer legacy measures. Each domain score is the sum of its 4 items (range 4 to 20); Physical Function is scored so that a higher number means better function, Pain Interference so that a higher number means more interference from pain.</p>
-<p style="font-size:12.5px;color:var(--muted);margin-top:6px">PROMIS&reg; is a registered trademark of the U.S. Department of Health and Human Services. Items reproduced from PROMIS Item Bank v2.0, &copy; 2008 to 2017 PROMIS Health Organization and PROMIS Cooperative Group, used under the HealthMeasures Terms of Use for individual clinical and research use. Full information at <a href="https://www.healthmeasures.net" target="_blank" rel="noopener">healthmeasures.net</a>.</p>
+<p style="font-size:14.5px;margin:0 0 8px">PROMIS Physical Function Short Form 4a and PROMIS Pain Interference Short Form 4a, developed by the PROMIS Health Organization with National Institutes of Health funding. Both have been validated in people with knee osteoarthritis, correlating well with longer legacy measures. Each domain's raw score is the sum of its 4 items (range 4 to 20). The T-score is calculated from the raw score using the official published conversion tables; Physical Function is scored so that a higher number means better function, Pain Interference so that a higher number means more interference from pain.</p>
+<p style="font-size:12.5px;color:var(--muted);margin-top:6px">PROMIS&reg; is a registered trademark of the U.S. Department of Health and Human Services. Items and raw-score-to-T-score conversion tables reproduced from the PROMIS Physical Function Scoring Manual and PROMIS Pain Interference Scoring Manual (HealthMeasures, Northwestern University), &copy; PROMIS Health Organization and PROMIS Cooperative Group, used under the HealthMeasures Terms of Use for individual clinical and research use. Full information at <a href="https://www.healthmeasures.net" target="_blank" rel="noopener">healthmeasures.net</a>.</p>
 </div>
 
 <div class="cta-row" style="margin-top:20px"><a class="btn btn-ghost" href="osteoarthritis.html">Back to the Osteoarthritis Clinic</a><a class="btn btn-ghost" href="injection-aftercare.html">Injection aftercare</a></div>
@@ -124,28 +129,46 @@ function promisSelect(qid, val, btn){
   var group=document.getElementById(qid+'-opts');
   group.querySelectorAll('.popt').forEach(function(b){ b.classList.remove('selected'); });
   btn.classList.add('selected');
+  var ans=document.getElementById(qid+'-ans');
+  if(ans){ ans.innerHTML='&#10003; Answered'; ans.classList.add('answered'); }
   promisUpdate();
 }
+// Official HealthMeasures raw-score-to-T-score conversion tables.
+// PROMIS Physical Function Short Form 4a v2.0 and PROMIS Pain Interference Short Form 4a v1.1.
+// Source: PROMIS Physical Function Scoring Manual; PROMIS Pain Interference Scoring Manual (HealthMeasures, Northwestern University).
+var PF_TABLE = {4:[22.5,4.0],5:[26.6,2.8],6:[28.9,2.5],7:[30.5,2.4],8:[31.9,2.3],9:[33.2,2.3],10:[34.4,2.3],11:[35.6,2.3],12:[36.7,2.3],13:[37.9,2.3],14:[39.2,2.4],15:[40.5,2.4],16:[41.9,2.5],17:[43.5,2.6],18:[45.5,2.8],19:[48.3,3.3],20:[57.0,6.6]};
+var PI_TABLE = {4:[41.6,6.1],5:[49.6,2.5],6:[52.0,2.0],7:[53.9,1.9],8:[55.6,1.9],9:[57.1,1.9],10:[58.5,1.8],11:[59.9,1.8],12:[61.2,1.8],13:[62.5,1.8],14:[63.8,1.8],15:[65.2,1.8],16:[66.6,1.8],17:[68.0,1.8],18:[69.7,1.9],19:[71.6,2.1],20:[75.6,3.7]};
 function promisUpdate(){
   var pfIds=['pf1','pf2','pf3','pf4'];
   var piIds=['pi1','pi2','pi3','pi4'];
-  var pfComplete = pfIds.every(function(id){ return PROMIS_VALS[id]!==undefined; });
-  var piComplete = piIds.every(function(id){ return PROMIS_VALS[id]!==undefined; });
+  var pfDone = pfIds.filter(function(id){ return PROMIS_VALS[id]!==undefined; }).length;
+  var piDone = piIds.filter(function(id){ return PROMIS_VALS[id]!==undefined; }).length;
+  var pfComplete = pfDone===4, piComplete = piDone===4;
+  var pfProg=document.getElementById('pf-progress'); if(pfProg){ pfProg.textContent=pfDone+' of 4 answered'; pfProg.classList.toggle('done', pfComplete); }
+  var piProg=document.getElementById('pi-progress'); if(piProg){ piProg.textContent=piDone+' of 4 answered'; piProg.classList.toggle('done', piComplete); }
+  var pfSum=null, piSum=null, pfT=null, piT=null;
   if(pfComplete){
-    var pfSum=pfIds.reduce(function(s,id){ return s+PROMIS_VALS[id]; },0);
+    pfSum=pfIds.reduce(function(s,id){ return s+PROMIS_VALS[id]; },0);
     document.getElementById('pfScore').textContent=pfSum;
+    var pfRow=PF_TABLE[pfSum];
+    pfT=pfRow[0];
+    document.getElementById('pfTScore').textContent=pfRow[0].toFixed(1)+' (SE '+pfRow[1].toFixed(1)+')';
   } else {
     document.getElementById('pfScore').textContent='--';
+    document.getElementById('pfTScore').textContent='--';
   }
   if(piComplete){
-    var piSum=piIds.reduce(function(s,id){ return s+PROMIS_VALS[id]; },0);
+    piSum=piIds.reduce(function(s,id){ return s+PROMIS_VALS[id]; },0);
     document.getElementById('piScore').textContent=piSum;
+    var piRow=PI_TABLE[piSum];
+    piT=piRow[0];
+    document.getElementById('piTScore').textContent=piRow[0].toFixed(1)+' (SE '+piRow[1].toFixed(1)+')';
   } else {
     document.getElementById('piScore').textContent='--';
+    document.getElementById('piTScore').textContent='--';
   }
   window._promisCurrent={date:new Date().toISOString().slice(0,10),
-    pfRaw: pfComplete ? pfIds.reduce(function(s,id){return s+PROMIS_VALS[id];},0) : null,
-    piRaw: piComplete ? piIds.reduce(function(s,id){return s+PROMIS_VALS[id];},0) : null};
+    pfRaw: pfSum, piRaw: piSum, pfT: pfT, piT: piT};
 }
 function promisSave(){
   if(!window._promisCurrent || (window._promisCurrent.pfRaw===null && window._promisCurrent.piRaw===null)){
@@ -169,9 +192,11 @@ function promisRenderHistory(){
   var wrap=document.getElementById('bHistWrap');
   if(!hist.length){ wrap.innerHTML='<p style="font-size:13.5px;color:var(--muted)">No saved results yet in this browser. Answer the questions above and select \'Save this result\' to start tracking.</p>'; return; }
   var rows=hist.slice().reverse().map(function(h){
-    return '<tr><td>'+h.date+'</td><td>'+(h.pfRaw===null?'--':h.pfRaw+' / 20')+'</td><td>'+(h.piRaw===null?'--':h.piRaw+' / 20')+'</td></tr>';
+    var pf = h.pfRaw==null ? '--' : h.pfRaw+' / 20 (T '+h.pfT.toFixed(1)+')';
+    var pi = h.piRaw==null ? '--' : h.piRaw+' / 20 (T '+h.piT.toFixed(1)+')';
+    return '<tr><td>'+h.date+'</td><td>'+pf+'</td><td>'+pi+'</td></tr>';
   }).join('');
-  wrap.innerHTML='<table class="bhist"><thead><tr><th>Date</th><th>Physical Function (raw)</th><th>Pain Interference (raw)</th></tr></thead><tbody>'+rows+'</tbody></table>';
+  wrap.innerHTML='<table class="bhist"><thead><tr><th>Date</th><th>Physical Function</th><th>Pain Interference</th></tr></thead><tbody>'+rows+'</tbody></table>';
 }
 function promisPrintSummary(){
   var pfLabels={pf1:'Chores (vacuuming/yard work)',pf2:'Stairs at a normal pace',pf3:'A 15-minute walk',pf4:'Errands and shopping'};
@@ -187,6 +212,9 @@ function promisPrintSummary(){
     var v=PROMIS_VALS[id];
     rows+='<tr><td>Pain interference: '+piLabels[id]+'</td><td>'+(v?piOptLabels[v]+' ('+v+')':'not answered')+'</td></tr>';
   });
+  var c=window._promisCurrent||{};
+  rows+='<tr><td><strong>Physical Function score</strong></td><td>'+(c.pfRaw!=null?'raw '+c.pfRaw+' / 20, T-score '+c.pfT.toFixed(1):'incomplete')+'</td></tr>';
+  rows+='<tr><td><strong>Pain Interference score</strong></td><td>'+(c.piRaw!=null?'raw '+c.piRaw+' / 20, T-score '+c.piT.toFixed(1):'incomplete')+'</td></tr>';
   document.getElementById('bAnswerRows').innerHTML=rows;
   document.getElementById('bPrintDate').textContent=new Date().toLocaleDateString();
   window.print();
