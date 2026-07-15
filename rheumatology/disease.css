@@ -23,6 +23,12 @@ ol.ladder{list-style:none;margin:14px 0 0;padding:0}
 .lad-note{font-size:13.5px;color:var(--muted,#6a6270);margin-top:6px !important}
 .pending{display:inline-block;font-size:12px;font-weight:600;color:var(--brass,#a9781f);background:var(--amber-bg,#fdf6e3);border:1px solid var(--amber-br,#e0b64b);border-radius:6px;padding:0 7px}
 .strengthset{display:inline-block;font-size:12.5px;font-weight:600;color:var(--ink,#2b2b2b)}
+/* domain matrix (GRAPPA-style therapy grid): wide, so it scrolls inside .tablewrap */
+table.dmx{margin:14px 0 6px;font-size:13px;width:100%}
+table.dmx th{font-size:12px;letter-spacing:.02em;vertical-align:bottom}
+table.dmx td{vertical-align:top}
+table.dmx .dmx-ind{white-space:normal;min-width:150px}
+table.dmx td:not(.dmx-ind){min-width:112px}
 table.crit{margin:14px 0 6px}
 table.crit .crit-dom td{background:var(--cream,#f4efe6);font-weight:700}
 table.crit .crit-pt{text-align:center;font-weight:700;width:64px;white-space:nowrap}

@@ -39,7 +39,7 @@ h1{font-size:2rem;margin:.2em 0}
 h2{font-size:1.35rem;margin:1.6em 0 .4em;padding-bottom:.2em;border-bottom:2px solid var(--line)}
 h3{font-size:1.08rem;margin:1.2em 0 .3em}
 a{color:var(--teal)}
-.eyebrow{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--maple);font-weight:700}
+.eyebrow{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#8f661a;font-weight:700}
 
 /* draft banner */
 .draft{background:var(--draft-bg);color:var(--draft-fg);text-align:center;font-size:.85rem;font-weight:600;padding:8px 12px;letter-spacing:.02em}

@@ -5,6 +5,7 @@
   --plum:#432a49;        /* primary: headings, dark bands, seal disc */
   --plum-2:#5c3a63;      /* lighter plum for hovers/accents */
   --brass:#a9781f;       /* accent: eyebrows, the line motif, primary CTA */
+  --brass-ink:#8f661a;   /* darker brass for SMALL text on light bg: WCAG AA 4.65:1 */
   --brass-2:#c08f36;
   --sage:#54715f;        /* secondary accent */
   --ivory:#f7f3ec;       /* soft background */
