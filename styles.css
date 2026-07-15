@@ -31,9 +31,9 @@ img,svg{max-width:100%}
 .brandmark{display:inline-flex;align-items:center;gap:11px;flex:0 0 auto}
 .brandmark:hover{text-decoration:none}
 .brandmark .seal{width:54px;height:54px}
-.brand-logo{height:54px;width:auto;display:block}
-.brand-logo-dark{height:54px;width:auto;display:block}
-@media(max-width:640px){.brand-logo{height:46px}.brand-logo-dark{height:46px}}
+.brand-logo{height:64px;width:auto;display:block}
+.brand-logo-dark{height:64px;width:auto;display:block}
+@media(max-width:640px){.brand-logo{height:54px}.brand-logo-dark{height:54px}}
 .wordmark{font-family:'Source Serif 4',serif;font-weight:700;color:var(--plum);line-height:1.05;font-size:17px}
 .wordmark small{display:block;font-family:Inter,sans-serif;font-weight:500;font-size:10.5px;
   letter-spacing:.08em;text-transform:uppercase;color:var(--brass)}
