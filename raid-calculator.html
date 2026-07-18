@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RAID calculator | Dr. Mahendira Rheumatology</title>
+<meta name="description" content="An interactive RAID (Rheumatoid Arthritis Impact of Disease) calculator, with tracking and printing.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://papachristosa.github.io/drmahendira/rheumatology/rheumatoid-arthritis.patients.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dr. Dharini Mahendira Rheumatology">
+<meta property="og:title" content="RAID calculator">
+<meta property="og:description" content="An interactive RAID (Rheumatoid Arthritis Impact of Disease) calculator, with tracking and printing.">
+<meta property="og:url" content="https://papachristosa.github.io/drmahendira/rheumatology/rheumatoid-arthritis.patients.html">
+<meta property="og:image" content="https://papachristosa.github.io/drmahendira/assets/social-1280x640.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="RAID calculator">
+<meta name="twitter:description" content="An interactive RAID (Rheumatoid Arthritis Impact of Disease) calculator, with tracking and printing.">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://papachristosa.github.io/drmahendira/index.html"}, {"@type": "ListItem", "position": 2, "name": "General Rheumatology", "item": "https://papachristosa.github.io/drmahendira/general-rheumatology.html"}, {"@type": "ListItem", "position": 3, "name": "Rheumatoid arthritis", "item": "https://papachristosa.github.io/drmahendira/rheumatology/rheumatoid-arthritis.patients.html"}, {"@type": "ListItem", "position": 4, "name": "RAID calculator", "item": "https://papachristosa.github.io/drmahendira/raid-calculator.html"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#maincontent">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-in">
+    <a class="brandmark" href="index.html">
+      <img class="brand-logo" src="assets/logo-mahendira-light.svg" alt="Dr. Dharini Mahendira, Rheumatology" width="269" height="64">
+    </a>
+    <input type="checkbox" id="nav-toggle">
+    <label class="nav-burger" for="nav-toggle" aria-label="Menu"><span></span></label>
+    <nav class="main" aria-label="Primary">
+      <a href="index.html">Home</a><a href="general-rheumatology.html">General Rheumatology</a><a href="osteoarthritis.html">Osteoarthritis Clinic</a><a href="pregnancy.html">RheumPreg Clinic</a><a href="patient-guides.html">Patient Guides</a><a href="teaching.html">Teaching</a><a href="research.html">Research</a><a href="team.html">Team</a><a href="contact.html">Contact</a>
+      <span class="aud" role="group" aria-label="Choose audience">
+        <a href="#" class="on">For patients</a>
+        <a href="#">For clinicians</a>
+      </span>
+      <a class="refer" href="contact.html">Refer a patient</a>
+    </nav>
+  </div>
+</header>
+<a id="maincontent" tabindex="-1"></a>
+
+<section class="hero"><div class="wrap">
+  <p class="eyebrow"><a href="rheumatology/rheumatoid-arthritis.patients.html">Rheumatoid arthritis</a> &middot; Self-tracking tool</p>
+  <h1>RAID: track the impact of your disease</h1>
+  <p class="lede">The Rheumatoid Arthritis Impact of Disease (RAID) score is a seven-question tool that captures how rheumatoid arthritis has affected you over the last week, across pain, physical function, fatigue, sleep, physical and emotional wellbeing, and coping. Complete it, save your result to track it over time, and print it to bring to your rheumatology appointment.</p>
+  <div class="cta-row"><a class="btn btn-ghost" href="rheumatology/rheumatoid-arthritis.patients.html">Back to the RA guide</a><a class="btn btn-ghost" href="patient-guides.html">All patient guides</a></div>
+</div></section>
+<section class="sec"><div class="wrap">
+
+<div class="alert noprint"><span class="b">i</span><span>Answer each question based on how you have felt over the <strong>last 7 days</strong>, not just today. There are no right or wrong answers. This tool runs entirely in your browser: nothing you enter is saved to a server or sent anywhere. Saving a result stores it only in this browser, on this device.</span></div>
+
+<div class="prose noprint">
+<div class="bq">
+  <h3>Q1. Pain</h3>
+  <p class="q-help">Rate the pain you felt due to your rheumatoid arthritis during the last week.</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q1" min="0" max="10" step="1" value="0" oninput="raidUpdate()">
+    <span class="bq-val" id="q1v">0</span>
+  </div>
+  <div class="bq-ends"><span>None</span><span>Extreme</span></div>
+</div><div class="bq">
+  <h3>Q2. Functional disability</h3>
+  <p class="q-help">Rate the difficulty you had in doing daily physical activities due to your rheumatoid arthritis during the last week.</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q2" min="0" max="10" step="1" value="0" oninput="raidUpdate()">
+    <span class="bq-val" id="q2v">0</span>
+  </div>
+  <div class="bq-ends"><span>No difficulty</span><span>Extreme difficulty</span></div>
+</div><div class="bq">
+  <h3>Q3. Fatigue</h3>
+  <p class="q-help">Rate how much fatigue you felt due to your rheumatoid arthritis during the last week.</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q3" min="0" max="10" step="1" value="0" oninput="raidUpdate()">
+    <span class="bq-val" id="q3v">0</span>
+  </div>
+  <div class="bq-ends"><span>No fatigue</span><span>Totally exhausted</span></div>
+</div><div class="bq">
+  <h3>Q4. Sleep</h3>
+  <p class="q-help">Rate the sleep difficulties (resting at night) you felt due to your rheumatoid arthritis during the last week.</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q4" min="0" max="10" step="1" value="0" oninput="raidUpdate()">
+    <span class="bq-val" id="q4v">0</span>
+  </div>
+  <div class="bq-ends"><span>No difficulty</span><span>Extreme difficulty</span></div>
+</div><div class="bq">
+  <h3>Q5. Physical well-being</h3>
+  <p class="q-help">Considering your arthritis overall, how would you rate your level of physical well-being during the past week?</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q5" min="0" max="10" step="1" value="0" oninput="raidUpdate()">
+    <span class="bq-val" id="q5v">0</span>
+  </div>
+  <div class="bq-ends"><span>Very good</span><span>Very bad</span></div>
+</div><div class="bq">
+  <h3>Q6. Emotional well-being</h3>
+  <p class="q-help">Considering your arthritis overall, how would you rate your level of emotional well-being during the past week?</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q6" min="0" max="10" step="1" value="0" oninput="raidUpdate()">
+    <span class="bq-val" id="q6v">0</span>
+  </div>
+  <div class="bq-ends"><span>Very good</span><span>Very bad</span></div>
+</div><div class="bq">
+  <h3>Q7. Coping</h3>
+  <p class="q-help">Considering your arthritis overall, how well did you cope (manage, deal, make do) with your disease during the last week?</p>
+  <div class="bq-row">
+    <input type="range" class="bq-range" id="q7" min="0" max="10" step="1" value="0" oninput="raidUpdate()">
+    <span class="bq-val" id="q7v">0</span>
+  </div>
+  <div class="bq-ends"><span>Very well</span><span>Very poorly</span></div>
+</div>
+</div>
+
+<div class="basdai-result">
+  <div class="basdai-score-label">Your RAID score</div>
+  <div class="basdai-score" id="bScore">0.0</div>
+  <div class="basdai-score-label">out of 10</div>
+  <div class="basdai-gauge"><span class="basdai-marker" id="bMarker" style="left:0%"></span></div>
+  <div class="basdai-endlabels"><span>0 &middot; no impact</span><span>10 &middot; greatest impact</span></div>
+  <div class="basdai-interp" id="bInterp">Move the sliders above to see your score.</div>
+</div>
+
+<div class="disclaimer noprint" style="margin-top:16px"><strong>About the scale.</strong> RAID runs from 0 to 10, where a higher number means rheumatoid arthritis had more impact on you that week. The seven areas carry different weights in the formula, pain, function, and fatigue count for more, reflecting how much patients said each mattered when the tool was developed. Treat any single score as one data point for a conversation with your team, not a diagnosis or a treatment decision on its own.</div>
+
+<div class="cta-row noprint" style="margin-top:18px">
+  <button type="button" class="btn btn-primary" onclick="raidSave()">Save this result</button>
+  <button type="button" class="btn btn-ghost" onclick="raidPrintSummary()">Print this result</button>
+</div>
+
+<div class="basdai-hist noprint">
+  <p class="group-label" style="margin-top:26px">Your saved results</p>
+  <div id="bHistWrap"></div>
+  <p style="margin-top:10px"><button type="button" class="btn btn-ghost" onclick="raidClearHistory()" style="font-size:13px">Clear saved history</button></p>
+</div>
+
+<div class="printonly" style="margin-top:18px">
+  <p><strong>Dr. Dharini Mahendira Rheumatology</strong> &middot; RAID result &middot; <span id="bPrintDate"></span></p>
+  <table class="bans"><thead><tr><th>Question</th><th>Response</th></tr></thead><tbody id="bAnswerRows"></tbody></table>
+</div>
+
+<div class="info-block" style="margin-top:24px"><h3>How the score is calculated</h3>
+<p style="font-size:14.5px;margin:0 0 8px">RAID = (0.21&times;Pain) + (0.16&times;Function) + (0.15&times;Fatigue) + (0.12&times;Sleep) + (0.12&times;Physical wellbeing) + (0.12&times;Emotional wellbeing) + (0.12&times;Coping). Each of the seven areas is scored from 0 to 10, and because the weights add up to 1, the result is itself a 0 to 10 score. Pain, function, and fatigue carry the most weight.</p>
+<p style="font-size:12.5px;color:var(--muted);margin-top:6px">Rheumatoid Arthritis Impact of Disease (RAID), a EULAR initiative (Gossec L, et al. <em>Ann Rheum Dis.</em> 2009;68:1680 to 1685). Questionnaire and scoring reproduced from Holten K, et al. <em>RMD Open.</em> 2024;10:e003486.</p>
+</div>
+
+<div class="cta-row" style="margin-top:20px"><a class="btn btn-ghost" href="rheumatology/rheumatoid-arthritis.patients.html">Back to the RA guide</a><a class="btn btn-ghost" href="patient-guides.html">All patient guides</a></div>
+</div></section>
+
+<script>
+function raidUpdate(){
+  var ids=['q1','q2','q3','q4','q5','q6','q7'];
+  var weights={q1:0.21,q2:0.16,q3:0.15,q4:0.12,q5:0.12,q6:0.12,q7:0.12};
+  var v={}; var score=0;
+  ids.forEach(function(id){
+    var el=document.getElementById(id);
+    var out=document.getElementById(id+'v');
+    v[id]=parseFloat(el.value);
+    out.textContent=el.value;
+    score+=v[id]*weights[id];
+  });
+  score=Math.round(score*10)/10;
+  document.getElementById('bScore').textContent=score.toFixed(1);
+  var pct=(score/10)*100;
+  document.getElementById('bMarker').style.left=pct+'%';
+  document.getElementById('bInterp').innerHTML='Your RAID score is <strong>'+score.toFixed(1)+' out of 10</strong>. A higher score means rheumatoid arthritis had more impact on you this week. Treat any single score as one data point to track over time and to talk through with your rheumatology team.';
+  window._raidCurrent={date:new Date().toISOString().slice(0,10),score:score,q1:v.q1,q2:v.q2,q3:v.q3,q4:v.q4,q5:v.q5,q6:v.q6,q7:v.q7};
+}
+function raidSave(){
+  if(!window._raidCurrent){ raidUpdate(); }
+  var hist=[];
+  try{ hist=JSON.parse(localStorage.getItem('ra_raid_history')||'[]'); }catch(e){ hist=[]; }
+  hist.push(window._raidCurrent);
+  if(hist.length>20){ hist=hist.slice(hist.length-20); }
+  localStorage.setItem('ra_raid_history', JSON.stringify(hist));
+  raidRenderHistory();
+}
+function raidClearHistory(){
+  if(!confirm('Clear all saved RAID results from this browser? This cannot be undone.')) return;
+  localStorage.removeItem('ra_raid_history');
+  raidRenderHistory();
+}
+function raidRenderHistory(){
+  var hist=[];
+  try{ hist=JSON.parse(localStorage.getItem('ra_raid_history')||'[]'); }catch(e){ hist=[]; }
+  var wrap=document.getElementById('bHistWrap');
+  if(!hist.length){ wrap.innerHTML='<p style="font-size:13.5px;color:var(--muted)">No saved results yet in this browser. Complete the seven questions above and select \'Save this result\' to start tracking.</p>'; return; }
+  var rows=hist.slice().reverse().map(function(h){
+    return '<tr><td>'+h.date+'</td><td>'+h.score.toFixed(1)+' / 10</td></tr>';
+  }).join('');
+  wrap.innerHTML='<table class="bhist"><thead><tr><th>Date</th><th>RAID score</th></tr></thead><tbody>'+rows+'</tbody></table>';
+}
+function raidPrintSummary(){
+  var ids=['q1','q2','q3','q4','q5','q6','q7'];
+  var labels={q1:'Pain',q2:'Functional disability',q3:'Fatigue',q4:'Sleep',q5:'Physical well-being',q6:'Emotional well-being',q7:'Coping'};
+  var rows=ids.map(function(id){
+    return '<tr><td>'+labels[id]+'</td><td>'+document.getElementById(id).value+' / 10</td></tr>';
+  }).join('');
+  document.getElementById('bAnswerRows').innerHTML=rows;
+  document.getElementById('bPrintDate').textContent=new Date().toLocaleDateString();
+  window.print();
+}
+document.addEventListener('DOMContentLoaded', function(){ raidUpdate(); raidRenderHistory(); });
+</script>
+<footer class="site-footer">
+  <div class="foot-in foot-grid">
+    <div class="foot-brand">
+      <img class="brand-logo-dark" src="assets/logo-mahendira-dark.svg" alt="Dr. Dharini Mahendira, Rheumatology" width="269" height="64">
+      <p>Reproductive rheumatology, complex osteoarthritis, and general rheumatology. Careful, sourced answers for patients and clinicians.</p>
+    </div>
+    <div><h5>Clinics</h5>
+      <a href="general-rheumatology.html">General Rheumatology</a>
+      <a href="osteoarthritis.html">Osteoarthritis Clinic</a>
+      <a href="pregnancy.html">RheumPreg Clinic</a>
+    </div>
+    <div><h5>Patients</h5>
+      <a href="patient-guides.html">Patient Guides</a><a href="pregnancy/index.html">Medication guides</a><a href="https://www.arthros.ca/flareforward" target="_blank" rel="noopener">FlareForward (exercise)</a><a href="https://www.arthros.ca/insights" target="_blank" rel="noopener">Insights (blog)</a>
+    </div>
+    <div><h5>Clinicians</h5>
+      <a href="pregnancy/guideline-comparison.clinicians.html">Guideline matrix</a><a href="methodology.html">How we make this</a><a href="https://rheumacademy.com/" target="_blank" rel="noopener">Rheum Academy (CPD)</a>
+    </div>
+    <div><h5>Practice</h5>
+      <a href="team.html">Team</a><a href="research.html">Research</a><a href="teaching.html">Teaching</a><a href="contact.html">Contact</a><a href="medico-legal.html">Medico-legal</a><a href="https://www.torontomyositis.ca" target="_blank" rel="noopener">Toronto Myositis Centre</a>
+    </div>
+  </div>
+  <div class="foot-in foot-base">
+    <span>&copy; 2026 Dr. Dharini Mahendira.</span>
+    <span>For clinical reference &middot; generated from reviewed records</span>
+  </div>
+</footer>
+</body></html>

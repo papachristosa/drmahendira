@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Symptom tracker | Dr. Mahendira Rheumatology</title>
+<meta name="description" content="A patient symptom tracker: choose your condition, complete a validated questionnaire, track your scores over time, and print a summary for your appointment.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://papachristosa.github.io/drmahendira/patient-guides.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dr. Dharini Mahendira Rheumatology">
+<meta property="og:title" content="Symptom tracker">
+<meta property="og:description" content="A patient symptom tracker: choose your condition, complete a validated questionnaire, track your scores over time, and print a summary for your appointment.">
+<meta property="og:url" content="https://papachristosa.github.io/drmahendira/patient-guides.html">
+<meta property="og:image" content="https://papachristosa.github.io/drmahendira/assets/social-1280x640.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Symptom tracker">
+<meta name="twitter:description" content="A patient symptom tracker: choose your condition, complete a validated questionnaire, track your scores over time, and print a summary for your appointment.">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://papachristosa.github.io/drmahendira/index.html"}, {"@type": "ListItem", "position": 2, "name": "Patient guides", "item": "https://papachristosa.github.io/drmahendira/patient-guides.html"}, {"@type": "ListItem", "position": 3, "name": "Symptom tracker", "item": "https://papachristosa.github.io/drmahendira/symptom-tracker.html"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#maincontent">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-in">
+    <a class="brandmark" href="index.html">
+      <img class="brand-logo" src="assets/logo-mahendira-light.svg" alt="Dr. Dharini Mahendira, Rheumatology" width="269" height="64">
+    </a>
+    <input type="checkbox" id="nav-toggle">
+    <label class="nav-burger" for="nav-toggle" aria-label="Menu"><span></span></label>
+    <nav class="main" aria-label="Primary">
+      <a href="index.html">Home</a><a href="general-rheumatology.html">General Rheumatology</a><a href="osteoarthritis.html">Osteoarthritis Clinic</a><a href="pregnancy.html">RheumPreg Clinic</a><a href="patient-guides.html" aria-current="page">Patient Guides</a><a href="teaching.html">Teaching</a><a href="research.html">Research</a><a href="team.html">Team</a><a href="contact.html">Contact</a>
+      <span class="aud" role="group" aria-label="Choose audience">
+        <a href="#" class="on">For patients</a>
+        <a href="#">For clinicians</a>
+      </span>
+      <a class="refer" href="contact.html">Refer a patient</a>
+    </nav>
+  </div>
+</header>
+<a id="maincontent" tabindex="-1"></a>
+
+<style>
+.cond-tiles{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 4px}
+.cond-tile{flex:1 1 170px;min-width:150px;text-align:left;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--card,#fff);cursor:pointer;font:inherit;transition:background .15s,border-color .15s}
+.cond-tile:hover{border-color:var(--brass,#a9781f)}
+.cond-tile.active{background:var(--plum,#432a49);border-color:var(--plum,#432a49)}
+.cond-tile .ct-name{display:block;font-weight:700;font-size:15.5px;color:var(--plum,#432a49)}
+.cond-tile .ct-sub{display:block;font-size:12.5px;color:var(--muted,#6a6270);margin-top:2px}
+.cond-tile.active .ct-name,.cond-tile.active .ct-sub{color:var(--ivory,#f7f3ec)}
+.instr{margin-top:26px;padding-top:8px;border-top:1px solid var(--line)}
+.instr:first-child{border-top:0;margin-top:18px}
+.instr-name{font-size:19px;margin:0 0 4px}
+.tracker-avg{display:flex;flex-wrap:wrap;gap:10px;margin:6px 0 12px}
+.tracker-avg-cell{flex:1 1 120px;min-width:104px;border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--card,#fff)}
+.tracker-avg-lbl{font-size:12px;color:var(--muted,#6a6270)}
+.tracker-avg-val{font-size:22px;font-weight:700;color:var(--plum,#432a49);margin-top:2px}
+.tracker-avg-n{font-size:12px;font-weight:400;color:var(--muted,#6a6270)}
+.tr-svg{width:100%;height:auto;display:block;margin:4px 0 8px}
+.tr-line{fill:none;stroke:var(--brass,#a9781f);stroke-width:2}
+.tr-dot{fill:var(--plum,#432a49)}
+.tr-grid{stroke:var(--line,#e5e0e8);stroke-width:1}
+.tr-axis{fill:var(--muted,#6a6270);font-size:10px}
+</style>
+
+<section class="hero"><div class="wrap">
+  <p class="eyebrow">Self-tracking tools</p>
+  <h1>My symptom tracker</h1>
+  <p class="lede">Choose your condition, answer a few quick questions about the last week, and save your result. Come back any time to see your scores over time and print a summary to bring to your appointment. Everything stays in this browser, on this device.</p>
+  <div class="cta-row"><a class="btn btn-ghost" href="patient-guides.html">All patient guides</a></div>
+</div></section>
+<section class="sec"><div class="wrap">
+
+<div class="alert noprint"><span class="b">i</span><span>Answer each question based on how you have felt over the <strong>last 7 days</strong>, not just today. This tool runs entirely in your browser: nothing you enter is saved to a server or sent anywhere. Saving a result stores it only in this browser, on this device.</span></div>
+
+<div class="prose noprint">
+  <p class="group-label">Choose your condition</p>
+  <div id="condTiles" class="cond-tiles"></div>
+</div>
+
+<div id="trackerBody"><p class="noprint" style="color:var(--muted);margin-top:18px">Select your condition above to begin.</p></div>
+
+<div class="printonly" id="trPrintArea" style="margin-top:18px"></div>
+
+</div></section>
+<script>var TRACKER=[{"id": "ra", "label": "Rheumatoid arthritis", "sub": "RAID, 7 questions", "instruments": [{"name": "RAID", "key": "ra_raid_history", "type": "wmean", "items": [{"label": "Pain", "help": "Rate the pain you felt due to your rheumatoid arthritis during the last week.", "lo": "None", "hi": "Extreme", "w": 0.21}, {"label": "Functional disability", "help": "Rate the difficulty you had in doing daily physical activities due to your rheumatoid arthritis during the last week.", "lo": "No difficulty", "hi": "Extreme difficulty", "w": 0.16}, {"label": "Fatigue", "help": "Rate how much fatigue you felt due to your rheumatoid arthritis during the last week.", "lo": "No fatigue", "hi": "Totally exhausted", "w": 0.15}, {"label": "Sleep", "help": "Rate the sleep difficulties (resting at night) you felt due to your rheumatoid arthritis during the last week.", "lo": "No difficulty", "hi": "Extreme difficulty", "w": 0.12}, {"label": "Physical well-being", "help": "Considering your arthritis overall, how would you rate your level of physical well-being during the past week?", "lo": "Very good", "hi": "Very bad", "w": 0.12}, {"label": "Emotional well-being", "help": "Considering your arthritis overall, how would you rate your level of emotional well-being during the past week?", "lo": "Very good", "hi": "Very bad", "w": 0.12}, {"label": "Coping", "help": "Considering your arthritis overall, how well did you cope (manage, deal, make do) with your disease during the last week?", "lo": "Very well", "hi": "Very poorly", "w": 0.12}]}]}, {"id": "psa", "label": "Psoriatic arthritis", "sub": "PsAID, 12 questions", "instruments": [{"name": "PsAID", "key": "psa_psaid_history", "type": "wmean", "items": [{"label": "Pain", "help": "How would you rate the pain you felt due to your psoriatic arthritis during the last week?", "lo": "None", "hi": "Extreme", "w": 3}, {"label": "Fatigue", "help": "How would you rate the overall level of fatigue you have experienced due to your psoriatic arthritis during the last week?", "lo": "None", "hi": "Extreme", "w": 2}, {"label": "Skin problems", "help": "How would you rate the skin problems (such as psoriasis) you have experienced during the last week?", "lo": "None", "hi": "Extreme", "w": 2}, {"label": "Work and/or leisure activities", "help": "How much has your psoriatic arthritis affected your ability to take part in work and/or leisure activities during the last week?", "lo": "None", "hi": "Extreme", "w": 2}, {"label": "Functional capacity", "help": "How much has your psoriatic arthritis limited your everyday physical activities (such as dressing, walking, or household tasks) during the last week?", "lo": "None", "hi": "Extreme", "w": 2}, {"label": "Discomfort", "help": "How would you rate the overall physical discomfort you have felt due to your psoriatic arthritis during the last week?", "lo": "None", "hi": "Extreme", "w": 2}, {"label": "Sleep disturbance", "help": "How much has your psoriatic arthritis disturbed your sleep during the last week?", "lo": "None", "hi": "Extreme", "w": 2}, {"label": "Coping", "help": "How much have you struggled to cope with your psoriatic arthritis during the last week?", "lo": "None", "hi": "Extreme", "w": 1}, {"label": "Anxiety, fear, or uncertainty", "help": "How much anxiety, fear, or uncertainty about the future has your psoriatic arthritis caused you during the last week?", "lo": "None", "hi": "Extreme", "w": 1}, {"label": "Embarrassment or shame", "help": "How much embarrassment or shame has your psoriatic arthritis caused you during the last week?", "lo": "None", "hi": "Extreme", "w": 1}, {"label": "Social participation", "help": "How much has your psoriatic arthritis limited your social life and relationships during the last week?", "lo": "None", "hi": "Extreme", "w": 1}, {"label": "Feeling low or depressed", "help": "How much has your psoriatic arthritis made you feel low or depressed during the last week?", "lo": "None", "hi": "Extreme", "w": 1}]}]}, {"id": "axspa", "label": "Axial spondyloarthritis", "sub": "BASDAI and BASFI", "instruments": [{"name": "BASDAI", "key": "axspa_basdai_history", "type": "basdai", "items": [{"label": "Fatigue", "help": "How would you describe the overall level of fatigue or tiredness you have experienced?", "lo": "None", "hi": "Very severe", "w": 1}, {"label": "Spinal pain", "help": "How would you describe the overall level of AS neck, back, or hip pain you have had?", "lo": "None", "hi": "Very severe", "w": 1}, {"label": "Other joint pain or swelling", "help": "How would you describe the overall level of pain or swelling in joints other than your neck, back, or hips?", "lo": "None", "hi": "Very severe", "w": 1}, {"label": "Tenderness", "help": "How would you describe the overall level of discomfort you have had from any areas tender to touch or pressure (such as at the heel, chest wall, or spine)?", "lo": "None", "hi": "Very severe", "w": 1}, {"label": "Morning stiffness: severity", "help": "How would you describe the overall level of morning stiffness you have had, from the time you wake up?", "lo": "None", "hi": "Very severe", "w": 1}, {"label": "Morning stiffness: duration", "help": "How long does your morning stiffness last, from the time you wake up? (0 = no stiffness, 5 = about 1 hour, 10 = 2 hours or more)", "lo": "None", "hi": "Very severe", "w": 1}]}, {"name": "BASFI", "key": "axspa_basfi_history", "type": "wmean", "items": [{"label": "Putting on socks or tights", "help": "Putting on your socks or tights without help or aids (such as a sock aid).", "lo": "Easy", "hi": "Impossible", "w": 1}, {"label": "Bending to the floor", "help": "Bending forward from the waist to pick up a pen from the floor without an aid.", "lo": "Easy", "hi": "Impossible", "w": 1}, {"label": "Reaching up high", "help": "Reaching up to a high shelf without help or aids (such as a helping hand).", "lo": "Easy", "hi": "Impossible", "w": 1}, {"label": "Getting up from a chair", "help": "Getting up out of an armless dining room chair without using your hands or any other help.", "lo": "Easy", "hi": "Impossible", "w": 1}, {"label": "Getting up from the floor", "help": "Getting up off the floor without help, from lying on your back.", "lo": "Easy", "hi": "Impossible", "w": 1}, {"label": "Standing unsupported", "help": "Standing unsupported for 10 minutes without discomfort.", "lo": "Easy", "hi": "Impossible", "w": 1}, {"label": "Climbing steps", "help": "Climbing 12 to 15 steps without using a handrail or a walking aid, one foot to each step.", "lo": "Easy", "hi": "Impossible", "w": 1}, {"label": "Looking over your shoulder", "help": "Looking over your shoulder without turning your body.", "lo": "Easy", "hi": "Impossible", "w": 1}, {"label": "Physically demanding activities", "help": "Doing physically demanding activities, such as physiotherapy exercises, gardening, or sports.", "lo": "Easy", "hi": "Impossible", "w": 1}, {"label": "A full day's activities", "help": "Doing a full day's activities, whether at home or at work.", "lo": "Easy", "hi": "Impossible", "w": 1}]}]}, {"id": "sjogrens", "label": "Sjogren's disease", "sub": "ESSPRI, 3 questions", "instruments": [{"name": "ESSPRI", "key": "sjogrens_esspri_history", "type": "wmean", "items": [{"label": "Dryness", "help": "How would you rate your overall level of dryness (eyes, mouth, skin, or elsewhere)?", "lo": "No symptom", "hi": "Maximal imaginable", "w": 1}, {"label": "Fatigue", "help": "How would you rate your overall level of fatigue?", "lo": "No symptom", "hi": "Maximal imaginable", "w": 1}, {"label": "Pain", "help": "How would you rate your overall level of pain (joint and/or muscle pain)?", "lo": "No symptom", "hi": "Maximal imaginable", "w": 1}]}]}];</script>
+<script>
+(function(){
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+  var active={}, activeCond=null, body, tiles;
+
+  function readVals(inst, prefix){ return inst.items.map(function(it,i){ var el=document.getElementById(prefix+'-q'+i); return el?parseFloat(el.value):0; }); }
+  function computeScore(inst, vals){
+    if(inst.type==='basdai'){ return (vals[0]+vals[1]+vals[2]+vals[3]+((vals[4]+vals[5])/2))/5; }
+    var sw=0, sv=0; inst.items.forEach(function(it,i){ sw+=it.w; sv+=it.w*vals[i]; }); return sw?sv/sw:0;
+  }
+  function score(prefix){
+    var inst=active[prefix]; if(!inst) return null;
+    var vals=readVals(inst,prefix);
+    vals.forEach(function(v,i){ var o=document.getElementById(prefix+'-q'+i+'v'); if(o)o.textContent=v; });
+    var s=Math.round(computeScore(inst,vals)*10)/10;
+    var se=document.getElementById(prefix+'-score'); if(se)se.textContent=s.toFixed(1);
+    var m=document.getElementById(prefix+'-marker'); if(m)m.style.left=((s/10)*100)+'%';
+    return {score:s, vals:vals};
+  }
+  function getHist(inst){ try{ return JSON.parse(localStorage.getItem(inst.key)||'[]'); }catch(e){ return []; } }
+  function averagesHTML(hist){
+    function mean(days){
+      var cutoff=Date.now()-days*86400000;
+      var vals=hist.filter(function(h){ return new Date(h.date+'T00:00:00').getTime()>=cutoff; }).map(function(h){ return Number(h.score); });
+      if(!vals.length) return null;
+      return {avg:Math.round((vals.reduce(function(a,b){return a+b;},0)/vals.length)*10)/10, n:vals.length};
+    }
+    return [[30,'30 days'],[90,'90 days'],[180,'180 days']].map(function(w){
+      var r=mean(w[0]);
+      var val=r? r.avg.toFixed(1)+' <span class="tracker-avg-n">('+r.n+')</span>' : '<span class="tracker-avg-n">no data</span>';
+      return '<div class="tracker-avg-cell"><div class="tracker-avg-lbl">Last '+w[1]+'</div><div class="tracker-avg-val">'+val+'</div></div>';
+    }).join('');
+  }
+  function trendSVG(hist){
+    var data=hist.slice();
+    var W=520, H=140, padL=26, padR=10, padT=12, padB=20;
+    var n=data.length, plotW=W-padL-padR, plotH=H-padT-padB;
+    function x(i){ return padL+(n<=1?plotW/2:(i/(n-1))*plotW); }
+    function y(v){ return padT+(1-Number(v)/10)*plotH; }
+    var grid='';
+    [0,5,10].forEach(function(g){ var yy=y(g); grid+='<line x1="'+padL+'" y1="'+yy+'" x2="'+(W-padR)+'" y2="'+yy+'" class="tr-grid"/><text x="'+(padL-5)+'" y="'+(yy+3)+'" class="tr-axis" text-anchor="end">'+g+'</text>'; });
+    var line=n>1?'<polyline points="'+data.map(function(h,i){ return x(i)+','+y(h.score); }).join(' ')+'" class="tr-line"/>':'';
+    var dots=data.map(function(h,i){ return '<circle cx="'+x(i)+'" cy="'+y(h.score)+'" r="3" class="tr-dot"/>'; }).join('');
+    return '<svg viewBox="0 0 '+W+' '+H+'" class="tr-svg" role="img" aria-label="Score trend over time">'+grid+line+dots+'</svg>';
+  }
+  function renderHist(prefix){
+    var inst=active[prefix]; if(!inst) return;
+    var hist=getHist(inst);
+    var he=document.getElementById(prefix+'-hist'), te=document.getElementById(prefix+'-trend'), ae=document.getElementById(prefix+'-avg');
+    if(!hist.length){ if(he)he.innerHTML='<p style="font-size:13.5px;color:var(--muted)">No saved results yet in this browser. Complete the questions above and select Save this result to start tracking.</p>'; if(te)te.innerHTML=''; if(ae)ae.innerHTML=''; return; }
+    if(ae)ae.innerHTML=averagesHTML(hist);
+    if(te)te.innerHTML=trendSVG(hist);
+    var rows=hist.slice().reverse().map(function(h){ return '<tr><td>'+h.date+'</td><td>'+Number(h.score).toFixed(1)+' / 10</td></tr>'; }).join('');
+    if(he)he.innerHTML='<table class="bhist"><thead><tr><th>Date</th><th>Score</th></tr></thead><tbody>'+rows+'</tbody></table>';
+  }
+  function save(prefix){
+    var inst=active[prefix]; if(!inst) return;
+    var r=score(prefix); if(!r) return;
+    var rec={date:new Date().toISOString().slice(0,10), score:r.score};
+    inst.items.forEach(function(it,i){ rec['q'+(i+1)]=r.vals[i]; });
+    var hist=getHist(inst); hist.push(rec); if(hist.length>20)hist=hist.slice(hist.length-20);
+    try{ localStorage.setItem(inst.key, JSON.stringify(hist)); }catch(e){}
+    renderHist(prefix);
+  }
+  function clearHist(prefix){
+    var inst=active[prefix]; if(!inst) return;
+    if(!confirm('Clear all saved '+inst.name+' results from this browser? This cannot be undone.')) return;
+    try{ localStorage.removeItem(inst.key); }catch(e){}
+    renderHist(prefix);
+  }
+  function printSummary(){
+    if(!activeCond) return;
+    var parts='<p><strong>Dr. Dharini Mahendira Rheumatology</strong> &middot; Symptom tracker &middot; '+esc(activeCond.label)+' &middot; '+new Date().toLocaleDateString()+'</p>';
+    activeCond.instruments.forEach(function(inst,ii){
+      var prefix=activeCond.id+'-'+ii; var r=score(prefix); if(!r) return;
+      parts+='<h3 style="margin:12px 0 4px">'+esc(inst.name)+': '+r.score.toFixed(1)+' / 10</h3>';
+      var rows=inst.items.map(function(it,i){ return '<tr><td>'+esc(it.label)+'</td><td>'+r.vals[i]+' / 10</td></tr>'; }).join('');
+      parts+='<table class="bans"><thead><tr><th>Question</th><th>Response</th></tr></thead><tbody>'+rows+'</tbody></table>';
+    });
+    document.getElementById('trPrintArea').innerHTML=parts;
+    window.print();
+  }
+  function instrumentHTML(inst, prefix){
+    var sliders=inst.items.map(function(it,qi){
+      var id=prefix+'-q'+qi;
+      return '<div class="bq"><h3>Q'+(qi+1)+'. '+esc(it.label)+'</h3><p class="q-help">'+esc(it.help)+'</p>'
+        +'<div class="bq-row"><input type="range" class="bq-range tr-slider" data-prefix="'+prefix+'" id="'+id+'" min="0" max="10" step="1" value="0"><span class="bq-val" id="'+id+'v">0</span></div>'
+        +'<div class="bq-ends"><span>'+esc(it.lo)+'</span><span>'+esc(it.hi)+'</span></div></div>';
+    }).join('');
+    return '<div class="instr">'
+      +'<h2 class="instr-name">'+esc(inst.name)+'</h2>'
+      +'<div class="prose noprint">'+sliders+'</div>'
+      +'<div class="basdai-result"><div class="basdai-score-label">Your '+esc(inst.name)+' score</div>'
+      +'<div class="basdai-score" id="'+prefix+'-score">0.0</div><div class="basdai-score-label">out of 10</div>'
+      +'<div class="basdai-gauge"><span class="basdai-marker" id="'+prefix+'-marker" style="left:0%"></span></div>'
+      +'<div class="basdai-endlabels"><span>0 &middot; no impact</span><span>10 &middot; greatest impact</span></div></div>'
+      +'<div class="cta-row noprint" style="margin-top:14px"><button type="button" class="btn btn-primary" data-act="save" data-prefix="'+prefix+'">Save this result</button>'
+      +'<button type="button" class="btn btn-ghost" data-act="print">Print summary</button></div>'
+      +'<div class="tracker-hist noprint"><p class="group-label" style="margin-top:22px">'+esc(inst.name)+' over time</p>'
+      +'<div id="'+prefix+'-avg" class="tracker-avg"></div><div id="'+prefix+'-trend"></div><div id="'+prefix+'-hist"></div>'
+      +'<p style="margin-top:10px"><button type="button" class="btn btn-ghost" data-act="clear" data-prefix="'+prefix+'" style="font-size:13px">Clear saved history</button></p></div>';
+  }
+  function selectCond(cid){
+    var cond=TRACKER.filter(function(c){ return c.id===cid; })[0]; if(!cond) return;
+    activeCond=cond; active={};
+    Array.prototype.forEach.call(tiles.querySelectorAll('.cond-tile'), function(b){ b.classList.toggle('active', b.getAttribute('data-cond')===cid); });
+    cond.instruments.forEach(function(inst,ii){ active[cid+'-'+ii]=inst; });
+    body.innerHTML=cond.instruments.map(function(inst,ii){ return instrumentHTML(inst, cid+'-'+ii); }).join('');
+    cond.instruments.forEach(function(inst,ii){ var p=cid+'-'+ii; score(p); renderHist(p); });
+    try{ body.scrollIntoView({behavior:'smooth', block:'start'}); }catch(e){}
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    body=document.getElementById('trackerBody');
+    tiles=document.getElementById('condTiles');
+    tiles.innerHTML=TRACKER.map(function(c){ return '<button type="button" class="cond-tile" data-cond="'+c.id+'"><span class="ct-name">'+esc(c.label)+'</span><span class="ct-sub">'+esc(c.sub)+'</span></button>'; }).join('');
+    tiles.addEventListener('click', function(e){ var b=e.target.closest('.cond-tile'); if(b){ selectCond(b.getAttribute('data-cond')); } });
+    body.addEventListener('input', function(e){ var s=e.target; if(s.classList && s.classList.contains('tr-slider')){ score(s.getAttribute('data-prefix')); } });
+    body.addEventListener('click', function(e){ var btn=e.target.closest('button[data-act]'); if(!btn) return; var act=btn.getAttribute('data-act'); var pfx=btn.getAttribute('data-prefix'); if(act==='save')save(pfx); else if(act==='clear')clearHist(pfx); else if(act==='print')printSummary(); });
+  });
+})();
+</script>
+<footer class="site-footer">
+  <div class="foot-in foot-grid">
+    <div class="foot-brand">
+      <img class="brand-logo-dark" src="assets/logo-mahendira-dark.svg" alt="Dr. Dharini Mahendira, Rheumatology" width="269" height="64">
+      <p>Reproductive rheumatology, complex osteoarthritis, and general rheumatology. Careful, sourced answers for patients and clinicians.</p>
+    </div>
+    <div><h5>Clinics</h5>
+      <a href="general-rheumatology.html">General Rheumatology</a>
+      <a href="osteoarthritis.html">Osteoarthritis Clinic</a>
+      <a href="pregnancy.html">RheumPreg Clinic</a>
+    </div>
+    <div><h5>Patients</h5>
+      <a href="patient-guides.html">Patient Guides</a><a href="pregnancy/index.html">Medication guides</a><a href="https://www.arthros.ca/flareforward" target="_blank" rel="noopener">FlareForward (exercise)</a><a href="https://www.arthros.ca/insights" target="_blank" rel="noopener">Insights (blog)</a>
+    </div>
+    <div><h5>Clinicians</h5>
+      <a href="pregnancy/guideline-comparison.clinicians.html">Guideline matrix</a><a href="methodology.html">How we make this</a><a href="https://rheumacademy.com/" target="_blank" rel="noopener">Rheum Academy (CPD)</a>
+    </div>
+    <div><h5>Practice</h5>
+      <a href="team.html">Team</a><a href="research.html">Research</a><a href="teaching.html">Teaching</a><a href="contact.html">Contact</a><a href="medico-legal.html">Medico-legal</a><a href="https://www.torontomyositis.ca" target="_blank" rel="noopener">Toronto Myositis Centre</a>
+    </div>
+  </div>
+  <div class="foot-in foot-base">
+    <span>&copy; 2026 Dr. Dharini Mahendira.</span>
+    <span>For clinical reference &middot; generated from reviewed records</span>
+  </div>
+</footer>
+</body></html>
