@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HAQ-DI tracker | Dr. Mahendira Rheumatology</title>
+<meta name="description" content="An interactive HAQ-DI (Health Assessment Questionnaire Disability Index) tracker for rheumatoid arthritis physical function, with tracking and printing.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://papachristosa.github.io/drmahendira/rheumatology/rheumatoid-arthritis.patients.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dr. Dharini Mahendira Rheumatology">
+<meta property="og:title" content="HAQ-DI tracker">
+<meta property="og:description" content="An interactive HAQ-DI (Health Assessment Questionnaire Disability Index) tracker for rheumatoid arthritis physical function, with tracking and printing.">
+<meta property="og:url" content="https://papachristosa.github.io/drmahendira/rheumatology/rheumatoid-arthritis.patients.html">
+<meta property="og:image" content="https://papachristosa.github.io/drmahendira/assets/social-1280x640.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HAQ-DI tracker">
+<meta name="twitter:description" content="An interactive HAQ-DI (Health Assessment Questionnaire Disability Index) tracker for rheumatoid arthritis physical function, with tracking and printing.">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://papachristosa.github.io/drmahendira/index.html"}, {"@type": "ListItem", "position": 2, "name": "General Rheumatology", "item": "https://papachristosa.github.io/drmahendira/general-rheumatology.html"}, {"@type": "ListItem", "position": 3, "name": "Rheumatoid arthritis", "item": "https://papachristosa.github.io/drmahendira/rheumatology/rheumatoid-arthritis.patients.html"}, {"@type": "ListItem", "position": 4, "name": "HAQ-DI tracker", "item": "https://papachristosa.github.io/drmahendira/haq-tracker.html"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#maincontent">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-in">
+    <a class="brandmark" href="index.html">
+      <img class="brand-logo" src="assets/logo-mahendira-light.svg" alt="Dr. Dharini Mahendira, Rheumatology" width="269" height="64">
+    </a>
+    <input type="checkbox" id="nav-toggle">
+    <label class="nav-burger" for="nav-toggle" aria-label="Menu"><span></span></label>
+    <nav class="main" aria-label="Primary">
+      <a href="index.html">Home</a><a href="general-rheumatology.html">General Rheumatology</a><a href="osteoarthritis.html">Osteoarthritis Clinic</a><a href="pregnancy.html">RheumPreg Clinic</a><a href="patient-guides.html">Patient Guides</a><a href="teaching.html">Teaching</a><a href="research.html">Research</a><a href="team.html">Team</a><a href="contact.html">Contact</a>
+      <span class="aud" role="group" aria-label="Choose audience">
+        <a href="#" class="on">For patients</a>
+        <a href="#">For clinicians</a>
+      </span>
+      <a class="refer" href="contact.html">Refer a patient</a>
+    </nav>
+  </div>
+</header>
+<a id="maincontent" tabindex="-1"></a>
+
+<style>
+.haq-legend{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 14px;font-size:12.5px;color:var(--muted)}
+.haq-legend span{background:var(--ivory);border:1px solid var(--line);border-radius:8px;padding:4px 9px}
+.haq-dom{margin:20px 0 0;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.haq-dom:last-of-type{border-bottom:0}
+.haq-dom h3{margin:0 0 8px;font-size:16px;color:var(--plum)}
+.haq-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:7px 0}
+.haq-q{font-size:14.5px;min-width:0}
+.haq-sel{font:inherit;font-size:14px;padding:7px 9px;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--plum);font-weight:600;min-width:150px}
+.haq-sel.set{border-color:var(--plum)}
+.haq-aid{display:flex;flex-wrap:wrap;gap:16px;margin-top:8px;font-size:13px}
+.haq-aid label{display:flex;align-items:center;gap:6px;color:var(--muted);cursor:pointer}
+.tr-svg{width:100%;height:auto;display:block;margin:4px 0 8px}
+.tr-line{fill:none;stroke:var(--brass,#a9781f);stroke-width:2}
+.tr-dot{fill:var(--plum,#432a49)}
+.tr-grid{stroke:var(--line,#e5e0e8);stroke-width:1}
+.tr-axis{fill:var(--muted,#6a6270);font-size:10px}
+</style>
+
+<section class="hero"><div class="wrap">
+  <p class="eyebrow"><a href="rheumatology/rheumatoid-arthritis.patients.html">Rheumatoid arthritis</a> &middot; Self-tracking tool</p>
+  <h1>HAQ: track your physical function</h1>
+  <p class="lede">The Health Assessment Questionnaire Disability Index (HAQ-DI) is the most widely used measure of physical function in rheumatoid arthritis. It asks how much difficulty you have had over the past week with everyday activities, across eight areas from dressing to walking to grip. Complete it, save your result to track it over time, and print it to bring to your rheumatology appointment.</p>
+  <div class="cta-row"><a class="btn btn-ghost" href="rheumatology/rheumatoid-arthritis.patients.html">Back to the RA guide</a><a class="btn btn-ghost" href="patient-guides.html">All patient guides</a></div>
+</div></section>
+<section class="sec"><div class="wrap">
+
+<div class="alert noprint"><span class="b">i</span><span>Answer for your <strong>usual abilities over the past week</strong>. Rate each activity without help from another person and without special equipment, unless the section asks about those. This tool runs entirely in your browser: nothing you enter is saved to a server or sent anywhere. Saving stores your result only in this browser, on this device.</span></div>
+
+<div class="haq-legend noprint"><span>0 = Without any difficulty</span><span>1 = With some difficulty</span><span>2 = With much difficulty</span><span>3 = Unable to do</span></div>
+
+<div class="prose noprint" id="haqForm"></div>
+
+<div class="basdai-result">
+  <div class="basdai-score-label">Your HAQ-DI</div>
+  <div class="basdai-score" id="haqScore">--</div>
+  <div class="basdai-score-label">out of 3</div>
+  <div class="basdai-gauge"><span class="basdai-marker" id="haqMarker" style="left:0%"></span></div>
+  <div class="basdai-endlabels"><span>0 &middot; no disability</span><span>3 &middot; most disability</span></div>
+  <div class="basdai-interp" id="haqInterp">Answer all eight sections above to see your score.</div>
+</div>
+
+<div class="disclaimer noprint" style="margin-top:16px"><strong>About the score.</strong> HAQ-DI runs from 0 to 3, where a higher number means more difficulty with daily activities. Each of the eight areas is scored by its hardest activity, and the eight are averaged. If you use aids or need help from another person for an area, that area counts as at least 2. Any single score is one data point for a conversation with your team, not a diagnosis or a treatment decision on its own; function can also be affected by joint damage, age, and other conditions, not only by active arthritis.</div>
+
+<div class="cta-row noprint" style="margin-top:18px">
+  <button type="button" class="btn btn-primary" id="haqSaveBtn" onclick="haqSave()">Save this result</button>
+  <button type="button" class="btn btn-ghost" onclick="haqPrint()">Print this result</button>
+  <span id="haqSaveMsg" style="font-size:13px;color:#3f7a54;align-self:center"></span>
+</div>
+
+<div class="basdai-hist noprint">
+  <p class="group-label" style="margin-top:26px">Your saved results</p>
+  <div id="haqTrend"></div>
+  <div id="haqHistWrap"></div>
+  <p style="margin-top:10px"><button type="button" class="btn btn-ghost" onclick="haqClear()" style="font-size:13px">Clear saved history</button></p>
+</div>
+
+<div class="printonly" id="haqPrintArea" style="margin-top:18px"></div>
+
+<div class="info-block" style="margin-top:24px"><h3>How the score is worked out</h3>
+<p style="font-size:14.5px;margin:0 0 8px">Each of the eight areas (dressing and grooming, arising, eating, walking, hygiene, reach, grip, and everyday activities) is scored from 0 to 3 by its most difficult activity. If you use an aid or device, or need help from another person, that area is scored as at least 2. The HAQ-DI is the average of the eight areas, giving a 0 to 3 result. A change of about 0.22 or more is generally considered a meaningful change in rheumatoid arthritis.</p>
+<p style="font-size:12.5px;color:var(--muted);margin-top:6px">Health Assessment Questionnaire Disability Index (HAQ-DI). Fries JF, Spitz PW, Kraines RG, Holman HR. <em>Arthritis Rheum.</em> 1980;23:137 to 145. The HAQ is free for clinical and educational use. Reference for items and scoring: autoimmunecalc.com.</p>
+</div>
+
+<div class="cta-row" style="margin-top:20px"><a class="btn btn-ghost" href="rapid3-tracker.html">RAPID3 disease activity tracker</a><a class="btn btn-ghost" href="raid-calculator.html">RAID impact tracker</a></div>
+</div></section>
+
+<script>
+(function(){
+  "use strict";
+  var KEY='haq_di_history';
+  var DOMAINS=[
+    {name:'Dressing and grooming', items:['Dress yourself, including tying shoelaces and doing buttons','Shampoo your hair']},
+    {name:'Arising', items:['Stand up from an armless straight chair','Get in and out of bed']},
+    {name:'Eating', items:['Cut your meat','Lift a full cup or glass to your mouth','Open a new carton of milk']},
+    {name:'Walking', items:['Walk outdoors on flat ground','Climb up five steps']},
+    {name:'Hygiene', items:['Wash and dry your body','Take a bath','Get on and off the toilet']},
+    {name:'Reach', items:['Reach and get down a 2 kg (5 lb) object, such as a bag of sugar, from just above your head','Bend down to pick up clothing from the floor']},
+    {name:'Grip', items:['Open car doors','Open jars which have been opened before','Turn taps on and off']},
+    {name:'Everyday activities', items:['Run errands and shop','Get in and out of a car','Do chores such as vacuuming or gardening']}
+  ];
+  var SCALE=['Without any difficulty','With some difficulty','With much difficulty','Unable to do'];
+  function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+  function getHist(){ try{ var h=JSON.parse(localStorage.getItem(KEY)||'[]'); return Array.isArray(h)?h:[]; }catch(e){ return []; } }
+
+  function render(){
+    var html='';
+    DOMAINS.forEach(function(d,di){
+      var items=d.items.map(function(q,qi){
+        var opts='<option value="">not answered</option>';
+        for(var k=0;k<=3;k++){ opts+='<option value="'+k+'">'+k+' - '+SCALE[k]+'</option>'; }
+        return '<div class="haq-item"><span class="haq-q">'+esc(q)+'</span>'
+          +'<select class="haq-sel" id="haq-'+di+'-'+qi+'" aria-label="'+esc(q)+'">'+opts+'</select></div>';
+      }).join('');
+      html+='<div class="haq-dom"><h3>'+(di+1)+'. '+esc(d.name)+'</h3>'+items
+        +'<div class="haq-aid"><label><input type="checkbox" id="haq-aid-'+di+'"> I use aids or devices for these</label>'
+        +'<label><input type="checkbox" id="haq-help-'+di+'"> I need help from another person for these</label></div></div>';
+    });
+    document.getElementById('haqForm').innerHTML=html;
+  }
+
+  function domainScore(di){
+    var vals=[], any=false;
+    DOMAINS[di].items.forEach(function(_,qi){
+      var el=document.getElementById('haq-'+di+'-'+qi);
+      if(el&&el.value!==''){ vals.push(Number(el.value)); any=true; }
+    });
+    if(!any) return null;
+    var s=Math.max.apply(null, vals);
+    var aid=document.getElementById('haq-aid-'+di), help=document.getElementById('haq-help-'+di);
+    if(((aid&&aid.checked)||(help&&help.checked))&&s<2) s=2;
+    return s;
+  }
+  function compute(){
+    var scores=[], complete=true;
+    for(var di=0;di<DOMAINS.length;di++){ var s=domainScore(di); if(s===null){ complete=false; } scores.push(s); }
+    if(!complete) return {complete:false, scores:scores};
+    var sum=0; scores.forEach(function(s){ sum+=s; });
+    return {complete:true, scores:scores, di:Math.round((sum/DOMAINS.length)*100)/100};
+  }
+  function interp(di){
+    if(di<=0.5) return '<strong>None to minimal.</strong> Little or no limitation in daily activities.';
+    if(di<=1.0) return '<strong>Mild.</strong> Some difficulty with activities; worth keeping an eye on.';
+    if(di<=2.0) return '<strong>Moderate.</strong> Meaningful difficulty affecting daily life.';
+    return '<strong>Severe.</strong> A lot of difficulty with daily activities. Worth discussing with your team.';
+  }
+  function refresh(){
+    var r=compute(); var sc=document.getElementById('haqScore'), mk=document.getElementById('haqMarker'), ip=document.getElementById('haqInterp');
+    if(!r.complete){ sc.textContent='--'; mk.style.left='0%'; ip.innerHTML='Answer all eight sections above to see your score.'; return; }
+    sc.textContent=r.di.toFixed(2); mk.style.left=(r.di/3*100)+'%'; ip.innerHTML=interp(r.di);
+  }
+  function trendSVG(hist){
+    var W=520,H=140,padL=26,padR=10,padT=12,padB=20, n=hist.length, plotW=W-padL-padR, plotH=H-padT-padB;
+    function x(i){ return padL+(n<=1?plotW/2:(i/(n-1))*plotW); }
+    function y(v){ return padT+(1-Number(v)/3)*plotH; }
+    var grid=''; [0,1.5,3].forEach(function(g){ var yy=y(g); grid+='<line x1="'+padL+'" y1="'+yy+'" x2="'+(W-padR)+'" y2="'+yy+'" class="tr-grid"/><text x="'+(padL-5)+'" y="'+(yy+3)+'" class="tr-axis" text-anchor="end">'+g+'</text>'; });
+    var line=n>1?'<polyline points="'+hist.map(function(h,i){ return x(i)+','+y(h.score); }).join(' ')+'" class="tr-line"/>':'';
+    var dots=hist.map(function(h,i){ return '<circle cx="'+x(i)+'" cy="'+y(h.score)+'" r="3" class="tr-dot"/>'; }).join('');
+    return '<svg viewBox="0 0 '+W+' '+H+'" class="tr-svg" role="img" aria-label="HAQ-DI trend over time">'+grid+line+dots+'</svg>';
+  }
+  function renderHist(){
+    var hist=getHist(), he=document.getElementById('haqHistWrap'), te=document.getElementById('haqTrend');
+    if(!hist.length){ he.innerHTML='<p style="font-size:13.5px;color:var(--muted)">No saved results yet in this browser.</p>'; te.innerHTML=''; return; }
+    te.innerHTML=trendSVG(hist);
+    var rows=hist.slice().reverse().map(function(h){ return '<tr><td>'+h.date+'</td><td>'+Number(h.score).toFixed(2)+' / 3</td></tr>'; }).join('');
+    he.innerHTML='<table class="bhist"><thead><tr><th>Date</th><th>HAQ-DI</th></tr></thead><tbody>'+rows+'</tbody></table>';
+  }
+  function haqSave(){
+    var r=compute(); var m=document.getElementById('haqSaveMsg');
+    if(!r.complete){ if(m){ m.style.color='#b0503a'; m.textContent='Answer all eight sections first.'; } return; }
+    var hist=getHist(); hist.push({date:new Date().toISOString().slice(0,10), score:r.di, domains:r.scores}); if(hist.length>40)hist=hist.slice(hist.length-40);
+    try{ localStorage.setItem(KEY, JSON.stringify(hist)); }catch(e){}
+    renderHist(); if(m){ m.style.color='#3f7a54'; m.textContent='Saved.'; setTimeout(function(){ m.textContent=''; },2500); }
+  }
+  function haqClear(){ if(!confirm('Clear all saved HAQ-DI results from this browser? This cannot be undone.'))return; try{ localStorage.removeItem(KEY); }catch(e){} renderHist(); }
+  function haqPrint(){
+    var r=compute();
+    var meta='<p><strong>Dr. Dharini Mahendira Rheumatology</strong> &middot; HAQ-DI &middot; '+new Date().toLocaleDateString()+'</p>';
+    var body='';
+    if(r.complete){ meta+='<p>HAQ-DI: '+r.di.toFixed(2)+' / 3</p>';
+      body='<table class="bans"><thead><tr><th>Area</th><th>Score (0 to 3)</th></tr></thead><tbody>'
+        +DOMAINS.map(function(d,di){ return '<tr><td>'+esc(d.name)+'</td><td>'+r.scores[di]+'</td></tr>'; }).join('')+'</tbody></table>';
+    } else { meta+='<p>Not all sections were answered.</p>'; }
+    document.getElementById('haqPrintArea').innerHTML=meta+body;
+    window.print();
+  }
+  window.haqSave=haqSave; window.haqClear=haqClear; window.haqPrint=haqPrint;
+  document.addEventListener('DOMContentLoaded', function(){
+    render(); renderHist();
+    document.getElementById('haqForm').addEventListener('change', function(e){
+      var t=e.target;
+      if(t.classList&&t.classList.contains('haq-sel')){ t.classList.toggle('set', t.value!==''); }
+      refresh();
+    });
+  });
+})();
+</script>
+<footer class="site-footer">
+  <div class="foot-in foot-grid">
+    <div class="foot-brand">
+      <img class="brand-logo-dark" src="assets/logo-mahendira-dark.svg" alt="Dr. Dharini Mahendira, Rheumatology" width="269" height="64">
+      <p>Reproductive rheumatology, complex osteoarthritis, and general rheumatology. Careful, sourced answers for patients and clinicians.</p>
+    </div>
+    <div><h5>Clinics</h5>
+      <a href="general-rheumatology.html">General Rheumatology</a>
+      <a href="osteoarthritis.html">Osteoarthritis Clinic</a>
+      <a href="pregnancy.html">RheumPreg Clinic</a>
+    </div>
+    <div><h5>Patients</h5>
+      <a href="patient-guides.html">Patient Guides</a><a href="pregnancy/index.html">Medication guides</a><a href="https://www.arthros.ca/flareforward" target="_blank" rel="noopener">FlareForward (exercise)</a><a href="https://www.arthros.ca/insights" target="_blank" rel="noopener">Insights (blog)</a>
+    </div>
+    <div><h5>Clinicians</h5>
+      <a href="pregnancy/guideline-comparison.clinicians.html">Guideline matrix</a><a href="methodology.html">How we make this</a><a href="https://rheumacademy.com/" target="_blank" rel="noopener">Rheum Academy (CPD)</a>
+    </div>
+    <div><h5>Practice</h5>
+      <a href="team.html">Team</a><a href="research.html">Research</a><a href="teaching.html">Teaching</a><a href="contact.html">Contact</a><a href="medico-legal.html">Medico-legal</a><a href="https://www.torontomyositis.ca" target="_blank" rel="noopener">Toronto Myositis Centre</a>
+    </div>
+  </div>
+  <div class="foot-in foot-base">
+    <span>&copy; 2026 Dr. Dharini Mahendira.</span>
+    <span>For clinical reference &middot; generated from reviewed records</span>
+  </div>
+</footer>
+</body></html>

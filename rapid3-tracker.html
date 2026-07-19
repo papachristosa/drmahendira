@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RAPID3 tracker | Dr. Mahendira Rheumatology</title>
+<meta name="description" content="An interactive RAPID3 (Routine Assessment of Patient Index Data 3) tracker for rheumatoid arthritis disease activity, with tracking and printing.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://papachristosa.github.io/drmahendira/rheumatology/rheumatoid-arthritis.patients.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dr. Dharini Mahendira Rheumatology">
+<meta property="og:title" content="RAPID3 tracker">
+<meta property="og:description" content="An interactive RAPID3 (Routine Assessment of Patient Index Data 3) tracker for rheumatoid arthritis disease activity, with tracking and printing.">
+<meta property="og:url" content="https://papachristosa.github.io/drmahendira/rheumatology/rheumatoid-arthritis.patients.html">
+<meta property="og:image" content="https://papachristosa.github.io/drmahendira/assets/social-1280x640.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="RAPID3 tracker">
+<meta name="twitter:description" content="An interactive RAPID3 (Routine Assessment of Patient Index Data 3) tracker for rheumatoid arthritis disease activity, with tracking and printing.">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://papachristosa.github.io/drmahendira/index.html"}, {"@type": "ListItem", "position": 2, "name": "General Rheumatology", "item": "https://papachristosa.github.io/drmahendira/general-rheumatology.html"}, {"@type": "ListItem", "position": 3, "name": "Rheumatoid arthritis", "item": "https://papachristosa.github.io/drmahendira/rheumatology/rheumatoid-arthritis.patients.html"}, {"@type": "ListItem", "position": 4, "name": "RAPID3 tracker", "item": "https://papachristosa.github.io/drmahendira/rapid3-tracker.html"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#maincontent">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-in">
+    <a class="brandmark" href="index.html">
+      <img class="brand-logo" src="assets/logo-mahendira-light.svg" alt="Dr. Dharini Mahendira, Rheumatology" width="269" height="64">
+    </a>
+    <input type="checkbox" id="nav-toggle">
+    <label class="nav-burger" for="nav-toggle" aria-label="Menu"><span></span></label>
+    <nav class="main" aria-label="Primary">
+      <a href="index.html">Home</a><a href="general-rheumatology.html">General Rheumatology</a><a href="osteoarthritis.html">Osteoarthritis Clinic</a><a href="pregnancy.html">RheumPreg Clinic</a><a href="patient-guides.html">Patient Guides</a><a href="teaching.html">Teaching</a><a href="research.html">Research</a><a href="team.html">Team</a><a href="contact.html">Contact</a>
+      <span class="aud" role="group" aria-label="Choose audience">
+        <a href="#" class="on">For patients</a>
+        <a href="#">For clinicians</a>
+      </span>
+      <a class="refer" href="contact.html">Refer a patient</a>
+    </nav>
+  </div>
+</header>
+<a id="maincontent" tabindex="-1"></a>
+
+<style>
+.r3-scale{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 14px;font-size:12.5px;color:var(--muted)}
+.r3-scale span{background:var(--ivory);border:1px solid var(--line);border-radius:8px;padding:4px 9px}
+.r3-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--line)}
+.r3-item:last-of-type{border-bottom:0}
+.r3-q{font-size:14.5px;min-width:0}
+.r3-sel{font:inherit;font-size:14px;padding:7px 9px;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--plum);font-weight:600;min-width:150px}
+.r3-sel.set{border-color:var(--plum)}
+.r3-vas{margin:18px 0 0}
+.r3-vas h3{margin:0 0 4px;font-size:16px;color:var(--plum)}
+.r3-vas .q-help{margin:0 0 10px;font-size:13.5px;color:var(--muted)}
+.r3-row{display:flex;align-items:center;gap:16px}
+.r3-row input[type=range]{flex:1;height:8px;border-radius:5px;-webkit-appearance:none;appearance:none;outline:none;background:linear-gradient(to right,#4f7a5c,#d8a53d,#c85a3c)}
+.r3-row input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:var(--plum);border:3px solid #fff;box-shadow:0 1px 5px rgba(30,27,32,.4);cursor:pointer}
+.r3-row input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--plum);border:3px solid #fff;box-shadow:0 1px 5px rgba(30,27,32,.4);cursor:pointer}
+.r3-val{min-width:46px;text-align:center;font-weight:800;font-size:18px;color:var(--plum);background:var(--ivory);border:1px solid var(--line);border-radius:9px;padding:5px 0}
+.r3-ends{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:5px}
+.r3-parts{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.r3-part{flex:1 1 120px;min-width:104px;border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:#fff;text-align:center}
+.r3-part .lbl{font-size:12px;color:var(--muted)}
+.r3-part .val{font-size:20px;font-weight:700;color:var(--plum);margin-top:2px}
+.tr-svg{width:100%;height:auto;display:block;margin:4px 0 8px}
+.tr-line{fill:none;stroke:var(--brass,#a9781f);stroke-width:2}
+.tr-dot{fill:var(--plum,#432a49)}
+.tr-grid{stroke:var(--line,#e5e0e8);stroke-width:1}
+.tr-axis{fill:var(--muted,#6a6270);font-size:10px}
+</style>
+
+<section class="hero"><div class="wrap">
+  <p class="eyebrow"><a href="rheumatology/rheumatoid-arthritis.patients.html">Rheumatoid arthritis</a> &middot; Self-tracking tool</p>
+  <h1>RAPID3: track your disease activity</h1>
+  <p class="lede">RAPID3 (Routine Assessment of Patient Index Data 3) is a quick, patient-reported measure of how active your rheumatoid arthritis is. It has three parts: how much difficulty you have with everyday activities, your pain, and how you are doing overall. It needs no joint examination or blood tests and takes under a minute. Complete it, save your result to track it over time, and print it for your appointment.</p>
+  <div class="cta-row"><a class="btn btn-ghost" href="rheumatology/rheumatoid-arthritis.patients.html">Back to the RA guide</a><a class="btn btn-ghost" href="patient-guides.html">All patient guides</a></div>
+</div></section>
+<section class="sec"><div class="wrap">
+
+<div class="alert noprint"><span class="b">i</span><span>Answer for the <strong>past week</strong>. For the activities, answer without help from another person. This tool runs entirely in your browser: nothing you enter is saved to a server or sent anywhere. Saving stores your result only in this browser, on this device.</span></div>
+
+<h2 style="margin:8px 0 2px">Part 1. Everyday activities</h2>
+<div class="r3-scale noprint"><span>0 = Without any difficulty</span><span>1 = With some difficulty</span><span>2 = With much difficulty</span><span>3 = Unable to do</span></div>
+<div class="prose noprint" id="r3Form"></div>
+
+<div class="r3-vas noprint" id="r3PainWrap">
+  <h3>Part 2. Pain</h3>
+  <p class="q-help">How much pain have you had because of your arthritis in the past week?</p>
+  <div class="r3-row"><input type="range" id="r3-pain" min="0" max="10" step="0.5" value="0"><span class="r3-val" id="r3-painv">0</span></div>
+  <div class="r3-ends"><span>0 &middot; no pain</span><span>10 &middot; pain as bad as it could be</span></div>
+</div>
+
+<div class="r3-vas noprint" id="r3GlobalWrap">
+  <h3>Part 3. Overall</h3>
+  <p class="q-help">Considering all the ways your arthritis affects you, how are you doing overall in the past week?</p>
+  <div class="r3-row"><input type="range" id="r3-global" min="0" max="10" step="0.5" value="0"><span class="r3-val" id="r3-globalv">0</span></div>
+  <div class="r3-ends"><span>0 &middot; very well</span><span>10 &middot; very poorly</span></div>
+</div>
+
+<div class="basdai-result">
+  <div class="basdai-score-label">Your RAPID3</div>
+  <div class="basdai-score" id="r3Score">--</div>
+  <div class="basdai-score-label">out of 30</div>
+  <div class="basdai-gauge"><span class="basdai-marker" id="r3Marker" style="left:0%"></span></div>
+  <div class="basdai-endlabels"><span>0 &middot; near remission</span><span>30 &middot; high activity</span></div>
+  <div class="basdai-interp" id="r3Interp">Answer all three parts above to see your score.</div>
+  <div class="r3-parts">
+    <div class="r3-part"><div class="lbl">Function (0 to 10)</div><div class="val" id="r3-fnv">--</div></div>
+    <div class="r3-part"><div class="lbl">Pain (0 to 10)</div><div class="val" id="r3-pnv">--</div></div>
+    <div class="r3-part"><div class="lbl">Overall (0 to 10)</div><div class="val" id="r3-glv">--</div></div>
+  </div>
+</div>
+
+<div class="disclaimer noprint" style="margin-top:16px"><strong>About the score.</strong> RAPID3 runs from 0 to 30, where a higher number means more active disease from your point of view. It reflects how you are feeling and functioning, not the joint examination or blood tests, so your team will read it alongside those. Any single score is one data point for a conversation, not a diagnosis or a treatment decision on its own. Pain, low mood, fatigue, and other conditions can all raise the score without meaning the arthritis itself is more active.</div>
+
+<div class="cta-row noprint" style="margin-top:18px">
+  <button type="button" class="btn btn-primary" id="r3SaveBtn" onclick="r3Save()">Save this result</button>
+  <button type="button" class="btn btn-ghost" onclick="r3Print()">Print this result</button>
+  <span id="r3SaveMsg" style="font-size:13px;color:#3f7a54;align-self:center"></span>
+</div>
+
+<div class="basdai-hist noprint">
+  <p class="group-label" style="margin-top:26px">Your saved results</p>
+  <div id="r3Trend"></div>
+  <div id="r3HistWrap"></div>
+  <p style="margin-top:10px"><button type="button" class="btn btn-ghost" onclick="r3Clear()" style="font-size:13px">Clear saved history</button></p>
+</div>
+
+<div class="printonly" id="r3PrintArea" style="margin-top:18px"></div>
+
+<div class="info-block" style="margin-top:24px"><h3>How the score is worked out</h3>
+<p style="font-size:14.5px;margin:0 0 8px">The 10 activity answers (each 0 to 3) are added up and divided by 3 to give a function score out of 10. That is added to your pain score (0 to 10) and your overall score (0 to 10), giving a total out of 30. As a guide, 0 to 3 is near remission, 3.1 to 6 is low activity, 6.1 to 12 is moderate activity, and above 12 is high activity.</p>
+<p style="font-size:12.5px;color:var(--muted);margin-top:6px">Routine Assessment of Patient Index Data 3 (RAPID3), on an MDHAQ. Pincus T, Swearingen CJ, Bergman MJ, et al. <em>Arthritis Care Res.</em> 2008;59:1802 to 1808. Free for clinical and educational use. Reference for items and scoring: autoimmunecalc.com.</p>
+</div>
+
+<div class="cta-row" style="margin-top:20px"><a class="btn btn-ghost" href="haq-tracker.html">HAQ-DI function tracker</a><a class="btn btn-ghost" href="raid-calculator.html">RAID impact tracker</a></div>
+</div></section>
+
+<script>
+(function(){
+  "use strict";
+  var KEY='rapid3_history';
+  var FN=[
+    'Dress yourself, including tying shoelaces and doing buttons',
+    'Get in and out of bed',
+    'Lift a full cup or glass to your mouth',
+    'Walk outdoors on flat ground',
+    'Wash and dry your entire body',
+    'Bend down to pick up clothing from the floor',
+    'Turn taps on and off',
+    'Get in and out of a car, bus, train, or aeroplane',
+    'Walk two miles or three kilometres, if you wish',
+    'Take part in recreation and sports as you would like, if you wish'
+  ];
+  var SCALE=['Without any difficulty','With some difficulty','With much difficulty','Unable to do'];
+  function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+  function getHist(){ try{ var h=JSON.parse(localStorage.getItem(KEY)||'[]'); return Array.isArray(h)?h:[]; }catch(e){ return []; } }
+
+  function render(){
+    var rows=FN.map(function(q,i){
+      var opts='<option value="">not answered</option>';
+      for(var k=0;k<=3;k++){ opts+='<option value="'+k+'">'+k+' - '+SCALE[k]+'</option>'; }
+      return '<div class="r3-item"><span class="r3-q">'+(i+1)+'. '+esc(q)+'</span><select class="r3-sel" id="r3-fn-'+i+'" aria-label="'+esc(q)+'">'+opts+'</select></div>';
+    }).join('');
+    document.getElementById('r3Form').innerHTML=rows;
+  }
+  function fnComplete(){
+    var sum=0; for(var i=0;i<FN.length;i++){ var el=document.getElementById('r3-fn-'+i); if(!el||el.value==='')return null; sum+=Number(el.value); }
+    return sum; // 0 to 30 raw
+  }
+  function compute(){
+    var raw=fnComplete(); if(raw===null) return {complete:false};
+    var fn=Math.round((raw/3)*10)/10;                 // 0 to 10
+    var pain=Number(document.getElementById('r3-pain').value);
+    var glob=Number(document.getElementById('r3-global').value);
+    var total=Math.round((fn+pain+glob)*10)/10;       // 0 to 30
+    return {complete:true, fn:fn, pain:pain, glob:glob, total:total};
+  }
+  function interp(t){
+    if(t<=3) return '<strong>Near remission.</strong> Minimal disease impact from your point of view.';
+    if(t<=6) return '<strong>Low activity.</strong> A low overall burden.';
+    if(t<=12) return '<strong>Moderate activity.</strong> A meaningful symptom burden; worth reviewing with your team.';
+    return '<strong>High activity.</strong> A high symptom burden; worth discussing with your team.';
+  }
+  function refresh(){
+    document.getElementById('r3-painv').textContent=Number(document.getElementById('r3-pain').value).toFixed(1);
+    document.getElementById('r3-globalv').textContent=Number(document.getElementById('r3-global').value).toFixed(1);
+    var r=compute(); var sc=document.getElementById('r3Score'), mk=document.getElementById('r3Marker'), ip=document.getElementById('r3Interp');
+    var fnv=document.getElementById('r3-fnv'), pnv=document.getElementById('r3-pnv'), glv=document.getElementById('r3-glv');
+    if(!r.complete){ sc.textContent='--'; mk.style.left='0%'; ip.innerHTML='Answer all three parts above to see your score.'; fnv.textContent='--'; pnv.textContent='--'; glv.textContent='--'; return; }
+    sc.textContent=r.total.toFixed(1); mk.style.left=(r.total/30*100)+'%'; ip.innerHTML=interp(r.total);
+    fnv.textContent=r.fn.toFixed(1); pnv.textContent=r.pain.toFixed(1); glv.textContent=r.glob.toFixed(1);
+  }
+  function trendSVG(hist){
+    var W=520,H=140,padL=26,padR=10,padT=12,padB=20, n=hist.length, plotW=W-padL-padR, plotH=H-padT-padB;
+    function x(i){ return padL+(n<=1?plotW/2:(i/(n-1))*plotW); }
+    function y(v){ return padT+(1-Number(v)/30)*plotH; }
+    var grid=''; [0,15,30].forEach(function(g){ var yy=y(g); grid+='<line x1="'+padL+'" y1="'+yy+'" x2="'+(W-padR)+'" y2="'+yy+'" class="tr-grid"/><text x="'+(padL-5)+'" y="'+(yy+3)+'" class="tr-axis" text-anchor="end">'+g+'</text>'; });
+    var line=n>1?'<polyline points="'+hist.map(function(h,i){ return x(i)+','+y(h.score); }).join(' ')+'" class="tr-line"/>':'';
+    var dots=hist.map(function(h,i){ return '<circle cx="'+x(i)+'" cy="'+y(h.score)+'" r="3" class="tr-dot"/>'; }).join('');
+    return '<svg viewBox="0 0 '+W+' '+H+'" class="tr-svg" role="img" aria-label="RAPID3 trend over time">'+grid+line+dots+'</svg>';
+  }
+  function renderHist(){
+    var hist=getHist(), he=document.getElementById('r3HistWrap'), te=document.getElementById('r3Trend');
+    if(!hist.length){ he.innerHTML='<p style="font-size:13.5px;color:var(--muted)">No saved results yet in this browser.</p>'; te.innerHTML=''; return; }
+    te.innerHTML=trendSVG(hist);
+    var rows=hist.slice().reverse().map(function(h){ return '<tr><td>'+h.date+'</td><td>'+Number(h.score).toFixed(1)+' / 30</td></tr>'; }).join('');
+    he.innerHTML='<table class="bhist"><thead><tr><th>Date</th><th>RAPID3</th></tr></thead><tbody>'+rows+'</tbody></table>';
+  }
+  function r3Save(){
+    var r=compute(); var m=document.getElementById('r3SaveMsg');
+    if(!r.complete){ if(m){ m.style.color='#b0503a'; m.textContent='Answer all 10 activities first.'; } return; }
+    var hist=getHist(); hist.push({date:new Date().toISOString().slice(0,10), score:r.total, fn:r.fn, pain:r.pain, glob:r.glob}); if(hist.length>40)hist=hist.slice(hist.length-40);
+    try{ localStorage.setItem(KEY, JSON.stringify(hist)); }catch(e){}
+    renderHist(); if(m){ m.style.color='#3f7a54'; m.textContent='Saved.'; setTimeout(function(){ m.textContent=''; },2500); }
+  }
+  function r3Clear(){ if(!confirm('Clear all saved RAPID3 results from this browser? This cannot be undone.'))return; try{ localStorage.removeItem(KEY); }catch(e){} renderHist(); }
+  function r3Print(){
+    var r=compute();
+    var meta='<p><strong>Dr. Dharini Mahendira Rheumatology</strong> &middot; RAPID3 &middot; '+new Date().toLocaleDateString()+'</p>';
+    var body='';
+    if(r.complete){ meta+='<p>RAPID3: '+r.total.toFixed(1)+' / 30 (function '+r.fn.toFixed(1)+', pain '+r.pain.toFixed(1)+', overall '+r.glob.toFixed(1)+')</p>';
+      body='<table class="bans"><thead><tr><th>Activity</th><th>Score (0 to 3)</th></tr></thead><tbody>'
+        +FN.map(function(q,i){ var el=document.getElementById('r3-fn-'+i); return '<tr><td>'+esc(q)+'</td><td>'+(el?el.value:'')+'</td></tr>'; }).join('')+'</tbody></table>';
+    } else { meta+='<p>Not all parts were answered.</p>'; }
+    document.getElementById('r3PrintArea').innerHTML=meta+body;
+    window.print();
+  }
+  window.r3Save=r3Save; window.r3Clear=r3Clear; window.r3Print=r3Print;
+  document.addEventListener('DOMContentLoaded', function(){
+    render(); renderHist();
+    document.getElementById('r3Form').addEventListener('change', function(e){ var t=e.target; if(t.classList&&t.classList.contains('r3-sel')){ t.classList.toggle('set', t.value!==''); } refresh(); });
+    document.getElementById('r3-pain').addEventListener('input', refresh);
+    document.getElementById('r3-global').addEventListener('input', refresh);
+  });
+})();
+</script>
+<footer class="site-footer">
+  <div class="foot-in foot-grid">
+    <div class="foot-brand">
+      <img class="brand-logo-dark" src="assets/logo-mahendira-dark.svg" alt="Dr. Dharini Mahendira, Rheumatology" width="269" height="64">
+      <p>Reproductive rheumatology, complex osteoarthritis, and general rheumatology. Careful, sourced answers for patients and clinicians.</p>
+    </div>
+    <div><h5>Clinics</h5>
+      <a href="general-rheumatology.html">General Rheumatology</a>
+      <a href="osteoarthritis.html">Osteoarthritis Clinic</a>
+      <a href="pregnancy.html">RheumPreg Clinic</a>
+    </div>
+    <div><h5>Patients</h5>
+      <a href="patient-guides.html">Patient Guides</a><a href="pregnancy/index.html">Medication guides</a><a href="https://www.arthros.ca/flareforward" target="_blank" rel="noopener">FlareForward (exercise)</a><a href="https://www.arthros.ca/insights" target="_blank" rel="noopener">Insights (blog)</a>
+    </div>
+    <div><h5>Clinicians</h5>
+      <a href="pregnancy/guideline-comparison.clinicians.html">Guideline matrix</a><a href="methodology.html">How we make this</a><a href="https://rheumacademy.com/" target="_blank" rel="noopener">Rheum Academy (CPD)</a>
+    </div>
+    <div><h5>Practice</h5>
+      <a href="team.html">Team</a><a href="research.html">Research</a><a href="teaching.html">Teaching</a><a href="contact.html">Contact</a><a href="medico-legal.html">Medico-legal</a><a href="https://www.torontomyositis.ca" target="_blank" rel="noopener">Toronto Myositis Centre</a>
+    </div>
+  </div>
+  <div class="foot-in foot-base">
+    <span>&copy; 2026 Dr. Dharini Mahendira.</span>
+    <span>For clinical reference &middot; generated from reviewed records</span>
+  </div>
+</footer>
+</body></html>

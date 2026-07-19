@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gout urate and flare tracker | Dr. Mahendira Rheumatology</title>
+<meta name="description" content="An interactive tracker for serum urate against the treat-to-target level and a flare diary for gout, with printing.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://papachristosa.github.io/drmahendira/rheumatology/gout.patients.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dr. Dharini Mahendira Rheumatology">
+<meta property="og:title" content="Gout urate and flare tracker">
+<meta property="og:description" content="An interactive tracker for serum urate against the treat-to-target level and a flare diary for gout, with printing.">
+<meta property="og:url" content="https://papachristosa.github.io/drmahendira/rheumatology/gout.patients.html">
+<meta property="og:image" content="https://papachristosa.github.io/drmahendira/assets/social-1280x640.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gout urate and flare tracker">
+<meta name="twitter:description" content="An interactive tracker for serum urate against the treat-to-target level and a flare diary for gout, with printing.">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://papachristosa.github.io/drmahendira/index.html"}, {"@type": "ListItem", "position": 2, "name": "General Rheumatology", "item": "https://papachristosa.github.io/drmahendira/general-rheumatology.html"}, {"@type": "ListItem", "position": 3, "name": "Gout", "item": "https://papachristosa.github.io/drmahendira/rheumatology/gout.patients.html"}, {"@type": "ListItem", "position": 4, "name": "Gout tracker", "item": "https://papachristosa.github.io/drmahendira/gout-tracker.html"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#maincontent">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-in">
+    <a class="brandmark" href="index.html">
+      <img class="brand-logo" src="assets/logo-mahendira-light.svg" alt="Dr. Dharini Mahendira, Rheumatology" width="269" height="64">
+    </a>
+    <input type="checkbox" id="nav-toggle">
+    <label class="nav-burger" for="nav-toggle" aria-label="Menu"><span></span></label>
+    <nav class="main" aria-label="Primary">
+      <a href="index.html">Home</a><a href="general-rheumatology.html">General Rheumatology</a><a href="osteoarthritis.html">Osteoarthritis Clinic</a><a href="pregnancy.html">RheumPreg Clinic</a><a href="patient-guides.html">Patient Guides</a><a href="teaching.html">Teaching</a><a href="research.html">Research</a><a href="team.html">Team</a><a href="contact.html">Contact</a>
+      <span class="aud" role="group" aria-label="Choose audience">
+        <a href="#" class="on">For patients</a>
+        <a href="#">For clinicians</a>
+      </span>
+      <a class="refer" href="contact.html">Refer a patient</a>
+    </nav>
+  </div>
+</header>
+<a id="maincontent" tabindex="-1"></a>
+
+<style>
+.gt-add{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end;margin:6px 0 4px}
+.gt-fld{display:flex;flex-direction:column;gap:4px}
+.gt-fld label{font-size:12.5px;color:var(--muted);font-weight:600}
+.gt-fld input,.gt-fld select{font:inherit;font-size:14px;padding:8px 9px;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--plum);font-weight:600}
+.gt-fld input[type=date]{min-width:150px}
+.gt-fld input[type=number]{width:110px}
+.gt-status{margin:14px 0 0;padding:12px 14px;border-radius:11px;font-size:14.5px;border:1px solid var(--line);background:#fff}
+.gt-status.good{background:#eef6f0;border-color:#cfe6d6;color:#2f6a45}
+.gt-status.over{background:#fbf1ec;border-color:#f0d8cc;color:#9a4a30}
+.gt-latest{font-size:26px;font-weight:800;color:var(--plum);line-height:1}
+.tr-svg{width:100%;height:auto;display:block;margin:8px 0}
+.tr-line{fill:none;stroke:var(--brass,#a9781f);stroke-width:2}
+.tr-dot{fill:var(--plum,#432a49)}
+.tr-dot.good{fill:#3f8759}
+.tr-grid{stroke:var(--line,#e5e0e8);stroke-width:1}
+.tr-target{stroke:#3f8759;stroke-width:1.4;stroke-dasharray:5 4}
+.tr-axis{fill:var(--muted,#6a6270);font-size:10px}
+.gt-tbl{width:100%;border-collapse:collapse;margin-top:10px;font-size:14px}
+.gt-tbl th,.gt-tbl td{text-align:left;padding:7px 9px;border-bottom:1px solid var(--line)}
+.gt-tbl th{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.03em}
+.gt-del{background:none;border:0;color:#b0503a;cursor:pointer;font-size:16px;line-height:1;padding:0 4px}
+.gt-count{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.gt-chip{border:1px solid var(--line);border-radius:10px;padding:8px 12px;background:#fff;text-align:center;min-width:96px}
+.gt-chip .n{font-size:20px;font-weight:700;color:var(--plum)}
+.gt-chip .l{font-size:11.5px;color:var(--muted)}
+</style>
+
+<section class="hero"><div class="wrap">
+  <p class="eyebrow"><a href="rheumatology/gout.patients.html">Gout</a> &middot; Self-tracking tool</p>
+  <h1>Track your urate level and your flares</h1>
+  <p class="lede">Gout is caused by too much urate in the blood. The aim of urate-lowering treatment is to bring your urate level down and keep it there, which over time dissolves the crystals in your joints and stops flares from coming back. This tool lets you record your blood urate results and see them against the usual target, and keep a simple diary of your flares to bring to your appointment.</p>
+  <div class="cta-row"><a class="btn btn-ghost" href="rheumatology/gout.patients.html">Back to the gout guide</a><a class="btn btn-ghost" href="patient-guides.html">All patient guides</a></div>
+</div></section>
+<section class="sec"><div class="wrap">
+
+<div class="alert noprint"><span class="b">i</span><span>This tool runs entirely in your browser: nothing you enter is saved to a server or sent anywhere. Everything you add is stored only in this browser, on this device. Bring your results to your appointments; your team decides what your target should be and whether your treatment needs changing.</span></div>
+
+<h2 style="margin:6px 0 2px">Your urate level over time</h2>
+<p class="prose" style="margin-top:2px">Enter your blood urate result each time you have it checked. In Canada this is usually reported in micromoles per litre (umol/L). The usual target is <strong>below 360</strong>.</p>
+
+<div class="gt-add noprint">
+  <div class="gt-fld"><label for="gt-udate">Date</label><input type="date" id="gt-udate"></div>
+  <div class="gt-fld"><label for="gt-uval">Urate (umol/L)</label><input type="number" id="gt-uval" min="0" max="1500" step="1" placeholder="e.g. 340"></div>
+  <button type="button" class="btn btn-primary" onclick="goutAddUrate()">Add reading</button>
+  <span id="gt-umsg" style="font-size:13px;color:#b0503a;align-self:center"></span>
+</div>
+
+<div class="gt-status" id="gt-status">Add your first urate reading to see it against the target.</div>
+<div id="gt-utrend"></div>
+<div id="gt-utable"></div>
+
+<h2 style="margin:26px 0 2px">Your flare diary</h2>
+<p class="prose" style="margin-top:2px">Record each flare so you and your team can see how often they happen and whether they are settling as your urate comes down.</p>
+
+<div class="gt-add noprint">
+  <div class="gt-fld"><label for="gt-fdate">Date it started</label><input type="date" id="gt-fdate"></div>
+  <div class="gt-fld"><label for="gt-fjoint">Joint(s) affected</label><input type="text" id="gt-fjoint" placeholder="e.g. right big toe" style="min-width:170px"></div>
+  <div class="gt-fld"><label for="gt-fsev">How bad</label><select id="gt-fsev"><option value="Mild">Mild</option><option value="Moderate">Moderate</option><option value="Severe">Severe</option></select></div>
+  <div class="gt-fld"><label for="gt-fdays">Days it lasted</label><input type="number" id="gt-fdays" min="0" max="120" step="1" placeholder="e.g. 5"></div>
+  <button type="button" class="btn btn-primary" onclick="goutAddFlare()">Add flare</button>
+  <span id="gt-fmsg" style="font-size:13px;color:#b0503a;align-self:center"></span>
+</div>
+
+<div class="gt-count noprint" id="gt-fcount"></div>
+<div id="gt-ftable"></div>
+
+<div class="cta-row noprint" style="margin-top:20px">
+  <button type="button" class="btn btn-ghost" onclick="goutPrint()">Print a summary for my appointment</button>
+</div>
+
+<div class="printonly" id="gt-print" style="margin-top:18px"></div>
+
+<div class="info-block" style="margin-top:26px"><h3>About the target</h3>
+<p style="font-size:14.5px;margin:0 0 8px">For most people on urate-lowering treatment, the recommended aim is a blood urate below 360 umol/L (this is the same as below 6 mg/dL, the unit used in some other countries). Keeping the level below target over the long term is what gradually clears the urate crystals and prevents flares. Your team may set a different target for you, and they may keep treating for a while even after you feel well, so the crystals have time to dissolve. A single reading is one data point for that conversation, not a decision on its own.</p>
+<p style="font-size:12.5px;color:var(--muted);margin-top:6px">Serum urate target from: FitzGerald JD, Dalbeth N, Mikuls T, et al. 2020 American College of Rheumatology Guideline for the Management of Gout. <em>Arthritis Care Res.</em> 2020;72:744 to 760 (strong recommendation for a treat-to-target strategy to a serum urate target below 6 mg/dL).</p>
+</div>
+
+<div class="cta-row" style="margin-top:20px"><a class="btn btn-ghost" href="rheumatology/gout.patients.html">Read the full gout guide</a></div>
+</div></section>
+
+<script>
+(function(){
+  "use strict";
+  var UKEY='gout_urate_readings', FKEY='gout_flares', TARGET=360;
+  function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+  function get(k){ try{ var h=JSON.parse(localStorage.getItem(k)||'[]'); return Array.isArray(h)?h:[]; }catch(e){ return []; } }
+  function set(k,v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+  function byDate(a,b){ return a.date<b.date?-1:(a.date>b.date?1:0); }
+  function today(){ return new Date().toISOString().slice(0,10); }
+  function fmt(d){ try{ return new Date(d+'T00:00:00').toLocaleDateString(); }catch(e){ return d; } }
+
+  // ---- urate ----
+  function goutAddUrate(){
+    var d=document.getElementById('gt-udate').value||today();
+    var v=parseFloat(document.getElementById('gt-uval').value);
+    var m=document.getElementById('gt-umsg');
+    if(isNaN(v)||v<=0){ m.textContent='Enter a urate number.'; return; }
+    if(v>1500){ m.textContent='That looks too high, please check.'; return; }
+    m.textContent='';
+    var list=get(UKEY); list.push({date:d, value:Math.round(v)}); list.sort(byDate); if(list.length>60)list=list.slice(list.length-60); set(UKEY,list);
+    document.getElementById('gt-uval').value='';
+    renderUrate();
+  }
+  function delUrate(i){ var list=get(UKEY); list.splice(i,1); set(UKEY,list); renderUrate(); }
+  function urateTrend(list){
+    var W=520,H=170,padL=32,padR=12,padT=12,padB=22, n=list.length, plotW=W-padL-padR, plotH=H-padT-padB;
+    var maxV=TARGET+40; list.forEach(function(r){ if(r.value>maxV)maxV=r.value; });
+    var yMax=Math.ceil((maxV+40)/100)*100; if(yMax<600)yMax=600;
+    function x(i){ return padL+(n<=1?plotW/2:(i/(n-1))*plotW); }
+    function y(v){ return padT+(1-v/yMax)*plotH; }
+    var grid=''; [0, yMax/3, 2*yMax/3, yMax].forEach(function(g){ var yy=y(g); grid+='<line x1="'+padL+'" y1="'+yy+'" x2="'+(W-padR)+'" y2="'+yy+'" class="tr-grid"/><text x="'+(padL-5)+'" y="'+(yy+3)+'" class="tr-axis" text-anchor="end">'+Math.round(g)+'</text>'; });
+    var ty=y(TARGET); var target='<line x1="'+padL+'" y1="'+ty+'" x2="'+(W-padR)+'" y2="'+ty+'" class="tr-target"/><text x="'+(W-padR)+'" y="'+(ty-4)+'" class="tr-axis" text-anchor="end" style="fill:#3f8759">target 360</text>';
+    var line=n>1?'<polyline points="'+list.map(function(r,i){ return x(i)+','+y(r.value); }).join(' ')+'" class="tr-line"/>':'';
+    var dots=list.map(function(r,i){ return '<circle cx="'+x(i)+'" cy="'+y(r.value)+'" r="3.5" class="tr-dot'+(r.value<TARGET?' good':'')+'"/>'; }).join('');
+    return '<svg viewBox="0 0 '+W+' '+H+'" class="tr-svg" role="img" aria-label="Serum urate over time against the 360 target">'+grid+target+line+dots+'</svg>';
+  }
+  function renderUrate(){
+    var list=get(UKEY), st=document.getElementById('gt-status'), tr=document.getElementById('gt-utrend'), tb=document.getElementById('gt-utable');
+    if(!list.length){ st.className='gt-status'; st.innerHTML='Add your first urate reading to see it against the target.'; tr.innerHTML=''; tb.innerHTML=''; return; }
+    var latest=list[list.length-1];
+    if(latest.value<TARGET){ st.className='gt-status good'; st.innerHTML='<span class="gt-latest">'+latest.value+'</span> umol/L on '+fmt(latest.date)+'. This is <strong>below the 360 target</strong>. Keeping it here is the goal.'; }
+    else { st.className='gt-status over'; st.innerHTML='<span class="gt-latest">'+latest.value+'</span> umol/L on '+fmt(latest.date)+'. This is <strong>at or above the 360 target</strong>. Worth reviewing with your team whether your treatment needs adjusting.'; }
+    tr.innerHTML=urateTrend(list);
+    var rows=list.slice().reverse().map(function(r,ri){ var idx=list.length-1-ri; return '<tr><td>'+fmt(r.date)+'</td><td>'+r.value+' umol/L</td><td>'+(r.value<TARGET?'below target':'at or above')+'</td><td class="noprint"><button type="button" class="gt-del" title="Remove" onclick="goutDelUrate('+idx+')">&times;</button></td></tr>'; }).join('');
+    tb.innerHTML='<table class="gt-tbl"><thead><tr><th>Date</th><th>Urate</th><th>Vs target</th><th class="noprint"></th></tr></thead><tbody>'+rows+'</tbody></table>';
+  }
+
+  // ---- flares ----
+  function goutAddFlare(){
+    var d=document.getElementById('gt-fdate').value||today();
+    var j=(document.getElementById('gt-fjoint').value||'').trim();
+    var s=document.getElementById('gt-fsev').value;
+    var days=parseInt(document.getElementById('gt-fdays').value,10);
+    var m=document.getElementById('gt-fmsg');
+    if(!j){ m.textContent='Add which joint(s).'; return; }
+    m.textContent='';
+    var list=get(FKEY); list.push({date:d, joint:j, sev:s, days:(isNaN(days)?null:days)}); list.sort(byDate); if(list.length>120)list=list.slice(list.length-120); set(FKEY,list);
+    document.getElementById('gt-fjoint').value=''; document.getElementById('gt-fdays').value='';
+    renderFlares();
+  }
+  function delFlare(i){ var list=get(FKEY); list.splice(i,1); set(FKEY,list); renderFlares(); }
+  function sinceDays(n){ var d=new Date(); d.setDate(d.getDate()-n); return d.toISOString().slice(0,10); }
+  function renderFlares(){
+    var list=get(FKEY), ce=document.getElementById('gt-fcount'), tb=document.getElementById('gt-ftable');
+    var c6=sinceDays(182), c12=sinceDays(365);
+    var n6=0,n12=0; list.forEach(function(f){ if(f.date>=c12){ n12++; if(f.date>=c6)n6++; } });
+    ce.innerHTML='<div class="gt-chip"><div class="n">'+list.length+'</div><div class="l">recorded in total</div></div>'
+      +'<div class="gt-chip"><div class="n">'+n12+'</div><div class="l">in the last 12 months</div></div>'
+      +'<div class="gt-chip"><div class="n">'+n6+'</div><div class="l">in the last 6 months</div></div>';
+    if(!list.length){ tb.innerHTML='<p style="font-size:13.5px;color:var(--muted);margin-top:8px">No flares recorded yet.</p>'; return; }
+    var rows=list.slice().reverse().map(function(f,ri){ var idx=list.length-1-ri; return '<tr><td>'+fmt(f.date)+'</td><td>'+esc(f.joint)+'</td><td>'+esc(f.sev)+'</td><td>'+(f.days==null?'&#183;':f.days+(f.days===1?' day':' days'))+'</td><td class="noprint"><button type="button" class="gt-del" title="Remove" onclick="goutDelFlare('+idx+')">&times;</button></td></tr>'; }).join('');
+    tb.innerHTML='<table class="gt-tbl"><thead><tr><th>Started</th><th>Joint(s)</th><th>How bad</th><th>Lasted</th><th class="noprint"></th></tr></thead><tbody>'+rows+'</tbody></table>';
+  }
+
+  function goutPrint(){
+    var u=get(UKEY), f=get(FKEY);
+    var html='<p><strong>Dr. Dharini Mahendira Rheumatology</strong> &middot; Gout tracker &middot; '+new Date().toLocaleDateString()+'</p>';
+    if(u.length){ var latest=u[u.length-1];
+      html+='<p>Latest urate: '+latest.value+' umol/L on '+fmt(latest.date)+' ('+(latest.value<TARGET?'below':'at or above')+' the 360 target).</p>';
+      html+='<table class="bans"><thead><tr><th>Date</th><th>Urate (umol/L)</th></tr></thead><tbody>'+u.slice().reverse().map(function(r){ return '<tr><td>'+fmt(r.date)+'</td><td>'+r.value+'</td></tr>'; }).join('')+'</tbody></table>';
+    } else { html+='<p>No urate readings recorded.</p>'; }
+    if(f.length){ html+='<p style="margin-top:10px">Flares recorded: '+f.length+' in total.</p>';
+      html+='<table class="bans"><thead><tr><th>Started</th><th>Joint(s)</th><th>How bad</th><th>Lasted</th></tr></thead><tbody>'+f.slice().reverse().map(function(x){ return '<tr><td>'+fmt(x.date)+'</td><td>'+esc(x.joint)+'</td><td>'+esc(x.sev)+'</td><td>'+(x.days==null?'':x.days)+'</td></tr>'; }).join('')+'</tbody></table>';
+    } else { html+='<p style="margin-top:10px">No flares recorded.</p>'; }
+    document.getElementById('gt-print').innerHTML=html;
+    window.print();
+  }
+
+  window.goutAddUrate=goutAddUrate; window.goutDelUrate=delUrate; window.goutAddFlare=goutAddFlare; window.goutDelFlare=delFlare; window.goutPrint=goutPrint;
+  document.addEventListener('DOMContentLoaded', function(){
+    var ud=document.getElementById('gt-udate'), fd=document.getElementById('gt-fdate');
+    if(ud)ud.value=today(); if(fd)fd.value=today();
+    renderUrate(); renderFlares();
+  });
+})();
+</script>
+<footer class="site-footer">
+  <div class="foot-in foot-grid">
+    <div class="foot-brand">
+      <img class="brand-logo-dark" src="assets/logo-mahendira-dark.svg" alt="Dr. Dharini Mahendira, Rheumatology" width="269" height="64">
+      <p>Reproductive rheumatology, complex osteoarthritis, and general rheumatology. Careful, sourced answers for patients and clinicians.</p>
+    </div>
+    <div><h5>Clinics</h5>
+      <a href="general-rheumatology.html">General Rheumatology</a>
+      <a href="osteoarthritis.html">Osteoarthritis Clinic</a>
+      <a href="pregnancy.html">RheumPreg Clinic</a>
+    </div>
+    <div><h5>Patients</h5>
+      <a href="patient-guides.html">Patient Guides</a><a href="pregnancy/index.html">Medication guides</a><a href="https://www.arthros.ca/flareforward" target="_blank" rel="noopener">FlareForward (exercise)</a><a href="https://www.arthros.ca/insights" target="_blank" rel="noopener">Insights (blog)</a>
+    </div>
+    <div><h5>Clinicians</h5>
+      <a href="pregnancy/guideline-comparison.clinicians.html">Guideline matrix</a><a href="methodology.html">How we make this</a><a href="https://rheumacademy.com/" target="_blank" rel="noopener">Rheum Academy (CPD)</a>
+    </div>
+    <div><h5>Practice</h5>
+      <a href="team.html">Team</a><a href="research.html">Research</a><a href="teaching.html">Teaching</a><a href="contact.html">Contact</a><a href="medico-legal.html">Medico-legal</a><a href="https://www.torontomyositis.ca" target="_blank" rel="noopener">Toronto Myositis Centre</a>
+    </div>
+  </div>
+  <div class="foot-in foot-base">
+    <span>&copy; 2026 Dr. Dharini Mahendira.</span>
+    <span>For clinical reference &middot; generated from reviewed records</span>
+  </div>
+</footer>
+</body></html>
